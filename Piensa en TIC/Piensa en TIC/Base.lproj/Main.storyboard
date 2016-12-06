@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rK-9f-y8h">
+                                <frame key="frameInset" minX="67" minY="214" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYy-pK-9T4">
+                                <frame key="frameInset" minX="67" minY="629" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Load Photo"/>
+                                <connections>
+                                    <action selector="loadImageButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kEi-p4-AVb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="9rK-9f-y8h" id="Ehf-sw-R4B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Carrousel View Controller-->
+        <scene sceneID="p9o-z2-sXi">
+            <objects>
+                <viewController id="Igb-f7-K8V" customClass="CarrouselViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z2r-xk-gmf"/>
+                        <viewControllerLayoutGuide type="bottom" id="gOS-3B-UGS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RNW-5q-U6G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-ja-3jX">
+                                <color key="backgroundColor" red="0.94457292559999995" green="0.96090680360000003" blue="0.96085256340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94457292559999995" green="0.96090680360000003" blue="0.96085256340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gOS-3B-UGS" firstAttribute="top" secondItem="z8K-ja-3jX" secondAttribute="bottom" id="D0X-sp-stU"/>
+                            <constraint firstAttribute="trailing" secondItem="z8K-ja-3jX" secondAttribute="trailing" id="LwU-0W-ymI"/>
+                            <constraint firstItem="z8K-ja-3jX" firstAttribute="leading" secondItem="RNW-5q-U6G" secondAttribute="leading" id="hPT-c0-yKW"/>
+                            <constraint firstItem="z8K-ja-3jX" firstAttribute="top" secondItem="RNW-5q-U6G" secondAttribute="top" id="igF-Y1-2iW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Co-Tl-QbI"/>
+                    <connections>
+                        <outlet property="contentView" destination="z8K-ja-3jX" id="3XK-fV-Aaf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ds7-RT-wKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-872.79999999999995" y="97.601199400299862"/>
+        </scene>
+        <!--Carrousel Item View Controller-->
+        <scene sceneID="LzY-O2-TvN">
+            <objects>
+                <viewController storyboardIdentifier="CarrouselItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XTD-hz-cbT" customClass="CarrouselItemViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DXD-cw-iBl"/>
+                        <viewControllerLayoutGuide type="bottom" id="hEb-2z-zzG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lm3-Ay-tio">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="im_start_intro_intro1" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-xD-sbg"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="6NK-Bk-D8n">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="f4P-nL-iCm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.1933943927" green="0.63236117359999999" blue="0.63834005589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-nR-64Y">
+                                <frame key="frameInset" minX="48.195652173913572" minY="573" width="274.99999999999983" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94457292559999995" green="0.96090680360000003" blue="0.96085256340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E2S-xD-sbg" secondAttribute="trailing" id="3XD-6Y-Vcg"/>
+                            <constraint firstItem="E2S-xD-sbg" firstAttribute="leading" secondItem="Lm3-Ay-tio" secondAttribute="leading" id="CsM-Kh-PQR"/>
+                            <constraint firstItem="6NK-Bk-D8n" firstAttribute="leading" secondItem="Lm3-Ay-tio" secondAttribute="leadingMargin" constant="10" id="d0n-ie-P4J"/>
+                            <constraint firstItem="E2S-xD-sbg" firstAttribute="centerX" secondItem="6NK-Bk-D8n" secondAttribute="centerX" id="ktD-8y-U7e"/>
+                            <constraint firstItem="E2S-xD-sbg" firstAttribute="top" secondItem="Lm3-Ay-tio" secondAttribute="top" id="rX4-pA-zOE"/>
+                            <constraint firstItem="6NK-Bk-D8n" firstAttribute="top" secondItem="E2S-xD-sbg" secondAttribute="bottom" constant="84" id="sXP-GR-zch"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwU-jv-3eP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-872.79999999999995" y="757.87106446776613"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="im_start_intro_intro1" width="320" height="382"/>
+    </resources>
+</document>

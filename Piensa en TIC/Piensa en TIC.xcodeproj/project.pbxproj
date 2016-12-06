@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EDE4A1DF50A090079AC35 /* AppDelegate.swift */; };
+		844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EDE4C1DF50A090079AC35 /* ViewController.swift */; };
+		844EDE501DF50A090079AC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE4E1DF50A090079AC35 /* Main.storyboard */; };
+		844EDE521DF50A090079AC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE511DF50A090079AC35 /* Assets.xcassets */; };
+		844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */; };
+		844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5C1DF50A2B0079AC35 /* Structure.plist */; };
+		844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		844EDE471DF50A080079AC35 /* Piensa en TIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piensa en TIC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		844EDE4A1DF50A090079AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		844EDE4C1DF50A090079AC35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		844EDE4F1DF50A090079AC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		844EDE511DF50A090079AC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		844EDE541DF50A090079AC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		844EDE561DF50A090079AC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844EDE5C1DF50A2B0079AC35 /* Structure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Structure.plist; sourceTree = "<group>"; };
+		844EDE5F1DF67A7F0079AC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chapters.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		844EDE441DF50A080079AC35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		844EDE3E1DF50A080079AC35 = {
+			isa = PBXGroup;
+			children = (
+				844EDE491DF50A080079AC35 /* Piensa en TIC */,
+				844EDE481DF50A080079AC35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		844EDE481DF50A080079AC35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				844EDE471DF50A080079AC35 /* Piensa en TIC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		844EDE491DF50A080079AC35 /* Piensa en TIC */ = {
+			isa = PBXGroup;
+			children = (
+				844EDE4A1DF50A090079AC35 /* AppDelegate.swift */,
+				844EDE4C1DF50A090079AC35 /* ViewController.swift */,
+				844EDE4E1DF50A090079AC35 /* Main.storyboard */,
+				844EDE511DF50A090079AC35 /* Assets.xcassets */,
+				844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */,
+				844EDE561DF50A090079AC35 /* Info.plist */,
+				844EDE5C1DF50A2B0079AC35 /* Structure.plist */,
+				844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */,
+			);
+			path = "Piensa en TIC";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		844EDE461DF50A080079AC35 /* Piensa en TIC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844EDE591DF50A090079AC35 /* Build configuration list for PBXNativeTarget "Piensa en TIC" */;
+			buildPhases = (
+				844EDE431DF50A080079AC35 /* Sources */,
+				844EDE441DF50A080079AC35 /* Frameworks */,
+				844EDE451DF50A080079AC35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Piensa en TIC";
+			productName = "Piensa en TIC";
+			productReference = 844EDE471DF50A080079AC35 /* Piensa en TIC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		844EDE3F1DF50A080079AC35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = angelapp;
+				TargetAttributes = {
+					844EDE461DF50A080079AC35 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 844EDE421DF50A080079AC35 /* Build configuration list for PBXProject "Piensa en TIC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 844EDE3E1DF50A080079AC35;
+			productRefGroup = 844EDE481DF50A080079AC35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				844EDE461DF50A080079AC35 /* Piensa en TIC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		844EDE451DF50A080079AC35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */,
+				844EDE521DF50A090079AC35 /* Assets.xcassets in Resources */,
+				844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */,
+				844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */,
+				844EDE501DF50A090079AC35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		844EDE431DF50A080079AC35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */,
+				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		844EDE4E1DF50A090079AC35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844EDE4F1DF50A090079AC35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844EDE541DF50A090079AC35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844EDE5F1DF67A7F0079AC35 /* Base */,
+			);
+			name = Chapters.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		844EDE571DF50A090079AC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		844EDE581DF50A090079AC35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		844EDE5A1DF50A090079AC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		844EDE5B1DF50A090079AC35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		844EDE421DF50A080079AC35 /* Build configuration list for PBXProject "Piensa en TIC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844EDE571DF50A090079AC35 /* Debug */,
+				844EDE581DF50A090079AC35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		844EDE591DF50A090079AC35 /* Build configuration list for PBXNativeTarget "Piensa en TIC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844EDE5A1DF50A090079AC35 /* Debug */,
+				844EDE5B1DF50A090079AC35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 844EDE3F1DF50A080079AC35 /* Project object */;
+}
