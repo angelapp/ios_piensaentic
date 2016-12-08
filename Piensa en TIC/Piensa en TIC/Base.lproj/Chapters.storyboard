@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Carrousel View Controller-->
+        <!--Carrousel Chapter View Controller-->
         <scene sceneID="iFf-Ch-5Er">
             <objects>
-                <viewController id="SVz-5x-OLh" customClass="CarrouselViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="carouselViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SVz-5x-OLh" customClass="CarrouselChapterViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MDN-Ma-eau"/>
                         <viewControllerLayoutGuide type="bottom" id="hkc-8N-LP1"/>
@@ -19,6 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtS-t1-mih">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.94457292559999995" green="0.96090680360000003" blue="0.96085256340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -32,17 +36,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="izT-pV-cUf"/>
                     <connections>
-                        <outlet property="contentView" destination="JtS-t1-mih" id="LGw-Uk-TxY"/>
+                        <outlet property="contentView" destination="JtS-t1-mih" id="oo1-8h-iJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pI-ba-chS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-872.79999999999995" y="97.601199400299862"/>
         </scene>
-        <!--Carrousel Item View Controller-->
+        <!--View Controller-->
         <scene sceneID="y4N-lQ-NkT">
             <objects>
-                <viewController storyboardIdentifier="CarrouselItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jjv-Fe-ujQ" customClass="CarrouselItemViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewStandard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jjv-Fe-ujQ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DxI-v4-ucw"/>
                         <viewControllerLayoutGuide type="bottom" id="l0q-eP-HzE"/>
@@ -51,8 +55,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6M-VJ-e39"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6M-VJ-e39">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="nT1-Wr-xdM">
+                                <rect key="frame" x="26" y="466" width="323" height="99"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="99" id="O9u-zT-7D5"/>
                                 </constraints>
@@ -61,6 +68,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PE9-eJ-nuN">
+                                <rect key="frame" x="50" y="573" width="275" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hgf-Jw-szZ"/>
                                 </constraints>
@@ -90,7 +98,7 @@
         <!--Carrousel Item View Controller-->
         <scene sceneID="FS3-JW-2uK">
             <objects>
-                <viewController storyboardIdentifier="CarrouselItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ujx-da-nhf" customClass="CarrouselItemViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ujx-da-nhf" customClass="CarrouselItemViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TEJ-HU-Ssb"/>
                         <viewControllerLayoutGuide type="bottom" id="r3v-nd-ElH"/>
@@ -100,18 +108,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRL-VQ-0WP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="23i-jp-3qP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="AqK-gL-W0y">
-                                <frame key="frameInset" minX="26" minY="174" width="323" height="384"/>
+                                <rect key="frame" x="26" y="174" width="323" height="384"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.1933943927" green="0.63236117359999999" blue="0.63834005589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gms-B3-7EM">
-                                <frame key="frameInset" minX="50" minY="573" width="274.99999999999977" height="50"/>
+                                <rect key="frame" x="50" y="573" width="274.99999999999977" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lk8-xx-fKL"/>
                                 </constraints>
@@ -142,7 +151,7 @@
         <!--Carrousel Item View Controller-->
         <scene sceneID="WLS-fv-59k">
             <objects>
-                <viewController storyboardIdentifier="CarrouselItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QcC-tM-Yfz" customClass="CarrouselItemViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="QcC-tM-Yfz" customClass="CarrouselItemViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JgE-du-UlX"/>
                         <viewControllerLayoutGuide type="bottom" id="iJG-K4-S9Q"/>
@@ -152,11 +161,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adR-fX-Gsf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="fD4-aE-9zu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="R2z-Hu-wNf">
+                                <rect key="frame" x="26" y="174" width="323" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="Tgd-31-THR"/>
                                 </constraints>
@@ -165,12 +176,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usK-rw-C2S">
+                                <rect key="frame" x="50" y="573" width="275" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7wO-AF-5rl"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XBN-bl-Ais"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XBN-bl-Ais">
+                                <rect key="frame" x="26" y="312" width="323" height="253"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94457292559999995" green="0.96090680360000003" blue="0.96085256340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -209,24 +223,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JJN-iP-V4a">
+                                <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="vNU-cp-jFz"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="bU7-7x-XKn">
-                                <frame key="frameInset" minX="26" minY="174" width="323" height="130"/>
+                                <rect key="frame" x="26" y="174" width="323" height="130"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.1933943927" green="0.63236117359999999" blue="0.63834005589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMo-4d-sgp">
+                                <rect key="frame" x="50" y="573" width="275" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RwX-i8-MIX"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-Ci-xf5">
-                                <frame key="frameInset" minX="26" minY="312" width="323" height="253"/>
+                                <rect key="frame" x="26" y="312" width="323" height="253"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94457292559999995" green="0.96090680360000003" blue="0.96085256340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

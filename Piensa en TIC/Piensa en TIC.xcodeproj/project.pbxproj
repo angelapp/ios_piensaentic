@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35BDFF41B0BD9D9928CE3DF3 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC40215C5CA9D336464B571 /* Pods_Piensa_en_TIC.framework */; };
 		844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EDE4A1DF50A090079AC35 /* AppDelegate.swift */; };
 		844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EDE4C1DF50A090079AC35 /* ViewController.swift */; };
 		844EDE501DF50A090079AC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE4E1DF50A090079AC35 /* Main.storyboard */; };
@@ -14,9 +15,16 @@
 		844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */; };
 		844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5C1DF50A2B0079AC35 /* Structure.plist */; };
 		844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */; };
+		84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4B5C51DF921A70077A0AE /* Menu.storyboard */; };
+		84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76C31DF923C6002D36AA /* HomeViewController.swift */; };
+		84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76C61DF9244B002D36AA /* StoryboardIdentifier.swift */; };
+		84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */; };
+		84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CC1DF9273E002D36AA /* RightViewController.swift */; };
+		84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110E249905AE8D006060AE50 /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
 		844EDE471DF50A080079AC35 /* Piensa en TIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piensa en TIC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844EDE4A1DF50A090079AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844EDE4C1DF50A090079AC35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +34,15 @@
 		844EDE561DF50A090079AC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844EDE5C1DF50A2B0079AC35 /* Structure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Structure.plist; sourceTree = "<group>"; };
 		844EDE5F1DF67A7F0079AC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chapters.storyboard; sourceTree = "<group>"; };
+		84A4B5C61DF921A70077A0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
+		84AA76C31DF923C6002D36AA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Menu/HomeViewController.swift; sourceTree = "<group>"; };
+		84AA76C61DF9244B002D36AA /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardIdentifier.swift; path = Utils/StoryboardIdentifier.swift; sourceTree = "<group>"; };
+		84AA76C81DF925A2002D36AA /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = SOURCE_ROOT; };
+		84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarrouselChapterViewController.swift; path = Chapters/CarrouselChapterViewController.swift; sourceTree = "<group>"; };
+		84AA76CC1DF9273E002D36AA /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = Menu/RightViewController.swift; sourceTree = "<group>"; };
+		84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConfigurator.swift; path = Service/MainConfigurator.swift; sourceTree = "<group>"; };
+		9AC40215C5CA9D336464B571 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDE8B9913821C8ACA27215E /* Pods-Piensa en TIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +50,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35BDFF41B0BD9D9928CE3DF3 /* Pods_Piensa_en_TIC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A68A99D66988286541D1425 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AC40215C5CA9D336464B571 /* Pods_Piensa_en_TIC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		844EDE3E1DF50A080079AC35 = {
 			isa = PBXGroup;
 			children = (
 				844EDE491DF50A080079AC35 /* Piensa en TIC */,
 				844EDE481DF50A080079AC35 /* Products */,
+				FCD884C26C9EB185D1168419 /* Pods */,
+				3A68A99D66988286541D1425 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +86,10 @@
 		844EDE491DF50A080079AC35 /* Piensa en TIC */ = {
 			isa = PBXGroup;
 			children = (
+				84AA76CE1DF929FF002D36AA /* Service */,
+				84AA76C91DF9263E002D36AA /* Carrousel */,
+				84AA76C51DF92406002D36AA /* Utils */,
+				84AA76C21DF9236F002D36AA /* Menu */,
 				844EDE4A1DF50A090079AC35 /* AppDelegate.swift */,
 				844EDE4C1DF50A090079AC35 /* ViewController.swift */,
 				844EDE4E1DF50A090079AC35 /* Main.storyboard */,
@@ -66,8 +98,52 @@
 				844EDE561DF50A090079AC35 /* Info.plist */,
 				844EDE5C1DF50A2B0079AC35 /* Structure.plist */,
 				844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */,
+				84A4B5C51DF921A70077A0AE /* Menu.storyboard */,
+				84AA76C81DF925A2002D36AA /* BridgeHeader.h */,
 			);
 			path = "Piensa en TIC";
+			sourceTree = "<group>";
+		};
+		84AA76C21DF9236F002D36AA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				84AA76C31DF923C6002D36AA /* HomeViewController.swift */,
+				84AA76CC1DF9273E002D36AA /* RightViewController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		84AA76C51DF92406002D36AA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84AA76C61DF9244B002D36AA /* StoryboardIdentifier.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		84AA76C91DF9263E002D36AA /* Carrousel */ = {
+			isa = PBXGroup;
+			children = (
+				84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */,
+			);
+			name = Carrousel;
+			sourceTree = "<group>";
+		};
+		84AA76CE1DF929FF002D36AA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		FCD884C26C9EB185D1168419 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE8B9913821C8ACA27215E /* Pods-Piensa en TIC.debug.xcconfig */,
+				110E249905AE8D006060AE50 /* Pods-Piensa en TIC.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 844EDE591DF50A090079AC35 /* Build configuration list for PBXNativeTarget "Piensa en TIC" */;
 			buildPhases = (
+				6D47A7F3277F11AC39BEC860 /* [CP] Check Pods Manifest.lock */,
 				844EDE431DF50A080079AC35 /* Sources */,
 				844EDE441DF50A080079AC35 /* Frameworks */,
 				844EDE451DF50A080079AC35 /* Resources */,
+				39AF2605526DA49293A1A201 /* [CP] Embed Pods Frameworks */,
+				BF4B63411E16B940C29F0BDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +211,7 @@
 				844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */,
 				844EDE521DF50A090079AC35 /* Assets.xcassets in Resources */,
 				844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */,
+				84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */,
 				844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */,
 				844EDE501DF50A090079AC35 /* Main.storyboard in Resources */,
 			);
@@ -139,13 +219,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39AF2605526DA49293A1A201 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D47A7F3277F11AC39BEC860 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF4B63411E16B940C29F0BDD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		844EDE431DF50A080079AC35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */,
 				844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */,
+				84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
+				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,
+				84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */,
+				84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +307,14 @@
 				844EDE5F1DF67A7F0079AC35 /* Base */,
 			);
 			name = Chapters.storyboard;
+			sourceTree = "<group>";
+		};
+		84A4B5C51DF921A70077A0AE /* Menu.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A4B5C61DF921A70077A0AE /* Base */,
+			);
+			name = Menu.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -272,24 +413,32 @@
 		};
 		844EDE5A1DF50A090079AC35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFDE8B9913821C8ACA27215E /* Pods-Piensa en TIC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		844EDE5B1DF50A090079AC35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 110E249905AE8D006060AE50 /* Pods-Piensa en TIC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -313,6 +462,7 @@
 				844EDE5B1DF50A090079AC35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
