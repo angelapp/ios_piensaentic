@@ -7,7 +7,7 @@
 		<key>preface</key>
 		<dict>
 			<key>background name</key>
-			<string>chapter1</string>
+			<string>act1_fondo</string>
 			<key>menu_color</key>
 			<string>0xABCDEF</string>
 			<key>page0</key>
@@ -17,7 +17,7 @@
 				<key>form</key>
 				<string>name|heroe|birthdate|email</string>
 				<key>top_image_name</key>
-				<string>sobre_mi</string>
+				<string>pantalla-04_sobre_mi</string>
 			</dict>
 			<key>page1</key>
 			<dict>
@@ -26,7 +26,7 @@
 				<key>content</key>
 				<string>second_background_image|info</string>
 				<key>second_background_image</key>
-				<string>description</string>
+				<string>pantalla-06_circulo</string>
 				<key>info</key>
 				<string>%@ de ahora en adelante serás %@ naciste el %d de %d del %d tu correo electrónico es %@</string>
 				<key>segue</key>
@@ -36,7 +36,7 @@
 		<key>chapter0</key>
 		<dict>
 			<key>background name</key>
-			<string>chapter1</string>
+			<string>act1_fondo</string>
 			<key>menu_color</key>
 			<string>0xABCDEF</string>
 			<key>user_info</key>
@@ -46,7 +46,7 @@
 				<key>content</key>
 				<string>top_image_name|description|left_image|right_image</string>
 				<key>top_image_name</key>
-				<string>step1</string>
+				<string>pantalla-08_paso1</string>
 				<key>description</key>
 				<string>%@, piensa en una canción o frase que te guste, por ejemplo esta parte de la canción &quot;Cuando te veo&quot; de Choquibtown</string>
 			</dict>
@@ -55,7 +55,7 @@
 				<key>content</key>
 				<string>top_image_name|description|image|example</string>
 				<key>top_image_name</key>
-				<string>step2</string>
+				<string>pantalla-09_paso2</string>
 				<key>description</key>
 				<string>Toma las letras iniciales y forma una contraseña súper segura:</string>
 				<key>image</key>
@@ -68,7 +68,7 @@
 				<key>content</key>
 				<string>top_image_name|description|example</string>
 				<key>top_image_name</key>
-				<string>step3</string>
+				<string>pantalla-10_paso3</string>
 				<key>description</key>
 				<string>Si quieres hacerla aún mas indescifrable, puedes cambiar algunas letras por números que se parezcan, por ejemplo la ele (l) por 1, la ese (s) por 5, quedaría asi:</string>
 				<key>example</key>
@@ -98,7 +98,7 @@
 				<key>description</key>
 				<string>Esta contraseña es solo tuya!!! No se lo digas a nadie ni la escribas en un papel. Ten en cuenta que vas a usarla siempre que abras la aplicación.</string>
 				<key>image</key>
-				<string>fantastic1</string>
+				<string>pantalla-12_fantastico</string>
 				<key>button</key>
 				<string>continuemos</string>
 				<key>button_background</key>

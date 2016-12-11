@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rjm-tn-eGy">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rjm-tn-eGy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,7 +41,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="gFK-gX-fUa">
-                        <barButtonItem key="rightBarButtonItem" image="paw" id="zDH-RR-Zjc">
+                        <barButtonItem key="rightBarButtonItem" image="hamburguesa" id="zDH-RR-Zjc">
                             <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <connections>
                                 <action selector="rightSideMenuButtonPressedWithSender:" destination="F48-5O-VjD" id="M8I-J3-YH6"/>
@@ -118,6 +118,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="paw" width="100" height="100"/>
+        <image name="hamburguesa" width="34" height="34"/>
     </resources>
 </document>
