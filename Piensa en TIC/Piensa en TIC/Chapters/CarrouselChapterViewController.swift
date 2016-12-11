@@ -4,12 +4,21 @@ import UIKit
 class CarrouselChapterViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     @IBOutlet var contentView:UIView!
+    @IBOutlet var backgroundImage:UIImageView!
     var pageViewController:UIPageViewController!
-    var imagesArray:[String]!
+    var imagesArray:NSArray!
+    var imageName:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let imageName = imageName else { return}
+        backgroundImage.image = UIImage(named:imageName)
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,33 +44,38 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         pageViewController.view.frame = pageViewRect
         pageViewController.didMove(toParentViewController: self)
         
-//        for subview in self.pageViewController.view.subviews {
-//            if subview.isKind(of: UIPageControl.self) {
-//                let pageControl = subview as! UIPageControl
-//                pageControl.pageIndicatorTintColor = UIColor.lightGray
-//                pageControl.currentPageIndicatorTintColor = UIColor.pageControlCustomColor()
-//            }
-//        }
+        for subview in self.pageViewController.view.subviews {
+            if subview.isKind(of: UIPageControl.self) {
+                let pageControl = subview as! UIPageControl
+                pageControl.pageIndicatorTintColor = UIColor.lightGray
+                pageControl.currentPageIndicatorTintColor = UIColor.blue
+            }
+        }
     }
     
-    func viewController(index:Int, storyboard:UIStoryboard) -> UIViewController! {
+    func viewController(index:Int, storyboard:UIStoryboard) -> GeneralViewController! {
         guard imagesArray.count >= 0, index < imagesArray.count else { return nil }
         
-        let viewController = storyboard.instantiateViewController(withIdentifier: StoryboardIdentifier.viewStandard)
+        let content = imagesArray[index] as! [String:String]
+        guard let identifier = content["content"] as String! else {return nil}
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! GeneralViewController
+        viewController.index = index
+        viewController.info = content
         
         return viewController
     }
     
-    func indexOf(viewController:UIViewController) -> Int!{
-//        guard let object = viewController.itemObject else {return nil}
-//        return imagesArray.index(where: { (image:String) in
-//            image == object
+    func indexOf(viewController:GeneralViewController) -> Int!{
+        guard let object = viewController.index else {return nil}
+//        return imagesArray.index(where: { (index:Int) in
+//            index == object
 //        })!
-        return nil
+        return object
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = self.indexOf(viewController: viewController) else {
+        guard let viewControllerIndex = self.indexOf(viewController: viewController as! GeneralViewController) else {
             return nil
         }
         
@@ -80,7 +94,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        guard let viewControllerIndex = self.indexOf(viewController:viewController) else {
+        guard let viewControllerIndex = self.indexOf(viewController:viewController as! GeneralViewController) else {
             return nil
         }
         

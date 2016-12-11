@@ -30,12 +30,11 @@ class HomeViewController: MFSideMenuContainerViewController {
         let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
         let rightSideMenuViewController = homeStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.rightMenu)
         
-        var arrayContent:[String] = []
-        for i in 0 ..< mainConfigurator.countKeysByPrefix(content!, prefix: "page") {
-            arrayContent.append(["page",String(i)].flatMap{$0}.joined(separator: ""))
-        }
+        let arrayContent:NSArray = content!["pages"] as! NSArray
+        let backgroundImageName = content!["backgroundName"] as! String
         
         (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
+        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
         
         self.rightMenuViewController = rightSideMenuViewController
         self.centerViewController = navigationController

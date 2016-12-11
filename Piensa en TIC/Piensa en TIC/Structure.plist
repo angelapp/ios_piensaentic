@@ -4,108 +4,106 @@
 <dict>
 	<key>chapters</key>
 	<dict>
+		<key>chapter0</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>viewStandard</string>
+					<key>top_image_name</key>
+					<string>pantalla-08_paso1</string>
+					<key>description</key>
+					<string>%@, piensa en una canción o frase que te guste, por ejemplo esta parte de la canción &quot;Cuando te veo&quot; de Choquibtown</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>generalController</string>
+					<key>image</key>
+					<string>phrase</string>
+					<key>top_image_name</key>
+					<string>pantalla-09_paso2</string>
+					<key>description</key>
+					<string>Toma las letras iniciales y forma una contraseña súper segura:</string>
+					<key>example</key>
+					<string>Contraseña:\n,Mshtscnell|12,16</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>generalController</string>
+					<key>top_image_name</key>
+					<string>pantalla-10_paso3</string>
+					<key>description</key>
+					<string>Si quieres hacerla aún mas indescifrable, puedes cambiar algunas letras por números que se parezcan, por ejemplo la ele (l) por 1, la ese (s) por 5, quedaría asi:</string>
+					<key>example</key>
+					<string>Contraseña súper segura:\n,M5ht5cne11|12,16</string>
+				</dict>
+				<dict>
+					<key>button</key>
+					<string>Crea una contraseña</string>
+					<key>content</key>
+					<string>viewStandard</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>description</key>
+					<string>%@, ya pensaste tu contraseña? Para hacerla súper segura debe tener números, letras y mínimo 6 caracteres</string>
+					<key>button_background</key>
+					<string>yellow</string>
+					<key>form</key>
+					<string>Escríbela|Escríbela nuevamente para confirmar</string>
+				</dict>
+				<dict>
+					<key>button</key>
+					<string>continuemos</string>
+					<key>content</key>
+					<string>generalController</string>
+					<key>segue</key>
+					<string>menu</string>
+					<key>image</key>
+					<string>pantalla-12_fantastico</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>description</key>
+					<string>Esta contraseña es solo tuya!!! No se lo digas a nadie ni la escribas en un papel. Ten en cuenta que vas a usarla siempre que abras la aplicación.</string>
+					<key>button_background</key>
+					<string>gray</string>
+				</dict>
+			</array>
+			<key>userInfo</key>
+			<string>heroe</string>
+			<key>backgroundName</key>
+			<string>act1_fondo</string>
+			<key>menuColor</key>
+			<string>0xABCDEF</string>
+		</dict>
 		<key>preface</key>
 		<dict>
-			<key>background name</key>
-			<string>act1_fondo</string>
-			<key>menu_color</key>
-			<string>0xABCDEF</string>
 			<key>page0</key>
 			<dict>
 				<key>content</key>
 				<string>top_image_name|form</string>
-				<key>form</key>
-				<string>name|heroe|birthdate|email</string>
 				<key>top_image_name</key>
 				<string>pantalla-04_sobre_mi</string>
+				<key>form</key>
+				<string>name|heroe|birthdate|email</string>
 			</dict>
+			<key>background name</key>
+			<string>act1_fondo</string>
 			<key>page1</key>
 			<dict>
-				<key>alert</key>
-				<string>terms and conditions</string>
 				<key>content</key>
 				<string>second_background_image|info</string>
+				<key>segue</key>
+				<string>menu</string>
+				<key>alert</key>
+				<string>terms and conditions</string>
 				<key>second_background_image</key>
 				<string>pantalla-06_circulo</string>
 				<key>info</key>
 				<string>%@ de ahora en adelante serás %@ naciste el %d de %d del %d tu correo electrónico es %@</string>
-				<key>segue</key>
-				<string>menu</string>
 			</dict>
-		</dict>
-		<key>chapter0</key>
-		<dict>
-			<key>background name</key>
-			<string>act1_fondo</string>
 			<key>menu_color</key>
 			<string>0xABCDEF</string>
-			<key>user_info</key>
-			<string>heroe</string>
-			<key>page0</key>
-			<dict>
-				<key>content</key>
-				<string>top_image_name|description|left_image|right_image</string>
-				<key>top_image_name</key>
-				<string>pantalla-08_paso1</string>
-				<key>description</key>
-				<string>%@, piensa en una canción o frase que te guste, por ejemplo esta parte de la canción &quot;Cuando te veo&quot; de Choquibtown</string>
-			</dict>
-			<key>page1</key>
-			<dict>
-				<key>content</key>
-				<string>top_image_name|description|image|example</string>
-				<key>top_image_name</key>
-				<string>pantalla-09_paso2</string>
-				<key>description</key>
-				<string>Toma las letras iniciales y forma una contraseña súper segura:</string>
-				<key>image</key>
-				<string>phrase</string>
-				<key>example</key>
-				<string>Contraseña:\n,Mshtscnell|12,16</string>
-			</dict>
-			<key>page2</key>
-			<dict>
-				<key>content</key>
-				<string>top_image_name|description|example</string>
-				<key>top_image_name</key>
-				<string>pantalla-10_paso3</string>
-				<key>description</key>
-				<string>Si quieres hacerla aún mas indescifrable, puedes cambiar algunas letras por números que se parezcan, por ejemplo la ele (l) por 1, la ese (s) por 5, quedaría asi:</string>
-				<key>example</key>
-				<string>Contraseña súper segura:\n,M5ht5cne11|12,16</string>
-			</dict>
-			<key>page3</key>
-			<dict>
-				<key>content</key>
-				<string>top_image_name|description|form|button</string>
-				<key>top_image_name</key>
-				<string></string>
-				<key>description</key>
-				<string>%@, ya pensaste tu contraseña? Para hacerla súper segura debe tener números, letras y mínimo 6 caracteres</string>
-				<key>form</key>
-				<string>Escríbela|Escríbela nuevamente para confirmar</string>
-				<key>button</key>
-				<string>Crea una contraseña</string>
-				<key>button_background</key>
-				<string>yellow</string>
-			</dict>
-			<key>page4</key>
-			<dict>
-				<key>content</key>
-				<string>top_image_name|description|image|button</string>
-				<key>top_image_name</key>
-				<string></string>
-				<key>description</key>
-				<string>Esta contraseña es solo tuya!!! No se lo digas a nadie ni la escribas en un papel. Ten en cuenta que vas a usarla siempre que abras la aplicación.</string>
-				<key>image</key>
-				<string>pantalla-12_fantastico</string>
-				<key>button</key>
-				<string>continuemos</string>
-				<key>button_background</key>
-				<string>gray</string>
-				<key>segue</key>
-				<string>menu</string>
-			</dict>
 		</dict>
 	</dict>
 </dict>

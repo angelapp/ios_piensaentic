@@ -24,7 +24,6 @@ class MainConfigurator: NSObject {
     
     func chapter(index:Int) -> NSDictionary!{
         guard let servicesKeys = self.servicesKeys as NSDictionary! else { return nil}
-        
         let identifier = [MainConstants.chapterPrefix,String(index)].flatMap{$0}.joined(separator: "")
         guard let content = servicesKeys[identifier] as! NSDictionary! else {return nil}
         return content

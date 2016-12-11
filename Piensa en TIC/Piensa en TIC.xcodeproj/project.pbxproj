@@ -15,6 +15,8 @@
 		844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */; };
 		844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5C1DF50A2B0079AC35 /* Structure.plist */; };
 		844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */; };
+		8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */; };
+		8478B9261DFD3DD3009D3C7A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */; };
 		84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4B5C51DF921A70077A0AE /* Menu.storyboard */; };
 		84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76C31DF923C6002D36AA /* HomeViewController.swift */; };
 		84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76C61DF9244B002D36AA /* StoryboardIdentifier.swift */; };
@@ -34,6 +36,8 @@
 		844EDE561DF50A090079AC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844EDE5C1DF50A2B0079AC35 /* Structure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Structure.plist; sourceTree = "<group>"; };
 		844EDE5F1DF67A7F0079AC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chapters.storyboard; sourceTree = "<group>"; };
+		8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralViewController.swift; path = Controllers/GeneralViewController.swift; sourceTree = "<group>"; };
+		8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Controllers/InformationViewController.swift; sourceTree = "<group>"; };
 		84A4B5C61DF921A70077A0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		84AA76C31DF923C6002D36AA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Menu/HomeViewController.swift; sourceTree = "<group>"; };
 		84AA76C61DF9244B002D36AA /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardIdentifier.swift; path = Utils/StoryboardIdentifier.swift; sourceTree = "<group>"; };
@@ -100,8 +104,18 @@
 				844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */,
 				84A4B5C51DF921A70077A0AE /* Menu.storyboard */,
 				84AA76C81DF925A2002D36AA /* BridgeHeader.h */,
+				8478B9241DFD3D8F009D3C7A /* Controllers */,
 			);
 			path = "Piensa en TIC";
+			sourceTree = "<group>";
+		};
+		8478B9241DFD3D8F009D3C7A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */,
+				8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		84AA76C21DF9236F002D36AA /* Menu */ = {
@@ -275,10 +289,12 @@
 				84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */,
 				844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */,
 				84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */,
+				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,
 				84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */,
 				84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */,
+				8478B9261DFD3DD3009D3C7A /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
