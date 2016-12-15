@@ -11,7 +11,7 @@ class RightViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.items = ["Logout"]
+        self.items = ["About me"]
         self.settingsTable.reloadData()
     }
     

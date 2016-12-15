@@ -18,7 +18,6 @@ class MainConfigurator: NSObject {
         guard let path = mainBundle.path(forResource: "Structure", ofType: "plist") else { return}
         guard let configurations = NSDictionary.init(contentsOfFile: path) else { return}
         guard let servicesKeys = configurations[MainConstants.chapters] as! NSDictionary! else { return}
-        
         self.servicesKeys = servicesKeys as NSDictionary!
     }
     
