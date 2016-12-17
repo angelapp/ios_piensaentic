@@ -54,9 +54,9 @@
 				</dict>
 				<dict>
 					<key>button</key>
-					<string>continuemos</string>
+					<string>pantalla_15_bot-continuar</string>
 					<key>content</key>
-					<string>generalController</string>
+					<string>chapterEpilogue</string>
 					<key>segue</key>
 					<string>menu</string>
 					<key>image</key>

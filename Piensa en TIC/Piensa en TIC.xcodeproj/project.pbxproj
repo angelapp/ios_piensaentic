@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35BDFF41B0BD9D9928CE3DF3 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC40215C5CA9D336464B571 /* Pods_Piensa_en_TIC.framework */; };
+		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
 		844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EDE4A1DF50A090079AC35 /* AppDelegate.swift */; };
 		844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EDE4C1DF50A090079AC35 /* ViewController.swift */; };
 		844EDE501DF50A090079AC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE4E1DF50A090079AC35 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		110E249905AE8D006060AE50 /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
+		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
 		844EDE471DF50A080079AC35 /* Piensa en TIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piensa en TIC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844EDE4A1DF50A090079AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844EDE4C1DF50A090079AC35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */,
 				8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */,
+				842D55381E04EB4100432858 /* EpilogueViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */,
 				844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */,
+				842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */,
 				84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */,
 				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
