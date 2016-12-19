@@ -38,3 +38,66 @@ extension UIView {
         return shapeLayer
     }
 }
+
+extension NSAttributedString {
+    
+    func stringWithWords(words:[String], fonts:[UIFont]) -> NSAttributedString{
+        let string : NSMutableAttributedString = NSMutableAttributedString.init(string: "")
+        for i in 0..<words.count {
+            let word = words[i]
+            let font: UIFont = fonts[i]
+            let attributes = [NSFontAttributeName:font]
+            let subString = NSAttributedString.init(string: word, attributes: attributes)
+            string.append(subString)
+        }
+        return string
+    }
+    
+    func stringWithWords(words:[String], colors:[UIColor]) -> NSAttributedString{
+        let string : NSMutableAttributedString = NSMutableAttributedString.init(string: "")
+        for i in 0..<words.count {
+            let word = words[i]
+            let color: UIColor = colors[i]
+            let attributes = [NSForegroundColorAttributeName:color]
+            let subString = NSAttributedString.init(string: word, attributes: attributes)
+            string.append(subString)
+        }
+        return string
+    }
+    
+    func appendAttributedStringWithWords(attributedString:NSAttributedString, words:[String], colors:[UIColor]) -> NSAttributedString{
+        let string : NSMutableAttributedString = NSMutableAttributedString.init(string: "")
+        string.append(attributedString)
+        for i in 0..<words.count {
+            let word = words[i]
+            let color: UIColor = colors[i]
+            let attributes = [NSForegroundColorAttributeName:color]
+            let subString = NSAttributedString.init(string: word, attributes: attributes)
+            string.append(subString)
+        }
+        return string
+    }
+}
+
+extension String {
+    func split(by:String?)-> [AnyObject]! {
+        
+        guard self.characters.count > 0 else {return nil}
+        guard let separator = by else {return nil}
+        guard separator.characters.count > 0 else {return nil}
+        var array = [String]()
+        switch separator {
+        case "|":
+            array = self.characters.split{$0 == "|"}.map(String.init)
+            break
+        case ",":
+            array = self.characters.split{$0 == ","}.map(String.init)
+            break
+        default:
+            array = self.characters.split{$0 == "|"}.map(String.init)
+            break
+        }
+        
+        return array as [AnyObject]!
+    }
+}

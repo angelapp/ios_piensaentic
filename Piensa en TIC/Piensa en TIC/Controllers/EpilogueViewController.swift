@@ -26,9 +26,10 @@ class EpilogueViewController: GeneralViewController {
         topImage.image = UIImage(named:topImageName)
         descriptionLabel.text = descriptionText
         descriptionImage.image = UIImage(named:imageName)
-        contnue.setImage(UIImage(named:buttonText), for: UIControlState.normal)
-        contnue.setImage(UIImage(named:buttonText), for: UIControlState.selected)
-        contnue.setImage(UIImage(named:buttonText), for: UIControlState.highlighted)
+        
+        contnue.setBackgroundImage(UIImage(named:buttonText), for: UIControlState.normal)
+        contnue.setBackgroundImage(UIImage(named:buttonText), for: UIControlState.selected)
+        contnue.setBackgroundImage(UIImage(named:buttonText), for: UIControlState.highlighted)
     }
     
     func actionButton(sender:Any?) -> () {

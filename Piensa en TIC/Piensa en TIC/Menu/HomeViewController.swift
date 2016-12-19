@@ -26,15 +26,15 @@ class HomeViewController: MFSideMenuContainerViewController {
         let content = mainConfigurator.chapter(index: 0)
         print(content as Any)
         let homeStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
-        let propertiesStoryboard = UIStoryboard.init(name: "Profile", bundle: Bundle.main)
-        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.profileController)
+        let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
+        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
         let rightSideMenuViewController = homeStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.rightMenu)
         
-//        let arrayContent:NSArray = content!["pages"] as! NSArray
-//        let backgroundImageName = content!["backgroundName"] as! String
-//        
-//        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
-//        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
+        let arrayContent:NSArray = content!["pages"] as! NSArray
+        let backgroundImageName = content!["backgroundName"] as! String
+        
+        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
+        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
         
         self.rightMenuViewController = rightSideMenuViewController
         self.centerViewController = navigationController

@@ -10,33 +10,39 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string>viewStandard</string>
+					<string>imageContentController</string>
 					<key>top_image_name</key>
 					<string>pantalla-08_paso1</string>
 					<key>description</key>
 					<string>%@, piensa en una canción o frase que te guste, por ejemplo esta parte de la canción &quot;Cuando te veo&quot; de Choquibtown</string>
+					<key>imageRight</key>
+					<string>pantalla-08_mis_sentimientos</string>
+					<key>imageLeft</key>
+					<string>pantalla-08_solfeo</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string>generalController</string>
+					<string>textDescriptionController</string>
 					<key>image</key>
-					<string>phrase</string>
+					<string>pantalla-09_mis_sentimientos</string>
 					<key>top_image_name</key>
 					<string>pantalla-09_paso2</string>
 					<key>description</key>
 					<string>Toma las letras iniciales y forma una contraseña súper segura:</string>
 					<key>example</key>
-					<string>Contraseña:\n,Mshtscnell|12,16</string>
+					<string>Contraseña: u015 ,Mshtscnell|17,26</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string>generalController</string>
+					<string>textDescriptionController</string>
 					<key>top_image_name</key>
 					<string>pantalla-10_paso3</string>
+					<key>image</key>
+					<string></string>
 					<key>description</key>
 					<string>Si quieres hacerla aún mas indescifrable, puedes cambiar algunas letras por números que se parezcan, por ejemplo la ele (l) por 1, la ese (s) por 5, quedaría asi:</string>
 					<key>example</key>
-					<string>Contraseña súper segura:\n,M5ht5cne11|12,16</string>
+					<string>Contraseña súper segura: u015,M5ht5cne11|17,26</string>
 				</dict>
 				<dict>
 					<key>button</key>

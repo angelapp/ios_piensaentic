@@ -13,4 +13,11 @@ class GeneralViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getUserNameFromUserDefaults() -> String {
+        let userDefaults = UserDefaults.standard
+        guard let name:String = userDefaults.object(forKey: "userName") as! String? else {return ""}
+     
+        return name
+    }
 }
