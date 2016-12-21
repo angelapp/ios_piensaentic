@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35BDFF41B0BD9D9928CE3DF3 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC40215C5CA9D336464B571 /* Pods_Piensa_en_TIC.framework */; };
+		7DC5FEE7B8B4AEF29A29F6FA /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA678D0A570B9AAADD3BF9B /* Pods_Piensa_en_TIC.framework */; };
 		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
 		842D553C1E05D5C900432858 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D553A1E05D5C900432858 /* Profile.storyboard */; };
 		842D553E1E05DA7D00432858 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D553D1E05DA7D00432858 /* Utils.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		110E249905AE8D006060AE50 /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
+		6AA678D0A570B9AAADD3BF9B /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
 		842D553B1E05D5C900432858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		842D553D1E05DA7D00432858 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarrouselChapterViewController.swift; path = Chapters/CarrouselChapterViewController.swift; sourceTree = "<group>"; };
 		84AA76CC1DF9273E002D36AA /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = Menu/RightViewController.swift; sourceTree = "<group>"; };
 		84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConfigurator.swift; path = Service/MainConfigurator.swift; sourceTree = "<group>"; };
-		9AC40215C5CA9D336464B571 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFDE8B9913821C8ACA27215E /* Pods-Piensa en TIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.debug.xcconfig"; sourceTree = "<group>"; };
+		D5C2293B268C1430EA3D8195 /* Pods-Piensa en TIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.debug.xcconfig"; sourceTree = "<group>"; };
+		F27F15101EF503C8260118C4 /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +67,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35BDFF41B0BD9D9928CE3DF3 /* Pods_Piensa_en_TIC.framework in Frameworks */,
+				7DC5FEE7B8B4AEF29A29F6FA /* Pods_Piensa_en_TIC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A68A99D66988286541D1425 /* Frameworks */ = {
+		10BB67D28E4E0597823B411E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AC40215C5CA9D336464B571 /* Pods_Piensa_en_TIC.framework */,
+				6AA678D0A570B9AAADD3BF9B /* Pods_Piensa_en_TIC.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,8 +107,8 @@
 			children = (
 				844EDE491DF50A080079AC35 /* Piensa en TIC */,
 				844EDE481DF50A080079AC35 /* Products */,
-				FCD884C26C9EB185D1168419 /* Pods */,
-				3A68A99D66988286541D1425 /* Frameworks */,
+				C521E11BDDB76D8EDE02C1C4 /* Pods */,
+				10BB67D28E4E0597823B411E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,11 +187,11 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
-		FCD884C26C9EB185D1168419 /* Pods */ = {
+		C521E11BDDB76D8EDE02C1C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FFDE8B9913821C8ACA27215E /* Pods-Piensa en TIC.debug.xcconfig */,
-				110E249905AE8D006060AE50 /* Pods-Piensa en TIC.release.xcconfig */,
+				D5C2293B268C1430EA3D8195 /* Pods-Piensa en TIC.debug.xcconfig */,
+				F27F15101EF503C8260118C4 /* Pods-Piensa en TIC.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -479,7 +479,7 @@
 		};
 		844EDE5A1DF50A090079AC35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFDE8B9913821C8ACA27215E /* Pods-Piensa en TIC.debug.xcconfig */;
+			baseConfigurationReference = D5C2293B268C1430EA3D8195 /* Pods-Piensa en TIC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -495,7 +495,7 @@
 		};
 		844EDE5B1DF50A090079AC35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 110E249905AE8D006060AE50 /* Pods-Piensa en TIC.release.xcconfig */;
+			baseConfigurationReference = F27F15101EF503C8260118C4 /* Pods-Piensa en TIC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
