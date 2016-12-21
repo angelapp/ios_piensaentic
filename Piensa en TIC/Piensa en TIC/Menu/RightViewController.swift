@@ -7,11 +7,13 @@ struct RightViewConstants{
 class RightViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var settingsTable:UITableView!
+    var delegate:SelectRightMenuItem!
+    let mainConfigurator = MainConfigurator.sharedConfiguration
     var items:[Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.items = ["About me"]
+        self.items = mainConfigurator.menuContent()
         self.settingsTable.reloadData()
     }
     
@@ -26,17 +28,25 @@ class RightViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.items.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView .dequeueReusableCell(withIdentifier: RightViewConstants.TableCellIdentifier) else { return UITableViewCell.init()}
-        cell.textLabel?.text = (self.items[indexPath.row] as! String)
+        let dic = self.items[indexPath.row] as! NSDictionary
+        cell.textLabel?.text = dic["text"] as! String!
+        cell.textLabel?.numberOfLines = 0
+        cell.imageView?.image = UIImage(named:dic["image"] as! String!)
+        
+        cell.drawBorder(UIColor.white, y: cell.frame.size.height, key: "BottomBorder", dotted: false)
         return cell
     }
     
     //MARK: TableView Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate = delegate else {return}
+        let dic = self.items[indexPath.row] as! NSDictionary
+        delegate.selectRightMenuItem(content: dic["content"] as! String!)
     }
     
 }

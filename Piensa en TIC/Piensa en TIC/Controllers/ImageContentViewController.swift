@@ -35,6 +35,7 @@ class ImageContentViewController: GeneralViewController {
         
         topImage.image = UIImage(named:topImageName)
         descriptionLabel.text = String(format: descriptionText, getUserNameFromUserDefaults())
+        descriptionLabel.textColor = UIColor.init(hexString: colorText)
         
         rightImage.image = UIImage(named:rightImageName)
         leftImage.image = UIImage(named:leftImageName)

@@ -120,14 +120,8 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController : UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        println("TextField should return method called")
-//        textField.resignFirstResponder();
-//        return true;
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("jaja")
         
         switch textField.tag {
         case nameTextField.tag:

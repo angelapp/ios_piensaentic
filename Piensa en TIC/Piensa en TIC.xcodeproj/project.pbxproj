@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DC5FEE7B8B4AEF29A29F6FA /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA678D0A570B9AAADD3BF9B /* Pods_Piensa_en_TIC.framework */; };
+		3AA321AA702C288E5D7EEB18 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */; };
 		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
 		842D553C1E05D5C900432858 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D553A1E05D5C900432858 /* Profile.storyboard */; };
 		842D553E1E05DA7D00432858 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D553D1E05DA7D00432858 /* Utils.swift */; };
@@ -29,11 +29,11 @@
 		84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */; };
 		84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CC1DF9273E002D36AA /* RightViewController.swift */; };
 		84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */; };
-		F3F78E5DADE448E5DDD11872 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB11C4F0C0AF98A02DE9CCD4 /* Pods_Piensa_en_TIC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6AA678D0A570B9AAADD3BF9B /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
+		4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
 		842D553B1E05D5C900432858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		842D553D1E05DA7D00432858 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -59,8 +59,7 @@
 		84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarrouselChapterViewController.swift; path = Chapters/CarrouselChapterViewController.swift; sourceTree = "<group>"; };
 		84AA76CC1DF9273E002D36AA /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = Menu/RightViewController.swift; sourceTree = "<group>"; };
 		84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConfigurator.swift; path = Service/MainConfigurator.swift; sourceTree = "<group>"; };
-		D5C2293B268C1430EA3D8195 /* Pods-Piensa en TIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.debug.xcconfig"; sourceTree = "<group>"; };
-		F27F15101EF503C8260118C4 /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
+		DFEF65DEE6C2D47F2CFFE753 /* Pods-Piensa en TIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,19 +67,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC5FEE7B8B4AEF29A29F6FA /* Pods_Piensa_en_TIC.framework in Frameworks */,
+				3AA321AA702C288E5D7EEB18 /* Pods_Piensa_en_TIC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10BB67D28E4E0597823B411E /* Frameworks */ = {
+		732D1DF2908C5B4DFE4659EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6AA678D0A570B9AAADD3BF9B /* Pods_Piensa_en_TIC.framework */,
+				DFEF65DEE6C2D47F2CFFE753 /* Pods-Piensa en TIC.debug.xcconfig */,
+				1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		842D55411E0785D000432858 /* Chapters */ = {
@@ -108,8 +108,8 @@
 			children = (
 				844EDE491DF50A080079AC35 /* Piensa en TIC */,
 				844EDE481DF50A080079AC35 /* Products */,
-				C521E11BDDB76D8EDE02C1C4 /* Pods */,
-				10BB67D28E4E0597823B411E /* Frameworks */,
+				732D1DF2908C5B4DFE4659EC /* Pods */,
+				C2722923386A053A582EF805 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,13 +188,12 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
-		C521E11BDDB76D8EDE02C1C4 /* Pods */ = {
+		C2722923386A053A582EF805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5C2293B268C1430EA3D8195 /* Pods-Piensa en TIC.debug.xcconfig */,
-				F27F15101EF503C8260118C4 /* Pods-Piensa en TIC.release.xcconfig */,
+				4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +283,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */ = {
@@ -480,7 +479,7 @@
 		};
 		844EDE5A1DF50A090079AC35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5C2293B268C1430EA3D8195 /* Pods-Piensa en TIC.debug.xcconfig */;
+			baseConfigurationReference = DFEF65DEE6C2D47F2CFFE753 /* Pods-Piensa en TIC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -490,13 +489,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BridgeHeader.h;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
 		844EDE5B1DF50A090079AC35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F27F15101EF503C8260118C4 /* Pods-Piensa en TIC.release.xcconfig */;
+			baseConfigurationReference = 1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -506,7 +505,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BridgeHeader.h;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};

@@ -14,6 +14,7 @@ class InformationViewController: GeneralViewController {
         
         topImage.image = UIImage(named:imageName)
         descriptionLabel.text = descriptionText
+        descriptionLabel.textColor = UIColor.init(hexString: colorText)
     }
 
     override func didReceiveMemoryWarning() {

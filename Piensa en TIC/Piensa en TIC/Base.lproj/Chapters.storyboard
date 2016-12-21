@@ -310,7 +310,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ugo-Ax-AcJ">
-                                <rect key="frame" x="26" y="312" width="106" height="253"/>
+                                <rect key="frame" x="0.0" y="312" width="106" height="253"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="LPV-jf-0LE"/>
                                     <constraint firstAttribute="height" constant="253" id="YRq-AN-JGm"/>
@@ -319,9 +319,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oYj-IQ-qZq" firstAttribute="leading" secondItem="ugo-Ax-AcJ" secondAttribute="trailing" constant="8" id="E8V-QT-xPV"/>
+                            <constraint firstItem="oYj-IQ-qZq" firstAttribute="leading" secondItem="ugo-Ax-AcJ" secondAttribute="trailing" constant="34" id="E8V-QT-xPV"/>
                             <constraint firstItem="j0p-hs-usG" firstAttribute="top" secondItem="oYj-IQ-qZq" secondAttribute="bottom" constant="102" id="EBN-BN-S4b"/>
-                            <constraint firstItem="ugo-Ax-AcJ" firstAttribute="leading" secondItem="6zf-sv-Q0L" secondAttribute="leading" constant="26" id="EY1-0q-wHE"/>
+                            <constraint firstItem="ugo-Ax-AcJ" firstAttribute="leading" secondItem="6zf-sv-Q0L" secondAttribute="leading" id="EY1-0q-wHE"/>
                             <constraint firstAttribute="trailing" secondItem="dog-BO-zJ0" secondAttribute="trailing" id="Hip-DX-Ji1"/>
                             <constraint firstItem="dog-BO-zJ0" firstAttribute="top" secondItem="6zf-sv-Q0L" secondAttribute="top" constant="28" id="I3Z-6u-Ume"/>
                             <constraint firstItem="dog-BO-zJ0" firstAttribute="leading" secondItem="6zf-sv-Q0L" secondAttribute="leading" id="JU3-Dz-u1S"/>
@@ -331,7 +331,7 @@
                             <constraint firstItem="811-NB-Xjo" firstAttribute="leading" secondItem="6zf-sv-Q0L" secondAttribute="leading" constant="26" id="lsf-z9-Qhs"/>
                             <constraint firstItem="811-NB-Xjo" firstAttribute="top" secondItem="dog-BO-zJ0" secondAttribute="bottom" constant="14" id="mpy-CP-esV"/>
                             <constraint firstItem="oYj-IQ-qZq" firstAttribute="top" secondItem="811-NB-Xjo" secondAttribute="bottom" constant="8" id="phn-Q6-ryt"/>
-                            <constraint firstItem="oYj-IQ-qZq" firstAttribute="leading" secondItem="ugo-Ax-AcJ" secondAttribute="trailing" constant="8" id="t63-ev-dNb"/>
+                            <constraint firstItem="oYj-IQ-qZq" firstAttribute="leading" secondItem="ugo-Ax-AcJ" secondAttribute="trailing" constant="34" id="t63-ev-dNb"/>
                             <constraint firstAttribute="trailing" secondItem="811-NB-Xjo" secondAttribute="trailing" constant="26" id="ySe-Ub-ttW"/>
                             <constraint firstItem="oYj-IQ-qZq" firstAttribute="top" secondItem="811-NB-Xjo" secondAttribute="bottom" constant="8" id="zdB-QO-ju9"/>
                         </constraints>

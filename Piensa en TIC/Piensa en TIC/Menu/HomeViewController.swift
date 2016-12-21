@@ -1,11 +1,18 @@
 import UIKit
 import MFSideMenu
 
+protocol SelectRightMenuItem {
+    func selectRightMenuItem(content:String!)
+}
+
 class HomeViewController: MFSideMenuContainerViewController {
+    
+    let mainConfigurator = MainConfigurator.sharedConfiguration
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout)){
+        
+        if self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout)) {
             self.edgesForExtendedLayout = UIRectEdge.all
         }
     }
@@ -22,7 +29,6 @@ class HomeViewController: MFSideMenuContainerViewController {
     
     //MARK: Initial Setup
     func initialSetup() -> (){
-        let mainConfigurator = MainConfigurator.sharedConfiguration
         let content = mainConfigurator.chapter(index: 0)
         print(content as Any)
         let homeStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
@@ -35,6 +41,9 @@ class HomeViewController: MFSideMenuContainerViewController {
         
         (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
         (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
+        (navigationController as! CarrouselChapterViewController).generalContent = content
+        
+        (rightSideMenuViewController as! RightViewController).delegate = self
         
         self.rightMenuViewController = rightSideMenuViewController
         self.centerViewController = navigationController
@@ -48,6 +57,32 @@ class HomeViewController: MFSideMenuContainerViewController {
     
     @IBAction func rightSideMenuButtonPressed(sender:Any) -> () {
         self.menuContainerViewController.toggleRightSideMenuCompletion { 
+        }
+    }
+}
+
+extension HomeViewController: SelectRightMenuItem {
+    func showChapter(_ index:Int) {
+        let content = mainConfigurator.chapter(index: index)
+        print(content as Any)
+        let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
+        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
+        
+        let arrayContent:NSArray = content!["pages"] as! NSArray
+        let backgroundImageName = content!["backgroundName"] as! String
+        
+        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
+        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
+        (navigationController as! CarrouselChapterViewController).generalContent = content
+        
+        self.centerViewController = navigationController
+    }
+    
+    func selectRightMenuItem(content: String!) {
+        if content.contains("chapter"){
+            let subString = content.replacingOccurrences(of: "chapter", with: "")
+            guard let index = Int(subString) else {return}
+            showChapter(index)
         }
     }
 }

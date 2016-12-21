@@ -37,6 +37,7 @@ class TextDescriptionViewController: GeneralViewController {
         
         topImage.image = UIImage(named:topImageName)
         descriptionLabel.text = String(format: descriptionText)
+        descriptionLabel.textColor = UIColor.init(hexString: colorText)
         image.image = UIImage(named:imageName)
         exampleLabel.attributedText = processExample(example)
     }

@@ -4,6 +4,7 @@ class GeneralViewController: UIViewController {
     
     var index:Int!
     var info:[String:String]!
+    var colorText:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()

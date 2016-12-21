@@ -2,6 +2,73 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>menu</key>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>vineta_sobremi</string>
+			<key>text</key>
+			<string>Perfil</string>
+			<key>content</key>
+			<string>preface</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_perfil</string>
+			<key>text</key>
+			<string>Crea una clave segura</string>
+			<key>content</key>
+			<string>chapter0</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_imagen</string>
+			<key>text</key>
+			<string>Yo en una imagen</string>
+			<key>content</key>
+			<string>chapter1</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_cartera</string>
+			<key>text</key>
+			<string>Qué hay en mi cartera?</string>
+			<key>content</key>
+			<string>chapter2</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_contacto_desconocido</string>
+			<key>text</key>
+			<string>Contacto desconocido</string>
+			<key>content</key>
+			<string>chapter3</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_encriptar</string>
+			<key>text</key>
+			<string>Encripta tus mensajes</string>
+			<key>content</key>
+			<string>chapter4</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_espia</string>
+			<key>text</key>
+			<string>Soy espía</string>
+			<key>content</key>
+			<string>chapter5</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_info</string>
+			<key>text</key>
+			<string>Información y contacto</string>
+			<key>content</key>
+			<string>infocredits</string>
+		</dict>
+	</array>
 	<key>chapters</key>
 	<dict>
 		<key>intro</key>
@@ -30,11 +97,11 @@
 			<key>backgroundName</key>
 			<string>actintro_fondo</string>
 			<key>textColor</key>
-			<string>0xc22323</string>
+			<string>#c22323</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0xc22323</string>
+			<string>#c22323</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0xde5b33</string>
+			<string>#de5b33</string>
 		</dict>
 		<key>preface</key>
 		<dict>
@@ -63,11 +130,11 @@
 			<key>background name</key>
 			<string>act1_fondo</string>
 			<key>textColor</key>
-			<string>0x123159</string>
+			<string>#123159</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0x237e99</string>
+			<string>#237e99</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0x123159</string>
+			<string>#123159</string>
 			<key>activity_name</key>
 			<string>Perfil</string>
 			<key>menu_bullet_activity</key>
@@ -149,11 +216,11 @@
 			<key>backgroundName</key>
 			<string>act1_fondo</string>
 			<key>textColor</key>
-			<string>0x123159</string>
+			<string>#123159FF</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0x237e99</string>
+			<string>#237e99FF</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0x123159</string>
+			<string>#123159FF</string>
 			<key>activity_name</key>
 			<string>Crea una clave segura</string>
 			<key>menu_bullet_activity</key>
@@ -165,7 +232,7 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>generalController</string>
 					<key>top_image_name</key>
 					<string>pantalla_13_titulo</string>
 					<key>description</key>
@@ -175,7 +242,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>generalController</string>
 					<key>top_image_name</key>
 					<string>pantalla_14_marcofoto</string>
 					<key>description</key>
@@ -185,7 +252,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>chapterEpilogue</string>
 					<key>description</key>
 					<string>Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:</string>
 					<key>button</key>
@@ -207,11 +274,11 @@
 			<key>backgroundName</key>
 			<string>act2_fondo</string>
 			<key>textColor</key>
-			<string>0xFFFFFF</string>
+			<string>#FFFFFFFF</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0xfaa448</string>
+			<string>#faa448FF</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0x33faa448</string>
+			<string>#faa44833</string>
 			<key>activity_name</key>
 			<string>Yo en una imagen</string>
 			<key>menu_bullet_activity</key>
@@ -223,7 +290,7 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>CarrouselItemViewController</string>
 					<key>top_image_name</key>
 					<string>pantalla_18_titulo</string>
 					<key>description</key>
@@ -327,15 +394,15 @@
 				</dict>
 			</array>
 			<key>pageIndicatorColorInactive</key>
-			<string>0xe0a2b1</string>
+			<string>#e0a2b1</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0xffffff</string>
+			<string>#ffffff</string>
 			<key>textColor</key>
-			<string>0xFFFFFF</string>
+			<string>#FFFFFF</string>
 			<key>backgroundName</key>
 			<string>act3_fondo</string>
 			<key>backgrounAlphaColor</key>
-			<string>0x80D83872</string>
+			<string>#80D83872</string>
 			<key>activity_name</key>
 			<string>¿Qué hay en mi cartera?</string>
 			<key>menu_bullet_activity</key>
@@ -400,11 +467,11 @@
 			<key>backgroundName</key>
 			<string>act4_fondo</string>
 			<key>textColor</key>
-			<string>0x052d33</string>
+			<string>#052d33</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0x052d33</string>
+			<string>#052d33</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0x038571</string>
+			<string>#038571</string>
 			<key>activity_name</key>
 			<string>Contacto desconocido</string>
 			<key>menu_bullet_activity</key>
@@ -416,7 +483,7 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>chapterEpilogue</string>
 					<key>top_image_name</key>
 					<string>pantalla01_titulo-1</string>
 					<key>description</key>
@@ -428,7 +495,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>generalController</string>
 					<key>top_image_name</key>
 					<string>pantalla02_titulo</string>
 					<key>description</key>
@@ -440,15 +507,15 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
-					<key>bottom_image_name</key>
+					<string>CarrouselItemViewController</string>
+					<key>image</key>
 					<string>pantalla03_img_encriptacion</string>
 					<key>description</key>
 					<string>Algunos programas de mensajería usan códigos para encriptar los mensajes que intercambias con tus contactos protegiendo tus conversaciones \n \n Pero muchos no lo hacen o lo hacen muy mal.</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>CarrouselItemViewController</string>
 					<key>tittle</key>
 					<string>Una buena encriptación debería:</string>
 					<key>description_one</key>
@@ -464,7 +531,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>CarrouselItemViewController</string>
 					<key>description_one</key>
 					<string>Encriptar además la identidad de tus contactos a quienes envías el mensaje</string>
 					<key>number_image_one</key>
@@ -480,7 +547,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>chapterEpilogue</string>
 					<key>description</key>
 					<string>Si quieres que tus mensajes estén bien encriptados prueba con Signal o Telegram. \n \n Para saber si tus programas de mensajería son buenos puedes consultar</string>
 					<key>link</key>
@@ -496,11 +563,11 @@
 			<key>backgroundName</key>
 			<string>act5_fondo</string>
 			<key>textColor</key>
-			<string>0xffffff</string>
+			<string>#ffffff</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0x052d33</string>
+			<string>#052d33</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0x5f998a</string>
+			<string>#5f998a</string>
 			<key>activity_name</key>
 			<string>Encripta tus mensajes</string>
 			<key>menu_bullet_activity</key>
@@ -598,13 +665,13 @@
 			<key>backgroundName</key>
 			<string>act6_fondo</string>
 			<key>textColor</key>
-			<string>0x0</string>
+			<string>#0</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0xfc477a</string>
+			<string>#fc477a</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0xf081a8</string>
+			<string>#f081a8</string>
 			<key>menuColor</key>
-			<string>0xfc477a</string>
+			<string>#fc477a</string>
 			<key>activity_name</key>
 			<string>Soy espía</string>
 			<key>menu_bullet_activity</key>
@@ -660,11 +727,11 @@
 			<key>backgroundName</key>
 			<string>actintro_fondo</string>
 			<key>textColor</key>
-			<string>0xc22323</string>
+			<string>#c22323</string>
 			<key>pageIndicatorColorActive</key>
-			<string>0xc22323</string>
+			<string>#c22323</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>0xde5b33</string>
+			<string>#de5b33</string>
 			<key>activity_name</key>
 			<string>Información y contacto</string>
 			<key>menu_bullet_activity</key>

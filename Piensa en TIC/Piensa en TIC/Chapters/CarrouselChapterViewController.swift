@@ -8,6 +8,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     var pageViewController:UIPageViewController!
     var imagesArray:NSArray!
     var imageName:String!
+    var generalContent:NSDictionary!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     }
     
     func viewController(index:Int, storyboard:UIStoryboard) -> GeneralViewController! {
-        guard imagesArray.count >= 0, index < imagesArray.count else { return nil }
+        guard imagesArray.count >= 0 && index < imagesArray.count else { return nil }
         
         let content = imagesArray[index] as! [String:String]
         guard let identifier = content["content"] as String! else {return nil}
@@ -62,6 +63,10 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! GeneralViewController
         viewController.index = index
         viewController.info = content
+        if let colorText = generalContent["textColor"] {
+            viewController.colorText = colorText as! String
+        }
+        
         
         return viewController
     }
