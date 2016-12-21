@@ -29,6 +29,7 @@
 		84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */; };
 		84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CC1DF9273E002D36AA /* RightViewController.swift */; };
 		84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */; };
+		F3F78E5DADE448E5DDD11872 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB11C4F0C0AF98A02DE9CCD4 /* Pods_Piensa_en_TIC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -203,12 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 844EDE591DF50A090079AC35 /* Build configuration list for PBXNativeTarget "Piensa en TIC" */;
 			buildPhases = (
-				6D47A7F3277F11AC39BEC860 /* [CP] Check Pods Manifest.lock */,
+				07659CB4F8235D5030974341 /* [CP] Check Pods Manifest.lock */,
 				844EDE431DF50A080079AC35 /* Sources */,
 				844EDE441DF50A080079AC35 /* Frameworks */,
 				844EDE451DF50A080079AC35 /* Resources */,
-				39AF2605526DA49293A1A201 /* [CP] Embed Pods Frameworks */,
-				BF4B63411E16B940C29F0BDD /* [CP] Copy Pods Resources */,
+				8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */,
+				EBB90192427B5D466642B6C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,7 +272,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39AF2605526DA49293A1A201 /* [CP] Embed Pods Frameworks */ = {
+		07659CB4F8235D5030974341 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,22 +302,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D47A7F3277F11AC39BEC860 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BF4B63411E16B940C29F0BDD /* [CP] Copy Pods Resources */ = {
+		EBB90192427B5D466642B6C2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -489,7 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BridgeHeader.h;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -505,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelapp.Piensa-en-TIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BridgeHeader.h;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

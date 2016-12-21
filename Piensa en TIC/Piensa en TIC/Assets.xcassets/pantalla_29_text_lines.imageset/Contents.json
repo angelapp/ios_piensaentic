@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "pantalla_29_text_lines.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "act3_fondo.png",
       "scale" : "2x"
     },
     {
