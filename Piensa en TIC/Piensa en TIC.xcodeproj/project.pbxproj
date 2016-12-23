@@ -38,6 +38,7 @@
 		84E8141C1E0CF63A001CFBA8 /* KnownFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8141B1E0CF63A001CFBA8 /* KnownFriendsViewController.swift */; };
 		84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8141D1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift */; };
 		84E814201E0CFEA8001CFBA8 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8141F1E0CFEA8001CFBA8 /* MessageViewController.swift */; };
+		84E814231E0DC971001CFBA8 /* ComplexScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E814211E0DC971001CFBA8 /* ComplexScreens.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		84E8141B1E0CF63A001CFBA8 /* KnownFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KnownFriendsViewController.swift; path = Controllers/KnownFriendsViewController.swift; sourceTree = "<group>"; };
 		84E8141D1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionFriendsViewController.swift; path = Controllers/DescriptionFriendsViewController.swift; sourceTree = "<group>"; };
 		84E8141F1E0CFEA8001CFBA8 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageViewController.swift; path = Controllers/MessageViewController.swift; sourceTree = "<group>"; };
+		84E814221E0DC971001CFBA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Piensa en TIC/Base.lproj/ComplexScreens.storyboard"; sourceTree = "<group>"; };
 		DFEF65DEE6C2D47F2CFFE753 /* Pods-Piensa en TIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 		844EDE3E1DF50A080079AC35 = {
 			isa = PBXGroup;
 			children = (
+				84E814211E0DC971001CFBA8 /* ComplexScreens.storyboard */,
 				844EDE491DF50A080079AC35 /* Piensa en TIC */,
 				844EDE481DF50A080079AC35 /* Products */,
 				732D1DF2908C5B4DFE4659EC /* Pods */,
@@ -288,6 +291,7 @@
 				844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */,
 				844EDE521DF50A090079AC35 /* Assets.xcassets in Resources */,
 				844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */,
+				84E814231E0DC971001CFBA8 /* ComplexScreens.storyboard in Resources */,
 				84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */,
 				844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */,
 				842D553C1E05D5C900432858 /* Profile.storyboard in Resources */,
@@ -417,6 +421,14 @@
 				84A4B5C61DF921A70077A0AE /* Base */,
 			);
 			name = Menu.storyboard;
+			sourceTree = "<group>";
+		};
+		84E814211E0DC971001CFBA8 /* ComplexScreens.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E814221E0DC971001CFBA8 /* Base */,
+			);
+			name = ComplexScreens.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
