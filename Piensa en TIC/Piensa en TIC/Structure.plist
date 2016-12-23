@@ -184,15 +184,11 @@
 					<key>button</key>
 					<string>Crea una contraseña</string>
 					<key>content</key>
-					<string>viewStandard</string>
+					<string>enterPasswordController</string>
 					<key>top_image_name</key>
 					<string></string>
 					<key>description</key>
 					<string>%@, ya pensaste tu contraseña? Para hacerla súper segura debe tener números, letras y mínimo 6 caracteres</string>
-					<key>button_background</key>
-					<string>yellow</string>
-					<key>form</key>
-					<string>Escríbela|Escríbela nuevamente para confirmar</string>
 				</dict>
 				<dict>
 					<key>button</key>
@@ -239,6 +235,8 @@
 					<string>Toma una fotografía que te represente, puede ser de ti o de algo que te guste mucho, también de un dibujo que hayas hecho. No te limites, puedes usar una imagen con filtros de Snapchat, Pinterest o alguna aplicación divertida que tengas en tu celular o computadora.</string>
 					<key>button</key>
 					<string>pantalla_13_bot-examinar</string>
+					<key>buttonEvent</key>
+					<string>photo</string>
 				</dict>
 				<dict>
 					<key>content</key>
@@ -249,24 +247,24 @@
 					<string>Esta imagen dice mucho de ti, más allá de lo que muestra también tiene información sobre la hora, la fecha y lugar dónde la tomaste, e incluso puede tener el nombre o información sobre tu celular o cámara utilizada. Estos datos se llaman Metadatos.</string>
 					<key>button</key>
 					<string>pantalla_14_bot_revisar</string>
+					<key>buttonEvent</key>
+					<string>checkData</string>
+					<key>hasSecondaryImage</key>
+					<string>1</string>
 				</dict>
 				<dict>
 					<key>content</key>
 					<string>chapterEpilogue</string>
 					<key>description</key>
-					<string>Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:</string>
+					<string>Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:u015,u2022        Wikipedia u015,u2022        ICANN</string>
+					<key>top_image_name</key>
+					<string></string>
 					<key>button</key>
 					<string>pantalla_15_bot-continuar</string>
 					<key>image</key>
 					<string>pantalla_15_fantastico</string>
-					<key>item1</key>
-					<string>\u2022        Wikipedia</string>
-					<key>item2</key>
-					<string>\u2022        ICANN</string>
-					<key>link1</key>
-					<string>https://es.wikipedia.org/wiki/Metadato</string>
-					<key>link2</key>
-					<string>https://icann.org/news/blog/parte-i-que-son-los-metadatos</string>
+					<key>links</key>
+					<string> ,https://es.wikipedia.org/wiki/Metadato,https://icann.org/news/blog/parte-i-que-son-los-metadatos</string>
 					<key>segue</key>
 					<string>menu</string>
 				</dict>
@@ -290,7 +288,7 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string>CarrouselItemViewController</string>
+					<string>introController</string>
 					<key>top_image_name</key>
 					<string>pantalla_18_titulo</string>
 					<key>description</key>
@@ -330,59 +328,69 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>textDescriptionController</string>
 					<key>top_image_name</key>
 					<string>pantalla_18_cremallera</string>
 					<key>description</key>
 					<string>Guardas muchas cosas en tu billetera y guardas más en tu celular. Toda esta información es valiosa, ¡protégela!</string>
-					<key>middle_image_name</key>
-					<string>cartera:|teléfono:</string>
-					<key>description_two</key>
+					<key>image</key>
+					<string>pantalla05_bombilla</string>
+					<key>example</key>
 					<string>Estos consejos prácticos te ayudarán</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
-					<key>number_image_name</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
 					<string>pantalla_23_uno</string>
-					<key>description</key>
+					<key>adviceDescription</key>
 					<string>Utiliza una contraseña o un patrón para bloquear la pantalla</string>
-					<key>middle_image_name</key>
+					<key>adviceImage</key>
 					<string>pantalla_23_patron</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
-					<key>number_image_name</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
 					<string>pantalla_24_dos</string>
-					<key>description</key>
+					<key>adviceDescription</key>
 					<string>Marca la tarjeta SIM, la tarjeta de memoria, la batería y el teléfono con algo único para darte cuenta si te los han cambiado</string>
-					<key>middle_image_name</key>
+					<key>adviceImage</key>
 					<string>pantalla_24_sim</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
-					<key>number_image_name</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
 					<string>pantalla_25_tres</string>
-					<key>description</key>
+					<key>adviceDescription</key>
 					<string>No guardes información sensible en tu teléfono sin protegerla con una contraseña</string>
-					<key>middle_image_name</key>
+					<key>adviceImage</key>
 					<string>pantalla_25_contrasena</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
-					<key>number_image_name</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
 					<string>pantalla_26_cuatro</string>
-					<key>description</key>
+					<key>adviceDescription</key>
 					<string>Conoce el número IMEI de tu teléfono marcando *#06#, así será más fácil rastrearlo si se te pierde o te lo roban</string>
-					<key>middle_image_name</key>
+					<key>adviceImage</key>
 					<string>pantalla_26_imei</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>chapterEpilogue</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
 					<key>description</key>
 					<string>¡Nunca dejes tu teléfono solo en un lugar público!</string>
 					<key>button</key>
@@ -416,7 +424,7 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>introController</string>
 					<key>top_image_name</key>
 					<string>pantalla01_titulo-4</string>
 					<key>description</key>
@@ -424,7 +432,9 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>knownController</string>
+					<key>borderColor</key>
+					<string>#4C7FD9</string>
 					<key>dot_line</key>
 					<string>pantalla_29_text_lines</string>
 					<key>description</key>
@@ -434,7 +444,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>describeFriendsController</string>
 					<key>header_description</key>
 					<array>
 						<string>No encontraste ninguna persona desconocida</string>
@@ -453,6 +463,8 @@
 				</dict>
 				<dict>
 					<key>content</key>
+					<string>chapterEpilogue</string>
+					<key>top_image_name</key>
 					<string></string>
 					<key>description</key>
 					<string>Revisa periódicamente tu lista de contactos y seguidores en redes sociales, también los permisos que tienen sobre tu perfil y la información que publicas.</string>
@@ -502,15 +514,15 @@
 					<string>Escribe un mensaje secreto para tu mejor amigo o amiga, comienza con algo como: Hoy quiero contarte que... \n \n Encríptalo, tómale una foto y envíalo por el sistema de mensajería que más te guste. \n \n ¡No olvides contarle a tu contacto como descifrarlo!</string>
 					<key>button</key>
 					<string>pantalla02_btn_enviar</string>
-					<key>segue</key>
+					<key>buttonEvent</key>
 					<string>send_message</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string>CarrouselItemViewController</string>
-					<key>image</key>
+					<string>messageController</string>
+					<key>descriptionImage</key>
 					<string>pantalla03_img_encriptacion</string>
-					<key>description</key>
+					<key>headerDescription</key>
 					<string>Algunos programas de mensajería usan códigos para encriptar los mensajes que intercambias con tus contactos protegiendo tus conversaciones \n \n Pero muchos no lo hacen o lo hacen muy mal.</string>
 				</dict>
 				<dict>
@@ -550,7 +562,7 @@
 					<string>chapterEpilogue</string>
 					<key>description</key>
 					<string>Si quieres que tus mensajes estén bien encriptados prueba con Signal o Telegram. \n \n Para saber si tus programas de mensajería son buenos puedes consultar</string>
-					<key>link</key>
+					<key>links</key>
 					<string>http://www.eff.org/node/82654</string>
 					<key>button</key>
 					<string>pantalla06_btn_continuar</string>
@@ -579,14 +591,14 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>textDescriptionController</string>
 					<key>top_image_name</key>
 					<string>pantalla01_titulo-2</string>
-					<key>tittle</key>
+					<key>description</key>
 					<string>Ahora eres espía!</string>
 					<key>middle_image_name</key>
 					<string>pantalla01_espia</string>
-					<key>description</key>
+					<key>example</key>
 					<string>Mira las fotos que publican algunos de tus contactos y busca lo siguiente</string>
 				</dict>
 				<dict>

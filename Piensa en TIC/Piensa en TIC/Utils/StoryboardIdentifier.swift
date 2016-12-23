@@ -12,4 +12,7 @@ enum StoryboardIdentifier {
     
     //MARK: profile
     static let profileController = "profileController"
+    
+    //MARK: enter password
+    static let enterPassword = "enterPasswordController"
 }

@@ -44,3 +44,12 @@ func examine() {
 
 
 examine()
+let pattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!$%@#£€*?&_]{6,}$"
+let regex = try! NSRegularExpression(pattern: pattern, options: [])
+let testStr = "867dsaG"
+let matches = regex.matches(in: testStr, options: [], range: NSRange(location: 0, length: testStr.characters.count))
+if matches.count > 0 {
+    print("ok")
+}
+
+

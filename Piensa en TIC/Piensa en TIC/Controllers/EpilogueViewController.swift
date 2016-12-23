@@ -12,7 +12,7 @@ class EpilogueViewController: GeneralViewController {
     
     @IBOutlet var topImage: UIImageView!
     @IBOutlet var descriptionImage: UIImageView!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var descriptionLabel: UITextView!
     @IBOutlet var contnue: UIButton!
 
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +24,7 @@ class EpilogueViewController: GeneralViewController {
         guard let buttonText = self.info["button"] else {return}
         
         topImage.image = UIImage(named:topImageName)
+        descriptionLabel.textAlignment = .center
         descriptionLabel.text = descriptionText
         descriptionImage.image = UIImage(named:imageName)
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
@@ -31,6 +32,13 @@ class EpilogueViewController: GeneralViewController {
         contnue.setBackgroundImage(UIImage(named:buttonText), for: UIControlState.normal)
         contnue.setBackgroundImage(UIImage(named:buttonText), for: UIControlState.selected)
         contnue.setBackgroundImage(UIImage(named:buttonText), for: UIControlState.highlighted)
+        
+        if let linksString = self.info["links"]{
+            guard let links = linksString.split(by: ",") else {return}
+            descriptionLabel.isSelectable = true
+            descriptionLabel.attributedText = processDescriptionWithLinks(descriptionText, links: links as! [String])
+            descriptionLabel.textAlignment = .center
+        }
     }
     
     func actionButton(sender:Any?) -> () {

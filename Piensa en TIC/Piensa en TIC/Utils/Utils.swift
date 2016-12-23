@@ -1,3 +1,4 @@
+
 extension UIView {
     func drawBorder(_ color:UIColor!, y: CGFloat, key:String!, dotted:Bool) -> Void{
         guard let layer:CALayer = self.layer.value(forKey: key) as! CALayer! else {
@@ -41,12 +42,12 @@ extension UIView {
 
 extension NSAttributedString {
     
-    func stringWithWords(words:[String], fonts:[UIFont]) -> NSAttributedString{
+    func stringWithWords(words:[String], fonts:[UIFont], color:UIColor) -> NSAttributedString{
         let string : NSMutableAttributedString = NSMutableAttributedString.init(string: "")
         for i in 0..<words.count {
             let word = words[i]
             let font: UIFont = fonts[i]
-            let attributes = [NSFontAttributeName:font]
+            let attributes = [NSFontAttributeName:font, NSForegroundColorAttributeName:color]
             let subString = NSAttributedString.init(string: word, attributes: attributes)
             string.append(subString)
         }
@@ -59,6 +60,18 @@ extension NSAttributedString {
             let word = words[i]
             let color: UIColor = colors[i]
             let attributes = [NSForegroundColorAttributeName:color]
+            let subString = NSAttributedString.init(string: word, attributes: attributes)
+            string.append(subString)
+        }
+        return string
+    }
+    
+    func stringWithWords(words:[String], links:[String], color:UIColor) -> NSAttributedString{
+        let string : NSMutableAttributedString = NSMutableAttributedString.init(string: "")
+        for i in 0..<words.count {
+            let word = words[i]
+            let link = links[i]
+            let attributes = [NSLinkAttributeName:link, NSForegroundColorAttributeName:color,NSFontAttributeName:UIFont.systemFont(ofSize: 17.0)] as [String : Any]
             let subString = NSAttributedString.init(string: word, attributes: attributes)
             string.append(subString)
         }

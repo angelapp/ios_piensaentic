@@ -8,6 +8,7 @@ protocol SelectRightMenuItem {
 class HomeViewController: MFSideMenuContainerViewController {
     
     let mainConfigurator = MainConfigurator.sharedConfiguration
+    var content:NSDictionary!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +16,8 @@ class HomeViewController: MFSideMenuContainerViewController {
         if self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout)) {
             self.edgesForExtendedLayout = UIRectEdge.all
         }
+        
+        content = mainConfigurator.chapter(index: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,8 +32,7 @@ class HomeViewController: MFSideMenuContainerViewController {
     
     //MARK: Initial Setup
     func initialSetup() -> (){
-        let content = mainConfigurator.chapter(index: 0)
-        print(content as Any)
+        
         let homeStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
         let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
         let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
@@ -63,8 +65,8 @@ class HomeViewController: MFSideMenuContainerViewController {
 
 extension HomeViewController: SelectRightMenuItem {
     func showChapter(_ index:Int) {
-        let content = mainConfigurator.chapter(index: index)
-        print(content as Any)
+        content = mainConfigurator.chapter(index: index)
+        
         let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
         let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
         

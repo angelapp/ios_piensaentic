@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Piensa en TIC
-//
-//  Created by SergioDan on 12/4/16.
-//  Copyright © 2016 angelapp. All rights reserved.
-//
-
 import UIKit
 import IQKeyboardManagerSwift
 

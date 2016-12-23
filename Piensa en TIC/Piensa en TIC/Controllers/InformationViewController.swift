@@ -3,6 +3,7 @@ import UIKit
 class InformationViewController: GeneralViewController {
 
     @IBOutlet var topImage:UIImageView!
+    @IBOutlet var secondaryImage:UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var button:UIButton!
     
@@ -15,22 +16,43 @@ class InformationViewController: GeneralViewController {
         topImage.image = UIImage(named:imageName)
         descriptionLabel.text = descriptionText
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
+        
+        if let buttonImageName = self.info["button"] {
+            button.isHidden = false
+            
+            button.setImage(UIImage(named:buttonImageName), for: UIControlState.normal)
+            button.setImage(UIImage(named:buttonImageName), for: UIControlState.selected)
+            button.setImage(UIImage(named:buttonImageName), for: UIControlState.highlighted)
+            
+        } else {
+          button.isHidden = true
+        }
+        
+        guard storage.getImage() != nil else {return}
+        if let _ = self.info["hasSecondaryImage"]{
+            self.secondaryImage.isHidden = false
+            self.secondaryImage.image = storage.getImage()
+        } else {
+            self.secondaryImage.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didButtonPress(sender:Any!) {
+        if let buttonEvent = self.info["buttonEvent"] {
+            if buttonEvent == "photo" {
+                self.loadImageButtonTapped(sender: sender as! UIButton)
+            }
+            else if buttonEvent == "checkData" {
+                if storage.getMetadata() != nil {
+                    self.showAlert(title: "Metadatos", message: storage.getMetadata() as! String)
+                }
+            }
+        }
     }
-    */
 
 }
