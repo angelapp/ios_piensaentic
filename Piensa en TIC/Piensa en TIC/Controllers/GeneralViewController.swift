@@ -88,13 +88,10 @@ extension GeneralViewController {
 }
 
 
-extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate{
     @IBAction func loadImageButtonTapped(sender: UIButton) {
-        imagePicker.allowsEditing = false
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        
-        self.present(imagePicker, animated: true, completion: nil)
+        let actionSheet = UIActionSheet(title: "Choose Option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Camera", "Photo Library")
+        actionSheet.show(in: self.view)
     }
     
     //MARK: delegate
@@ -115,6 +112,28 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: UIActionSheet delegate Methods
+    
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        
+        imagePicker.allowsEditing = false
+        switch (buttonIndex){
+            
+        case 0: break
+        case 1:
+            imagePicker.sourceType = .camera
+            break
+        case 2:
+            imagePicker.sourceType = .photoLibrary
+            break
+        default:break
+            
+        }
+        present(imagePicker, animated: true, completion: nil)
+        
+        
     }
 
 }
