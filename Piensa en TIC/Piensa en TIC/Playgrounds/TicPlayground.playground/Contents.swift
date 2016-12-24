@@ -51,5 +51,3 @@ let matches = regex.matches(in: testStr, options: [], range: NSRange(location: 0
 if matches.count > 0 {
     print("ok")
 }
-
-

@@ -1,7 +1,130 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Survey View Controller-->
+        <scene sceneID="lLs-XW-yVz">
+            <objects>
+                <viewController storyboardIdentifier="surveyController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XVq-EB-wVh" customClass="SurveyViewController" customModule="Piensa_en_TIC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wJf-66-SVt"/>
+                        <viewControllerLayoutGuide type="bottom" id="S24-X9-zUf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lqf-O7-2ut">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oIr-Hm-FTu">
+                                <rect key="frame" x="0.0" y="68" width="375" height="547"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="surveySelectionIdentifier" rowHeight="50" id="ffc-gf-9yV" customClass="SurveySelectionViewCell" customModule="Piensa_en_TIC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffc-gf-9yV" id="xWW-1T-3Pq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaI-yT-8FF">
+                                                    <rect key="frame" x="7.5" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="EEO-XL-uwP"/>
+                                                        <constraint firstAttribute="height" constant="30" id="rm8-iV-FPC"/>
+                                                    </constraints>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKT-Ha-sUE">
+                                                    <rect key="frame" x="45.5" y="10" width="321" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="D9r-jx-bYE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HaI-yT-8FF" firstAttribute="top" secondItem="xWW-1T-3Pq" secondAttribute="top" constant="9.9199999999999999" id="2D9-7n-ao2"/>
+                                                <constraint firstAttribute="trailing" secondItem="cKT-Ha-sUE" secondAttribute="trailing" constant="8.7100000000000009" id="Kgc-ih-EUh"/>
+                                                <constraint firstAttribute="bottom" secondItem="cKT-Ha-sUE" secondAttribute="bottom" constant="9.25" id="OfS-1K-FyA"/>
+                                                <constraint firstItem="cKT-Ha-sUE" firstAttribute="top" secondItem="xWW-1T-3Pq" secondAttribute="top" constant="9.75" id="Syw-TE-yDA"/>
+                                                <constraint firstAttribute="bottom" secondItem="HaI-yT-8FF" secondAttribute="bottom" constant="9.0800000000000001" id="XsB-65-A2c"/>
+                                                <constraint firstItem="HaI-yT-8FF" firstAttribute="leading" secondItem="xWW-1T-3Pq" secondAttribute="leading" constant="7.29" id="abF-C5-UR1"/>
+                                                <constraint firstItem="cKT-Ha-sUE" firstAttribute="leading" secondItem="HaI-yT-8FF" secondAttribute="trailing" constant="8" id="cqE-Ph-Cwp"/>
+                                                <constraint firstItem="cKT-Ha-sUE" firstAttribute="leading" secondItem="HaI-yT-8FF" secondAttribute="trailing" constant="8" id="i9x-W8-sve"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="radioButton" destination="HaI-yT-8FF" id="b52-Ic-V0u"/>
+                                            <outlet property="titleLabel" destination="cKT-Ha-sUE" id="680-UA-e40"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="surveyInputIdentifier" rowHeight="140" id="zXk-oX-ieV" customClass="SurveyTextViewCell" customModule="Piensa_en_TIC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78" width="375" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zXk-oX-ieV" id="hp6-Bs-6Zg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pantalla_40_lines" translatesAutoresizingMaskIntoConstraints="NO" id="tt8-vK-0O7">
+                                                    <rect key="frame" x="8" y="35" width="359" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pantalla_40_lines" translatesAutoresizingMaskIntoConstraints="NO" id="25g-uk-YJ0">
+                                                    <rect key="frame" x="8" y="65" width="359" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pantalla_40_lines" translatesAutoresizingMaskIntoConstraints="NO" id="VGK-1U-8hW">
+                                                    <rect key="frame" x="8" y="95" width="359" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kSq-SC-Uq2">
+                                                    <rect key="frame" x="8" y="12" width="359" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="textView" destination="kSq-SC-Uq2" id="pvf-TI-e5r"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XVq-EB-wVh" id="Poq-PA-Ivz"/>
+                                    <outlet property="delegate" destination="XVq-EB-wVh" id="kgd-Je-N2g"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oIr-Hm-FTu" firstAttribute="top" secondItem="wJf-66-SVt" secondAttribute="bottom" constant="48" id="cfe-7U-9Lp"/>
+                            <constraint firstItem="oIr-Hm-FTu" firstAttribute="leading" secondItem="Lqf-O7-2ut" secondAttribute="leading" id="cjd-UJ-6D1"/>
+                            <constraint firstAttribute="trailing" secondItem="oIr-Hm-FTu" secondAttribute="trailing" id="i8I-AH-uke"/>
+                            <constraint firstItem="S24-X9-zUf" firstAttribute="top" secondItem="oIr-Hm-FTu" secondAttribute="bottom" constant="52" id="yld-gM-rrq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="oIr-Hm-FTu" id="xZI-0Q-HeE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wff-ME-SJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="79.610194902548727"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pantalla_40_lines" width="275" height="50"/>
+    </resources>
 </document>

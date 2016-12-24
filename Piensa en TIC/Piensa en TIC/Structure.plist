@@ -296,7 +296,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>surveyController</string>
 					<key>top_image_name</key>
 					<string>pantalla_18_cremallera</string>
 					<key>question</key>
@@ -306,7 +306,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>introController</string>
 					<key>description</key>
 					<string>Ahora imagina que esa persona toma tu teléfono celular ¿Qué encontraría? Revisa!</string>
 					<key>top_image_name</key>
