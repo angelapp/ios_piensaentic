@@ -113,6 +113,10 @@ extension String {
         
         return array as [AnyObject]!
     }
+    
+    func concatenate(_ items: Any...)-> String{
+        return (items as! [String]).flatMap{$0}.joined(separator: "")
+    }
 }
 
 extension UIColor {

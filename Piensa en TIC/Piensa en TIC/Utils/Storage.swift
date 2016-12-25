@@ -1,18 +1,30 @@
 import UIKit
 
+struct StorageConstants {
+    static let imageName = "image"
+    static let metadata = "metadata"
+}
+
 class Storage: NSObject {
     private var imageSelected:UIImage!
     private var metadata:AnyObject!
+    var appState:UserDefaults!
     
     static let shared = Storage()
     
     private override init() {
         super.init()
+        appState = UserDefaults.standard
     }
     
     func setImage(image:UIImage!) -> () {
         guard image != nil else {return}
+        
         self.imageSelected = image
+    }
+    
+    func getImage() -> UIImage! {
+        return self.imageSelected
     }
     
     func setMetadata(metadata:AnyObject!) -> () {
@@ -20,11 +32,25 @@ class Storage: NSObject {
         self.metadata = metadata
     }
     
-    func getImage() -> UIImage!{
-        return imageSelected
+    func getMetadata() -> AnyObject! {
+        return self.metadata
     }
     
-    func getMetadata() -> AnyObject!{
-        return metadata
+    func saveChapter(chapter:String) -> (){
+        appState.set(true, forKey: chapter)
+        appState.synchronize()
+    }
+    
+    func getChapter(chapter:String) -> Bool{
+        return appState.bool(forKey: chapter)
+    }
+    
+    func saveOptionChosen(key:String, value:String){
+        appState.set(value, forKey: key)
+        appState.synchronize()
+    }
+    
+    func getStringFromKey(key:String) -> String! {
+        return appState.object(forKey: key) as! String!
     }
 }

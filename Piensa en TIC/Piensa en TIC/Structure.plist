@@ -289,6 +289,8 @@
 				<dict>
 					<key>content</key>
 					<string>introController</string>
+					<key>secondary_image</key>
+					<string>pantalla01_fondo</string>
 					<key>top_image_name</key>
 					<string>pantalla_18_titulo</string>
 					<key>description</key>
@@ -306,8 +308,8 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string>introController</string>
-					<key>description</key>
+					<string>surveyController</string>
+					<key>title</key>
 					<string>Ahora imagina que esa persona toma tu teléfono celular ¿Qué encontraría? Revisa!</string>
 					<key>top_image_name</key>
 					<string>pantalla_18_cremallera</string>
@@ -318,7 +320,7 @@
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>resultsController</string>
 					<key>top_image_name</key>
 					<string>pantalla_18_cremallera</string>
 					<key>question</key>
@@ -402,11 +404,11 @@
 				</dict>
 			</array>
 			<key>pageIndicatorColorInactive</key>
-			<string>#e0a2b1</string>
+			<string>#e0a2b1ff</string>
 			<key>pageIndicatorColorActive</key>
-			<string>#ffffff</string>
+			<string>#ffffffff</string>
 			<key>textColor</key>
-			<string>#FFFFFF</string>
+			<string>#FFFFFFFF</string>
 			<key>backgroundName</key>
 			<string>act3_fondo</string>
 			<key>backgrounAlphaColor</key>

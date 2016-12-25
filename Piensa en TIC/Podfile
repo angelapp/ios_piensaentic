@@ -8,4 +8,5 @@ target 'Piensa en TIC' do
   # Pods for Piensa en TIC
   pod 'MFSideMenu'
   pod 'IQKeyboardManagerSwift','4.0.6'
+  pod 'Alamofire', '~> 4.0'
 end

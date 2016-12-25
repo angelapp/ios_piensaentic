@@ -3,19 +3,27 @@ import UIKit
 struct Identifier {
     static let selectionIdentifier = "surveySelectionIdentifier"
     static let inputIdentifier = "surveyInputIdentifier"
+    static let resultIdentifier = "resultCell"
+}
+
+struct SurveyConstants {
+    static let heightTitle:CGFloat = 78.0
 }
 
 class SurveyViewController: GeneralViewController {
     
+    @IBOutlet var heightLabelConstraint:NSLayoutConstraint!
+    @IBOutlet var titleLabel:UILabel!
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var topImage:UIImageView!
     var content:[[String:AnyObject]]!
     var results:[[Bool]]!
     var indexSelected:[IndexPath?]!
+    var isWallet:Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         indexSelected = [IndexPath!]()
         indexSelected.append(nil)
         indexSelected.append(nil)
@@ -24,18 +32,40 @@ class SurveyViewController: GeneralViewController {
         indexSelected.append(nil)
         results = [[Bool]]()
         content = [[String:AnyObject]]()
-        content.append(["section":"Fotografías de mis amigos" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
-        results.append([false,false,false,false])
-        content.append(["section":"Mis fotografías" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
-        results.append([false,false,false,false])
-        content.append(["section":"Datos de identificación" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
-        results.append([false,false,false,false])
-        content.append(["section":"Teléfonos y datos de contacto de familia y amigos" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
-        results.append([false,false,false,false])
-        content.append(["section":"Dinero o tarjetas de banco (miles de pesos)" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
-        results.append([false,false,false,false])
-        content.append(["section":"¿Qué más tienes?" as AnyObject, "text":true as AnyObject])
         
+        
+        if let image = self.info["top_image_name"] {
+            topImage.image = UIImage(named:image)
+        }
+        
+        if let title = self.info["title"] {
+            heightLabelConstraint.constant = SurveyConstants.heightTitle
+            titleLabel.text = title
+            isWallet = false
+        } else {
+            heightLabelConstraint.constant = 0
+        }
+        
+        appendWalletInformation()
+    }
+    
+    func appendWalletInformation(){
+        content.append(["section":"Fotografías de mis amigos" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
+        results.append([true,false,false,false])
+        updateState(indexPath: IndexPath(row:0,section:0), value: true)
+        content.append(["section":"Mis fotografías" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
+        results.append([true,false,false,false])
+        updateState(indexPath: IndexPath(row:0,section:1), value: true)
+        content.append(["section":"Datos de identificación" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
+        results.append([true,false,false,false])
+        updateState(indexPath: IndexPath(row:0,section:2), value: true)
+        content.append(["section":"Teléfonos y datos de contacto de familia y amigos" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
+        results.append([true,false,false,false])
+        updateState(indexPath: IndexPath(row:0,section:3), value: true)
+        content.append(["section":"Dinero o tarjetas de banco (miles de pesos)" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
+        results.append([true,false,false,false])
+        updateState(indexPath: IndexPath(row:0,section:4), value: true)
+        content.append(["section":"¿Qué más tienes?" as AnyObject, "text":true as AnyObject])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +83,21 @@ class SurveyViewController: GeneralViewController {
 extension SurveyViewController: UITableViewDelegate {
     func updateState(indexPath:IndexPath, value:Bool){
         results[indexPath.section][indexPath.row] = value
+        guard let sectionContent = content[indexPath.section] as [String:Any]! else { tableView.reloadData(); return}
+        if let options = sectionContent["options"] as! [String]! {
+            let key = "".concatenate(sectionContent["section"] as! String!, (isWallet ? "Cartera":"Telefono"))
+            storage.saveOptionChosen(key: key, value: options[indexPath.row])
+        } else {
+            guard let userInput = getInformationFromTextView(indexPath: indexPath) else { tableView.reloadData(); return}
+            let key = "".concatenate(sectionContent["section"] as! String!, (isWallet ? "Cartera":"Telefono"))
+            storage.saveOptionChosen(key: key, value: userInput)
+        }
         tableView.reloadData()
+    }
+    
+    func getInformationFromTextView(indexPath:IndexPath) -> String! {
+        guard let cell = tableView.cellForRow(at: indexPath) as! SurveyTextViewCell! else { return nil}
+        return cell.textView.text
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -115,8 +159,6 @@ extension SurveyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == content.count - 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.inputIdentifier, for: indexPath) as! SurveyTextViewCell
-            
-            guard let sectionContent = content[indexPath.section] as [String:Any]! else { return cell}
             
             return cell
         }

@@ -389,17 +389,17 @@
                                     <constraint firstAttribute="height" constant="140" id="gaf-It-5jp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-te-Awp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-te-Awp">
                                 <rect key="frame" x="26.5" y="244" width="323" height="254"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="254" id="suE-jd-NRF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hZQ-9m-DsZ" secondAttribute="trailing" id="7O1-e0-9Or"/>
                             <constraint firstItem="gax-EI-UuA" firstAttribute="leading" secondItem="fkf-lQ-MB5" secondAttribute="leading" id="CnZ-oX-3pW"/>
@@ -413,6 +413,11 @@
                             <constraint firstAttribute="trailing" secondItem="gax-EI-UuA" secondAttribute="trailing" id="nfO-bo-6CA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="gax-EI-UuA" id="xJF-oG-6XP"/>
+                        <outlet property="descriptionLabel" destination="CvB-te-Awp" id="Crz-oz-no6"/>
+                        <outlet property="topImage" destination="hZQ-9m-DsZ" id="o7O-km-fQN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhW-ms-cq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

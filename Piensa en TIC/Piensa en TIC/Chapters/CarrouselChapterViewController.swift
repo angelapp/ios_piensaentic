@@ -48,8 +48,6 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         for subview in self.pageViewController.view.subviews {
             if subview.isKind(of: UIPageControl.self) {
                 let pageControl = subview as! UIPageControl
-//                pageIndicatorColorActive
-//                pageIndicatorColorInactive
                 pageControl.pageIndicatorTintColor = UIColor(hexString:generalContent["pageIndicatorColorInactive"] as! String)
                 pageControl.currentPageIndicatorTintColor = UIColor(hexString:generalContent["pageIndicatorColorActive"] as! String)
             }
@@ -62,7 +60,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         let content = imagesArray[index] as! [String:String]
         guard let identifier = content["content"] as String! else {return nil}
         
-        if identifier == "surveyController" {
+        if identifier == "surveyController" || identifier == "resultsController" {
             let temporalStoryboard = UIStoryboard.init(name: "ComplexScreens", bundle: nil)
             let viewController = temporalStoryboard.instantiateViewController(withIdentifier: identifier) as! GeneralViewController
             viewController.index = index
