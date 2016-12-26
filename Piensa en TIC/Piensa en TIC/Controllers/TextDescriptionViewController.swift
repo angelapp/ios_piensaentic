@@ -31,7 +31,12 @@ class TextDescriptionViewController: GeneralViewController {
         descriptionLabel.text = String(format: descriptionText)
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
         image.image = UIImage(named:imageName)
-        exampleLabel.attributedText = processExample(example)
+        if example.contains("|") {
+            exampleLabel.attributedText = processExample(example)
+        } else {
+            exampleLabel.text = example
+        }
+        
         exampleLabel.textColor = UIColor.init(hexString: colorText)
     }
 }

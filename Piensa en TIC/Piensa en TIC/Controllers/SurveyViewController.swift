@@ -82,6 +82,7 @@ class SurveyViewController: GeneralViewController {
 
 extension SurveyViewController: UITableViewDelegate {
     func updateState(indexPath:IndexPath, value:Bool){
+        indexSelected[indexPath.section] = indexPath
         results[indexPath.section][indexPath.row] = value
         guard let sectionContent = content[indexPath.section] as [String:Any]! else { tableView.reloadData(); return}
         if let options = sectionContent["options"] as! [String]! {
@@ -106,7 +107,6 @@ extension SurveyViewController: UITableViewDelegate {
         }
         
         updateState(indexPath: indexPath, value:true)
-        indexSelected[indexPath.section] = indexPath
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

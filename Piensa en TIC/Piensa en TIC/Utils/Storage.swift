@@ -51,6 +51,7 @@ class Storage: NSObject {
     }
     
     func getStringFromKey(key:String) -> String! {
-        return appState.object(forKey: key) as! String!
+        let result = appState.object(forKey: key) as! String!
+        return result
     }
 }

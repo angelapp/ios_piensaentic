@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3AA321AA702C288E5D7EEB18 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */; };
+		842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842282CF1E10C88B003A9756 /* SpyFormViewController.swift */; };
 		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
 		842D553C1E05D5C900432858 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D553A1E05D5C900432858 /* Profile.storyboard */; };
 		842D553E1E05DA7D00432858 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D553D1E05DA7D00432858 /* Utils.swift */; };
@@ -38,6 +39,7 @@
 		84E42D0D1E0F3B7E00D9F9BD /* ActivityRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */; };
 		84E42D111E0F61C100D9F9BD /* ResultsSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */; };
 		84E42D131E0F626000D9F9BD /* ResultsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D121E0F626000D9F9BD /* ResultsViewCell.swift */; };
+		84E42D151E10B70500D9F9BD /* AdviceEncryptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D141E10B70500D9F9BD /* AdviceEncryptViewController.swift */; };
 		84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E814151E0CEDE6001CFBA8 /* IntroViewController.swift */; };
 		84E814181E0CEEF8001CFBA8 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E814171E0CEEF8001CFBA8 /* SurveyViewController.swift */; };
 		84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E814191E0CF0AA001CFBA8 /* AdviceViewController.swift */; };
@@ -50,6 +52,7 @@
 /* Begin PBXFileReference section */
 		1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
 		4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842282CF1E10C88B003A9756 /* SpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpyFormViewController.swift; path = Controllers/SpyFormViewController.swift; sourceTree = "<group>"; };
 		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
 		842D553B1E05D5C900432858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		842D553D1E05DA7D00432858 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityRegister.swift; path = Network/ActivityRegister.swift; sourceTree = "<group>"; };
 		84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsSurveyViewController.swift; path = Controllers/ResultsSurveyViewController.swift; sourceTree = "<group>"; };
 		84E42D121E0F626000D9F9BD /* ResultsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsViewCell.swift; path = Controllers/Cell/ResultsViewCell.swift; sourceTree = "<group>"; };
+		84E42D141E10B70500D9F9BD /* AdviceEncryptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdviceEncryptViewController.swift; path = Controllers/AdviceEncryptViewController.swift; sourceTree = "<group>"; };
 		84E814151E0CEDE6001CFBA8 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = Controllers/IntroViewController.swift; sourceTree = "<group>"; };
 		84E814171E0CEEF8001CFBA8 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = Controllers/SurveyViewController.swift; sourceTree = "<group>"; };
 		84E814191E0CF0AA001CFBA8 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdviceViewController.swift; path = Controllers/AdviceViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				84E8141B1E0CF63A001CFBA8 /* KnownFriendsViewController.swift */,
 				84E8141D1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift */,
 				84E8141F1E0CFEA8001CFBA8 /* MessageViewController.swift */,
+				84E42D141E10B70500D9F9BD /* AdviceEncryptViewController.swift */,
+				842282CF1E10C88B003A9756 /* SpyFormViewController.swift */,
 			);
 			name = Chapters;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 		844EDE491DF50A080079AC35 /* Piensa en TIC */ = {
 			isa = PBXGroup;
 			children = (
+				8478B9241DFD3D8F009D3C7A /* Controllers */,
 				84E42D091E0F253800D9F9BD /* Network */,
 				84400DFB1E07BC5E008BE9F1 /* Playground */,
 				84AA76CE1DF929FF002D36AA /* Service */,
@@ -180,7 +187,6 @@
 				844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */,
 				84A4B5C51DF921A70077A0AE /* Menu.storyboard */,
 				84AA76C81DF925A2002D36AA /* BridgeHeader.h */,
-				8478B9241DFD3D8F009D3C7A /* Controllers */,
 			);
 			path = "Piensa en TIC";
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E42D151E10B70500D9F9BD /* AdviceEncryptViewController.swift in Sources */,
 				84E42D0B1E0F256700D9F9BD /* Network.swift in Sources */,
 				84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */,
 				849294A41E0C2D8400835B67 /* Constants.swift in Sources */,
@@ -409,6 +416,7 @@
 				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */,
 				84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */,
+				842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84400DF81E07AF58008BE9F1 /* TextDescriptionViewController.swift in Sources */,
 				84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */,

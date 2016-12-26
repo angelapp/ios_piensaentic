@@ -1,7 +1,7 @@
 import UIKit
 
 class ResultsSurveyViewController: GeneralViewController {
-    
+    @IBOutlet var topImage:UIImageView!
     @IBOutlet var tableView:UITableView!
     var content:[[String:Any]]!
 
@@ -14,6 +14,9 @@ class ResultsSurveyViewController: GeneralViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if let image = self.info["top_image_name"] {
+            topImage.image = UIImage(named:image)
+        }
         fillWithInformation()
     }
 
@@ -24,17 +27,22 @@ class ResultsSurveyViewController: GeneralViewController {
     
     func fillWithInformation(){
         content = [[String:Any]]()
+        let sectionTitle1 = "Fotografías de mis amigos"
+        content.append(["section":sectionTitle1 as AnyObject, "left": storage.getStringFromKey(key: "".concatenate(sectionTitle1,"Cartera")), "right":storage.getStringFromKey(key: "".concatenate(sectionTitle1,"Telefono"))])
         
-        content.append(["section":"Fotografías de mis amigos" as AnyObject, "left": storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera")), "right":storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera"))])
+        let sectionTitle2 = "Mis fotografías"
+        content.append(["section":sectionTitle2 as AnyObject, "left": storage.getStringFromKey(key: "".concatenate(sectionTitle2,"Cartera")), "right":storage.getStringFromKey(key: "".concatenate(sectionTitle2,"Telefono"))])
         
+        let sectionTitle3 = "Datos de identificación"
+        content.append(["section":sectionTitle3 as AnyObject, "left": storage.getStringFromKey(key: "".concatenate(sectionTitle3,"Cartera")), "right":storage.getStringFromKey(key: "".concatenate(sectionTitle3,"Telefono"))])
         
-        content.append(["section":"Mis fotografías" as AnyObject, "left": storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera")), "right":storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera"))])
+        let sectionTitle4 = "Teléfonos y datos de contacto de familia y amigos"
+        content.append(["section":sectionTitle4 as AnyObject, "left": storage.getStringFromKey(key: "".concatenate(sectionTitle4,"Cartera")), "right":storage.getStringFromKey(key: "".concatenate(sectionTitle4,"Telefono"))])
         
-        content.append(["section":"Datos de identificación" as AnyObject, "left": storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera")), "right":storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera"))])
+        let sectionTitle5 = "Dinero o tarjetas de banco (miles de pesos)"
+        content.append(["section":sectionTitle5 as AnyObject, "left": storage.getStringFromKey(key: "".concatenate(sectionTitle5,"Cartera")), "right":storage.getStringFromKey(key: "".concatenate(sectionTitle5,"Telefono"))])
         
-        content.append(["section":"Teléfonos y datos de contacto de familia y amigos" as AnyObject, "left": storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera")), "right":storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera"))])
-        
-        content.append(["section":"Dinero o tarjetas de banco (miles de pesos)" as AnyObject, "left": storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera")), "right":storage.getStringFromKey(key: "".concatenate("Fotografías de mis amigos","Cartera"))])
+        tableView.reloadData()
     }
 }
 

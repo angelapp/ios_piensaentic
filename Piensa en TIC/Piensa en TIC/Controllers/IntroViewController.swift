@@ -1,6 +1,6 @@
 import UIKit
 
-class IntroViewController: GeneralViewController {
+class IntroViewController: GeneralViewController{
 
     @IBOutlet var topImage: UIImageView!
     @IBOutlet var backgroundImage: UIImageView!
@@ -26,6 +26,7 @@ class IntroViewController: GeneralViewController {
 
         if let secondaryImageName = self.info["secondary_image"] {
             backgroundImage.image = UIImage(named: secondaryImageName)
+            backgroundImage.isHidden = false
         }
     }
 

@@ -6,6 +6,7 @@ class InformationViewController: GeneralViewController {
     @IBOutlet var secondaryImage:UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var button:UIButton!
+    @IBOutlet var backgroundImage:UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,13 +20,10 @@ class InformationViewController: GeneralViewController {
         
         if let buttonImageName = self.info["button"] {
             button.isHidden = false
-            
-            button.setImage(UIImage(named:buttonImageName), for: UIControlState.normal)
-            button.setImage(UIImage(named:buttonImageName), for: UIControlState.selected)
-            button.setImage(UIImage(named:buttonImageName), for: UIControlState.highlighted)
-            
+            backgroundImage.image = UIImage(named: buttonImageName)
         } else {
-          button.isHidden = true
+            button.isHidden = true
+            backgroundImage.isHidden = true
         }
         
         guard storage.getImage() != nil else {return}
