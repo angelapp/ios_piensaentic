@@ -15,6 +15,10 @@ class EpilogueViewController: GeneralViewController {
     @IBOutlet var contnue: UIButton!
     @IBOutlet var backgroundImage:UIImageView!
     @IBOutlet var videoView:YTPlayerView!
+    
+    @IBOutlet var textView:UITextView!
+    @IBOutlet var box:UIView!
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,14 +26,17 @@ class EpilogueViewController: GeneralViewController {
         guard let topImageName = self.info["top_image_name"] else { return}
         guard let descriptionText = self.info["description"] else { return}
         
-        
-        if topImageName == "" {
-            topImageHeightConstraint.constant = EpilogueConstants.heightTopImageWithoutPhoto
-        } else {
-            topImageHeightConstraint.constant = EpilogueConstants.heightTopImage
+        if topImageHeightConstraint != nil{
+            if topImageName == "" {
+                topImageHeightConstraint.constant = EpilogueConstants.heightTopImageWithoutPhoto
+            } else {
+                topImageHeightConstraint.constant = EpilogueConstants.heightTopImage
+            }
         }
         
-        topImage.image = UIImage(named:topImageName)
+        if topImage != nil {
+            topImage.image = UIImage(named:topImageName)
+        }
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = descriptionText
         descriptionLabel.textColor = UIColor(hexString: colorText)
@@ -67,11 +74,23 @@ class EpilogueViewController: GeneralViewController {
             videoView.load(withVideoId: videoId, playerVars: playerVars)
         }
 
+        if box != nil {
+            configureBorder(box)
+        }
+        
     }
     
     func actionButton(sender:Any?) -> () {
         guard let segue = self.info["segue"] else {return}
         performSegue(withIdentifier: segue, sender: nil)
+    }
+    
+    func configureBorder(_ view:UIView){
+        let color = UIColor(hexString: colorText)
+        view.layer.cornerRadius = 6
+        view.layer.borderWidth = 2
+        //        view.layer.borderColor = UIColor(hexString:"#4C7EDAFF")?.cgColor
+        view.layer.borderColor = color?.cgColor
     }
 
     override func didReceiveMemoryWarning() {

@@ -617,6 +617,8 @@
 					<string>pantalla02_marco-1</string>
 					<key>dot_line</key>
 					<string>pantalla_40_lines</string>
+					<key>screen</key>
+					<string>one</string>
 				</dict>
 				<dict>
 					<key>content</key>
@@ -633,6 +635,8 @@
 					<string>pantalla02_marco-1</string>
 					<key>dot_line</key>
 					<string>pantalla_40_lines</string>
+					<key>screen</key>
+					<string>two</string>
 				</dict>
 				<dict>
 					<key>content</key>
@@ -649,24 +653,28 @@
 					<string>pantalla02_marco-1</string>
 					<key>dot_line</key>
 					<string>pantalla_40_lines</string>
+					<key>screen</key>
+					<string>three</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string>textDescriptionController</string>
+					<string>summaryController</string>
 					<key>box_border_background</key>
 					<string>pantalla02_marco-1</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string>textDescriptionController</string>
+					<string>jusTextController</string>
 					<key>description</key>
-					<string>Las imágenes y fotografías que publicas pueden decir mucho más de ti de lo que quisieras. \n \n Mira entre tus imágenes y busca aquellas que muestren información que no quieres que sea pública! \n \n Elimínalas o protégelas, de todas maneras recuerda que alguien ya puede tener una copia de ellas.</string>
+					<string>Las imágenes y fotografías que publicas pueden decir mucho más de ti de lo que quisieras. u015 u015 Mira entre tus imágenes y busca aquellas que muestren información que no quieres que sea pública! u015 u015 Elimínalas o protégelas, de todas maneras recuerda que alguien ya puede tener una copia de ellas.</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
-					<key>question_one</key>
+					<string>chapterEpilogueTwo</string>
+					<key>description</key>
 					<string>¿Qué imágenes con información encontraste?</string>
+					<key>top_image_name</key>
+					<string></string>
 					<key>box_border_background</key>
 					<string>pantalla02_marco-1</string>
 					<key>question_two</key>
