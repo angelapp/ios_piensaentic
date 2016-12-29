@@ -1,5 +1,6 @@
 import UIKit
 import youtube_ios_player_helper
+import Foundation
 
 struct EpilogueConstants {
     static let heightTopImage:CGFloat = 132.0
@@ -15,7 +16,8 @@ class EpilogueViewController: GeneralViewController {
     @IBOutlet var contnue: UIButton!
     @IBOutlet var backgroundImage:UIImageView!
     @IBOutlet var videoView:YTPlayerView!
-    
+
+    @IBOutlet var blankView: UIView!
     @IBOutlet var textView:UITextView!
     @IBOutlet var box:UIView!
     
@@ -37,6 +39,10 @@ class EpilogueViewController: GeneralViewController {
         if topImage != nil {
             topImage.image = UIImage(named:topImageName)
         }
+        if (descriptionText.range(of:"contraseña") != nil){
+            descriptionLabel.textContainerInset = UIEdgeInsetsMake(80, 0, 40,0)
+        }
+        
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = descriptionText
         descriptionLabel.textColor = UIColor(hexString: colorText)
@@ -97,5 +103,6 @@ class EpilogueViewController: GeneralViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 }

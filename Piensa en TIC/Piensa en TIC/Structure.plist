@@ -192,7 +192,7 @@
 				</dict>
 				<dict>
 					<key>button</key>
-					<string>pantalla_15_bot-continuar</string>
+					<string>pantalla-12_continuemos</string>
 					<key>content</key>
 					<string>chapterEpilogue</string>
 					<key>segue</key>
@@ -256,7 +256,7 @@
 					<key>content</key>
 					<string>chapterEpilogue</string>
 					<key>description</key>
-					<string>Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:u015,u2022        Wikipedia u015,u2022        ICANN</string>
+					<string>Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:u015,u2022 Wikipedia u015,u2022 ICANN</string>
 					<key>top_image_name</key>
 					<string></string>
 					<key>button</key>
