@@ -9,6 +9,7 @@ class MessageViewController: GeneralViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initialSetup()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +22,7 @@ class MessageViewController: GeneralViewController {
         guard let descriptionImageName = self.info["descriptionImage"] else { return}
         
         descriptionImage.image = UIImage(named:descriptionImageName)
-        descriptionLabel.text = String(format: headerDescription)
+        descriptionLabel.text = String(format: headerDescription.replacingOccurrences(of: "\n", with: "\n"))
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
     }
 }

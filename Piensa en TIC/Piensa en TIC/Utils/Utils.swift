@@ -1,4 +1,12 @@
 
+enum BorderPosition {
+    case Up
+    case Down
+    case Left
+    case Right
+    case AllSides
+}
+
 extension UIView {
     func drawBorder(_ color:UIColor!, y: CGFloat, key:String!, dotted:Bool) -> Void{
         guard let layer:CALayer = self.layer.value(forKey: key) as! CALayer! else {
@@ -40,6 +48,63 @@ extension UIView {
     }
 }
 
+extension UITextView {
+    func drawSeparator(_ position:BorderPosition, color:UIColor, dotted: Bool)-> () {
+        let line = CAShapeLayer.init()
+        let linePath = UIBezierPath.init()
+        
+        var y1:CGFloat = 0.0
+        var x1:CGFloat = 0.0
+        var y2:CGFloat = 0.0
+        var x2:CGFloat = 0.0
+        let width = self.bounds.size.width
+        let height = self.bounds.size.height
+        switch position {
+        case .Up:
+            y1 = 0.0
+            x1 = 0.0
+            y2 = 0.0
+            x2 = width
+            break
+        case .Down:
+            y1 = height
+            x1 = 0.0
+            y2 = height
+            x2 = width
+            break
+        case .Left:
+            y1 = 0.0
+            x1 = 0.0
+            y2 = height
+            x2 = 0.0
+            break
+        case .Right:
+            y1 = 0.0
+            x1 = width
+            y2 = height
+            x2 = width
+            break
+        default:
+            break
+        }
+        
+        linePath.move(to: CGPoint(x: x1, y: y1))
+        linePath.addLine(to: CGPoint(x: x2, y: y2))
+        
+        if dotted {
+            line.lineDashPattern = [NSNumber(value: 3.0), NSNumber(value: 1.0)]
+        }
+        
+        line.path = linePath.cgPath
+        line.fillColor = nil
+        line.opacity = 0.7
+        line.strokeColor = color.cgColor
+        
+        self.layer.addSublayer(line)
+    }
+
+}
+
 extension NSAttributedString {
     
     func stringWithWords(words:[String], fonts:[UIFont], color:UIColor) -> NSAttributedString{
@@ -71,7 +136,7 @@ extension NSAttributedString {
         for i in 0..<words.count {
             let word = words[i]
             let link = links[i]
-            let attributes = [NSLinkAttributeName:link, NSForegroundColorAttributeName:color,NSFontAttributeName:UIFont.systemFont(ofSize: 17.0)] as [String : Any]
+            let attributes = [NSLinkAttributeName:link, NSForegroundColorAttributeName:color,NSFontAttributeName:UIFont.systemFont(ofSize: 20.0)] as [String : Any]
             let subString = NSAttributedString.init(string: word, attributes: attributes)
             string.append(subString)
         }
@@ -112,6 +177,10 @@ extension String {
         }
         
         return array as [AnyObject]!
+    }
+    
+    func concatenate(_ items: Any...)-> String{
+        return (items as! [String]).flatMap{$0}.joined(separator: "")
     }
 }
 

@@ -1,14 +1,14 @@
 import UIKit
 
-class IntroViewController: GeneralViewController {
+class IntroViewController: GeneralViewController{
 
     @IBOutlet var topImage: UIImageView!
+    @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initialSetup()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,8 +21,13 @@ class IntroViewController: GeneralViewController {
         guard let descriptionText = self.info["description"] else { return}
         
         topImage.image = UIImage(named:topImageName)
-        descriptionLabel.text = String(format: descriptionText)
-        descriptionLabel.textColor = UIColor.init(hexString: colorText)
+        descriptionLabel.textColor = UIColor(hexString: self.colorText)
+        descriptionLabel.text = descriptionText
+
+        if let secondaryImageName = self.info["secondary_image"] {
+            backgroundImage.image = UIImage(named: secondaryImageName)
+            backgroundImage.isHidden = false
+        }
     }
 
 }

@@ -16,6 +16,7 @@ class MainConfigurator: NSObject {
     
     private override init() {
         super.init()
+        
         let mainBundle = Bundle.main
         guard let path = mainBundle.path(forResource: "Structure", ofType: "plist") else { return}
         guard let configurations = NSDictionary.init(contentsOfFile: path) else { return}

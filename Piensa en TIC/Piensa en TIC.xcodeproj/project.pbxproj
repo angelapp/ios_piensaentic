@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3AA321AA702C288E5D7EEB18 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */; };
+		842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842282CF1E10C88B003A9756 /* SpyFormViewController.swift */; };
+		842BC06D1E1212F0005DFBB3 /* SummarySpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */; };
+		842BC06F1E121F72005DFBB3 /* JustTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */; };
 		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
 		842D553C1E05D5C900432858 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D553A1E05D5C900432858 /* Profile.storyboard */; };
 		842D553E1E05DA7D00432858 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D553D1E05DA7D00432858 /* Utils.swift */; };
@@ -27,11 +30,18 @@
 		849294A41E0C2D8400835B67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A31E0C2D8400835B67 /* Constants.swift */; };
 		849294A61E0C58CA00835B67 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A51E0C58CA00835B67 /* Storage.swift */; };
 		84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4B5C51DF921A70077A0AE /* Menu.storyboard */; };
+		84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95DD41E0E2DC50023EA38 /* SurveySelectionViewCell.swift */; };
+		84A95DD71E0E3EA00023EA38 /* SurveyTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95DD61E0E3EA00023EA38 /* SurveyTextViewCell.swift */; };
 		84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76C31DF923C6002D36AA /* HomeViewController.swift */; };
 		84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76C61DF9244B002D36AA /* StoryboardIdentifier.swift */; };
 		84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */; };
 		84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CC1DF9273E002D36AA /* RightViewController.swift */; };
 		84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */; };
+		84E42D0B1E0F256700D9F9BD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D0A1E0F256700D9F9BD /* Network.swift */; };
+		84E42D0D1E0F3B7E00D9F9BD /* ActivityRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */; };
+		84E42D111E0F61C100D9F9BD /* ResultsSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */; };
+		84E42D131E0F626000D9F9BD /* ResultsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D121E0F626000D9F9BD /* ResultsViewCell.swift */; };
+		84E42D151E10B70500D9F9BD /* AdviceEncryptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D141E10B70500D9F9BD /* AdviceEncryptViewController.swift */; };
 		84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E814151E0CEDE6001CFBA8 /* IntroViewController.swift */; };
 		84E814181E0CEEF8001CFBA8 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E814171E0CEEF8001CFBA8 /* SurveyViewController.swift */; };
 		84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E814191E0CF0AA001CFBA8 /* AdviceViewController.swift */; };
@@ -44,6 +54,9 @@
 /* Begin PBXFileReference section */
 		1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
 		4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842282CF1E10C88B003A9756 /* SpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpyFormViewController.swift; path = Controllers/SpyFormViewController.swift; sourceTree = "<group>"; };
+		842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummarySpyFormViewController.swift; path = Controllers/SummarySpyFormViewController.swift; sourceTree = "<group>"; };
+		842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JustTextViewController.swift; path = Controllers/JustTextViewController.swift; sourceTree = "<group>"; };
 		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
 		842D553B1E05D5C900432858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		842D553D1E05DA7D00432858 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -66,12 +79,19 @@
 		849294A31E0C2D8400835B67 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		849294A51E0C58CA00835B67 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Utils/Storage.swift; sourceTree = "<group>"; };
 		84A4B5C61DF921A70077A0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
+		84A95DD41E0E2DC50023EA38 /* SurveySelectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveySelectionViewCell.swift; path = Controllers/Cell/SurveySelectionViewCell.swift; sourceTree = "<group>"; };
+		84A95DD61E0E3EA00023EA38 /* SurveyTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyTextViewCell.swift; path = Controllers/Cell/SurveyTextViewCell.swift; sourceTree = "<group>"; };
 		84AA76C31DF923C6002D36AA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Menu/HomeViewController.swift; sourceTree = "<group>"; };
 		84AA76C61DF9244B002D36AA /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardIdentifier.swift; path = Utils/StoryboardIdentifier.swift; sourceTree = "<group>"; };
 		84AA76C81DF925A2002D36AA /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = SOURCE_ROOT; };
 		84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarrouselChapterViewController.swift; path = Chapters/CarrouselChapterViewController.swift; sourceTree = "<group>"; };
 		84AA76CC1DF9273E002D36AA /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = Menu/RightViewController.swift; sourceTree = "<group>"; };
 		84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConfigurator.swift; path = Service/MainConfigurator.swift; sourceTree = "<group>"; };
+		84E42D0A1E0F256700D9F9BD /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
+		84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityRegister.swift; path = Network/ActivityRegister.swift; sourceTree = "<group>"; };
+		84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsSurveyViewController.swift; path = Controllers/ResultsSurveyViewController.swift; sourceTree = "<group>"; };
+		84E42D121E0F626000D9F9BD /* ResultsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsViewCell.swift; path = Controllers/Cell/ResultsViewCell.swift; sourceTree = "<group>"; };
+		84E42D141E10B70500D9F9BD /* AdviceEncryptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdviceEncryptViewController.swift; path = Controllers/AdviceEncryptViewController.swift; sourceTree = "<group>"; };
 		84E814151E0CEDE6001CFBA8 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = Controllers/IntroViewController.swift; sourceTree = "<group>"; };
 		84E814171E0CEEF8001CFBA8 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = Controllers/SurveyViewController.swift; sourceTree = "<group>"; };
 		84E814191E0CF0AA001CFBA8 /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdviceViewController.swift; path = Controllers/AdviceViewController.swift; sourceTree = "<group>"; };
@@ -113,11 +133,14 @@
 				84400DF71E07AF58008BE9F1 /* TextDescriptionViewController.swift */,
 				849294A11E0C290800835B67 /* EnterPasswordViewController.swift */,
 				84E814151E0CEDE6001CFBA8 /* IntroViewController.swift */,
-				84E814171E0CEEF8001CFBA8 /* SurveyViewController.swift */,
 				84E814191E0CF0AA001CFBA8 /* AdviceViewController.swift */,
 				84E8141B1E0CF63A001CFBA8 /* KnownFriendsViewController.swift */,
 				84E8141D1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift */,
 				84E8141F1E0CFEA8001CFBA8 /* MessageViewController.swift */,
+				84E42D141E10B70500D9F9BD /* AdviceEncryptViewController.swift */,
+				842282CF1E10C88B003A9756 /* SpyFormViewController.swift */,
+				842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */,
+				842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */,
 			);
 			name = Chapters;
 			sourceTree = "<group>";
@@ -133,7 +156,6 @@
 		844EDE3E1DF50A080079AC35 = {
 			isa = PBXGroup;
 			children = (
-				84E814211E0DC971001CFBA8 /* ComplexScreens.storyboard */,
 				844EDE491DF50A080079AC35 /* Piensa en TIC */,
 				844EDE481DF50A080079AC35 /* Products */,
 				732D1DF2908C5B4DFE4659EC /* Pods */,
@@ -152,6 +174,8 @@
 		844EDE491DF50A080079AC35 /* Piensa en TIC */ = {
 			isa = PBXGroup;
 			children = (
+				8478B9241DFD3D8F009D3C7A /* Controllers */,
+				84E42D091E0F253800D9F9BD /* Network */,
 				84400DFB1E07BC5E008BE9F1 /* Playground */,
 				84AA76CE1DF929FF002D36AA /* Service */,
 				84AA76C91DF9263E002D36AA /* Carrousel */,
@@ -164,11 +188,11 @@
 				844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */,
 				844EDE561DF50A090079AC35 /* Info.plist */,
 				844EDE5C1DF50A2B0079AC35 /* Structure.plist */,
+				84E814211E0DC971001CFBA8 /* ComplexScreens.storyboard */,
 				842D553A1E05D5C900432858 /* Profile.storyboard */,
 				844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */,
 				84A4B5C51DF921A70077A0AE /* Menu.storyboard */,
 				84AA76C81DF925A2002D36AA /* BridgeHeader.h */,
-				8478B9241DFD3D8F009D3C7A /* Controllers */,
 			);
 			path = "Piensa en TIC";
 			sourceTree = "<group>";
@@ -176,10 +200,31 @@
 		8478B9241DFD3D8F009D3C7A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				84A95DD31E0E2D960023EA38 /* Cell */,
+				84A95DD11E0E2B020023EA38 /* Survey */,
 				842D55411E0785D000432858 /* Chapters */,
 				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		84A95DD11E0E2B020023EA38 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */,
+				84E814171E0CEEF8001CFBA8 /* SurveyViewController.swift */,
+			);
+			name = Survey;
+			sourceTree = "<group>";
+		};
+		84A95DD31E0E2D960023EA38 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84A95DD41E0E2DC50023EA38 /* SurveySelectionViewCell.swift */,
+				84A95DD61E0E3EA00023EA38 /* SurveyTextViewCell.swift */,
+				84E42D121E0F626000D9F9BD /* ResultsViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		84AA76C21DF9236F002D36AA /* Menu */ = {
@@ -216,6 +261,15 @@
 				84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		84E42D091E0F253800D9F9BD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				84E42D0A1E0F256700D9F9BD /* Network.swift */,
+				84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		C2722923386A053A582EF805 /* Frameworks */ = {
@@ -314,7 +368,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */ = {
@@ -354,26 +408,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E42D151E10B70500D9F9BD /* AdviceEncryptViewController.swift in Sources */,
+				842BC06F1E121F72005DFBB3 /* JustTextViewController.swift in Sources */,
+				84E42D0B1E0F256700D9F9BD /* Network.swift in Sources */,
+				842BC06D1E1212F0005DFBB3 /* SummarySpyFormViewController.swift in Sources */,
 				84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */,
 				849294A41E0C2D8400835B67 /* Constants.swift in Sources */,
 				84E814181E0CEEF8001CFBA8 /* SurveyViewController.swift in Sources */,
 				844EDE4D1DF50A090079AC35 /* ViewController.swift in Sources */,
+				84E42D111E0F61C100D9F9BD /* ResultsSurveyViewController.swift in Sources */,
 				842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */,
 				849294A21E0C290800835B67 /* EnterPasswordViewController.swift in Sources */,
 				84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */,
+				84E42D131E0F626000D9F9BD /* ResultsViewCell.swift in Sources */,
 				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */,
 				84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */,
+				842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84400DF81E07AF58008BE9F1 /* TextDescriptionViewController.swift in Sources */,
 				84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */,
 				84400DF61E07AE16008BE9F1 /* ImageContentViewController.swift in Sources */,
 				842D55401E05DFB200432858 /* ProfileViewController.swift in Sources */,
+				84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */,
 				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,
 				84E814201E0CFEA8001CFBA8 /* MessageViewController.swift in Sources */,
 				84E8141C1E0CF63A001CFBA8 /* KnownFriendsViewController.swift in Sources */,
 				842D553E1E05DA7D00432858 /* Utils.swift in Sources */,
+				84E42D0D1E0F3B7E00D9F9BD /* ActivityRegister.swift in Sources */,
 				84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */,
+				84A95DD71E0E3EA00023EA38 /* SurveyTextViewCell.swift in Sources */,
 				84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */,
 				849294A61E0C58CA00835B67 /* Storage.swift in Sources */,
 				8478B9261DFD3DD3009D3C7A /* InformationViewController.swift in Sources */,
@@ -429,6 +493,7 @@
 				84E814221E0DC971001CFBA8 /* Base */,
 			);
 			name = ComplexScreens.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
