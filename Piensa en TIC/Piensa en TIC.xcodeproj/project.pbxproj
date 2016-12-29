@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18446CC01E14DC6500434AFB /* LogginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446CBF1E14DC6500434AFB /* LogginViewController.swift */; };
+		18446CC21E14E0A400434AFB /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */; };
 		3AA321AA702C288E5D7EEB18 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */; };
 		842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842282CF1E10C88B003A9756 /* SpyFormViewController.swift */; };
 		842BC06D1E1212F0005DFBB3 /* SummarySpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18446CBF1E14DC6500434AFB /* LogginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogginViewController.swift; sourceTree = "<group>"; };
+		18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
 		4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842282CF1E10C88B003A9756 /* SpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpyFormViewController.swift; path = Controllers/SpyFormViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				84A95DD11E0E2B020023EA38 /* Survey */,
 				842D55411E0785D000432858 /* Chapters */,
 				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
+				18446CBF1E14DC6500434AFB /* LogginViewController.swift */,
+				18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				TargetAttributes = {
 					844EDE461DF50A080079AC35 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 6DX6UMAY8Y;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -424,12 +431,14 @@
 				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */,
 				84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */,
+				18446CC01E14DC6500434AFB /* LogginViewController.swift in Sources */,
 				842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84400DF81E07AF58008BE9F1 /* TextDescriptionViewController.swift in Sources */,
 				84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */,
 				84400DF61E07AE16008BE9F1 /* ImageContentViewController.swift in Sources */,
 				842D55401E05DFB200432858 /* ProfileViewController.swift in Sources */,
+				18446CC21E14E0A400434AFB /* PasswordRecoveryViewController.swift in Sources */,
 				84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */,
 				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,
 				84E814201E0CFEA8001CFBA8 /* MessageViewController.swift in Sources */,
@@ -595,8 +604,9 @@
 			baseConfigurationReference = DFEF65DEE6C2D47F2CFFE753 /* Pods-Piensa en TIC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6DX6UMAY8Y;
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -613,7 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6DX6UMAY8Y;
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
