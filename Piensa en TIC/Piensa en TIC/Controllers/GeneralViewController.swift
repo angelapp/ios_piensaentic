@@ -136,5 +136,10 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         
     }
+    
+    
+    func formattedText(_ word:String) -> String{
+        return word.replacingOccurrences(of: "u015", with: "\n")
+    }
 
 }

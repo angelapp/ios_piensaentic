@@ -510,7 +510,7 @@
 					<key>top_image_name</key>
 					<string>pantalla02_titulo</string>
 					<key>description</key>
-					<string>Escribe un mensaje secreto para tu mejor amigo o amiga, comienza con algo como: Hoy quiero contarte que... \n \n Encríptalo, tómale una foto y envíalo por el sistema de mensajería que más te guste. \n \n ¡No olvides contarle a tu contacto como descifrarlo!</string>
+					<string>Escribe un mensaje secreto para tu mejor amigo o amiga, comienza con algo como: Hoy quiero contarte que... u015 u015 Encríptalo, tómale una foto y envíalo por el sistema de mensajería que más te guste. u015 u015 ¡No olvides contarle a tu contacto como descifrarlo!</string>
 					<key>button</key>
 					<string>pantalla02_btn_enviar</string>
 					<key>buttonEvent</key>

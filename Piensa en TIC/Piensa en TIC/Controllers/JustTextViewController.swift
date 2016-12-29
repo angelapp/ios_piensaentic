@@ -15,10 +15,6 @@ class JustTextViewController: GeneralViewController {
         guard let text = self.info["description"] else {return}
         textLabel.text = formattedText(text)
     }
-    
-    func formattedText(_ word:String) -> String{
-        return word.replacingOccurrences(of: "u015", with: "\n")
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

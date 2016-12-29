@@ -136,7 +136,7 @@ extension NSAttributedString {
         for i in 0..<words.count {
             let word = words[i]
             let link = links[i]
-            let attributes = [NSLinkAttributeName:link, NSForegroundColorAttributeName:color,NSFontAttributeName:UIFont.systemFont(ofSize: 17.0)] as [String : Any]
+            let attributes = [NSLinkAttributeName:link, NSForegroundColorAttributeName:color,NSFontAttributeName:UIFont.systemFont(ofSize: 20.0)] as [String : Any]
             let subString = NSAttributedString.init(string: word, attributes: attributes)
             string.append(subString)
         }

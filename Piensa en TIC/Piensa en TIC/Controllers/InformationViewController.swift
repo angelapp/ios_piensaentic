@@ -15,7 +15,7 @@ class InformationViewController: GeneralViewController {
         guard let descriptionText = self.info["description"] else { return}
         
         topImage.image = UIImage(named:imageName)
-        descriptionLabel.text = descriptionText
+        descriptionLabel.text = formattedText(descriptionText)
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
         
         if let buttonImageName = self.info["button"] {
