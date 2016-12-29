@@ -9,6 +9,7 @@ class GeneralViewController: UIViewController {
     var imageSaved:UIImage!
     var metadata:AnyObject!
     let storage = Storage.shared
+    var delegate:CompleteChapterDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()

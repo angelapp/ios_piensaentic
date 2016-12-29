@@ -86,9 +86,10 @@ class EpilogueViewController: GeneralViewController {
         
     }
     
-    func actionButton(sender:Any?) -> () {
+    @IBAction func actionButton(sender:Any?) -> () {
         guard let segue = self.info["segue"] else {return}
-        performSegue(withIdentifier: segue, sender: nil)
+        guard delegate != nil else {return}
+        delegate.processChapter()
     }
     
     func configureBorder(_ view:UIView){
