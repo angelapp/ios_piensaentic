@@ -44,6 +44,7 @@ class HomeViewController: MFSideMenuContainerViewController {
         (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
         (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
         (navigationController as! CarrouselChapterViewController).generalContent = content
+        (navigationController as! CarrouselChapterViewController).delegate = self
         
         (rightSideMenuViewController as! RightViewController).delegate = self
         
@@ -76,6 +77,7 @@ extension HomeViewController: SelectRightMenuItem {
         (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
         (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
         (navigationController as! CarrouselChapterViewController).generalContent = content
+        (navigationController as! CarrouselChapterViewController).delegate = self
         
         self.centerViewController = navigationController
     }

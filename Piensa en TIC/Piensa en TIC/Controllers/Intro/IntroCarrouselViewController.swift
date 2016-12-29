@@ -1,19 +1,16 @@
-
 import UIKit
 
-protocol CompleteChapterDelegate {
-    func processChapter()
+protocol DismissIntro {
+    func dismiss()
 }
 
-class CarrouselChapterViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
+class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     @IBOutlet var contentView:UIView!
     @IBOutlet var backgroundImage:UIImageView!
     var pageViewController:UIPageViewController!
-    var imagesArray:NSArray!
     var imageName:String!
+    var pagesArray:[[String:String]]!
     var generalContent:NSDictionary!
-    var delegate:SelectRightMenuItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +20,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let imageName = imageName else { return}
+        let imageName = "actintro_fondo"
         backgroundImage.image = UIImage(named:imageName)
     }
     
@@ -33,7 +30,10 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     }
     
     func initialSetup() {
-//        imagesArray = [""]
+        pagesArray = [[String:String]]()
+        pagesArray.append(["top_image":"logo","description":"Atrévete a superar retos y dominar la tecnología con actividades útiles para enfrentar los riesgos digitales."])
+        pagesArray.append(["top_image":"logo", "description":"Lleve tu propio diario digital y aprende consejos de seguridad navegando de forma segura.", "background":"intro_bot_comencemos"])
+        
         
         pageViewController = UIPageViewController.init(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.horizontal, options: nil)
         pageViewController.delegate = self
@@ -50,57 +50,35 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         pageViewController.view.frame = pageViewRect
         pageViewController.didMove(toParentViewController: self)
         
-        for subview in self.pageViewController.view.subviews {
-            if subview.isKind(of: UIPageControl.self) {
-                let pageControl = subview as! UIPageControl
-                pageControl.pageIndicatorTintColor = UIColor(hexString:generalContent["pageIndicatorColorInactive"] as! String)
-                pageControl.currentPageIndicatorTintColor = UIColor(hexString:generalContent["pageIndicatorColorActive"] as! String)
-            }
-        }
+//        for subview in self.pageViewController.view.subviews {
+//            if subview.isKind(of: UIPageControl.self) {
+//                let pageControl = subview as! UIPageControl
+//                pageControl.pageIndicatorTintColor = UIColor(hexString:generalContent["pageIndicatorColorInactive"] as! String)
+//                pageControl.currentPageIndicatorTintColor = UIColor(hexString:generalContent["pageIndicatorColorActive"] as! String)
+//            }
+//        }
     }
     
-    func viewController(index:Int, storyboard:UIStoryboard) -> GeneralViewController! {
-        guard imagesArray.count >= 0 && index < imagesArray.count else { return nil }
+    func viewController(index:Int, storyboard:UIStoryboard) -> UIViewController! {
+        guard pagesArray.count >= 0 && index < pagesArray.count else { return nil }
         
-        let content = imagesArray[index] as! [String:String]
-        guard let identifier = content["content"] as String! else {return nil}
         
-        if identifier == "surveyController" || identifier == "resultsController" {
-            let temporalStoryboard = UIStoryboard.init(name: "ComplexScreens", bundle: nil)
-            let viewController = temporalStoryboard.instantiateViewController(withIdentifier: identifier) as! GeneralViewController
-            viewController.index = index
-            viewController.info = content
-            viewController.delegate = self
-            if let colorText = generalContent["textColor"] {
-                viewController.colorText = colorText as! String
-            }
-            
-            
-            return viewController
-        }
-        
-        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! GeneralViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "introInfoController") as! IntroInformationViewController
+        let content = pagesArray[index]
         viewController.index = index
-        viewController.info = content
+        viewController.content = content
         viewController.delegate = self
-        if let colorText = generalContent["textColor"] {
-            viewController.colorText = colorText as! String
-        }
-        
-        
         return viewController
     }
     
-    func indexOf(viewController:GeneralViewController) -> Int!{
+    func indexOf(viewController:IntroInformationViewController) -> Int!{
         guard let object = viewController.index else {return nil}
-//        return imagesArray.index(where: { (index:Int) in
-//            index == object
-//        })!
+
         return object
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = self.indexOf(viewController: viewController as! GeneralViewController) else {
+        guard let viewControllerIndex = self.indexOf(viewController: viewController as! IntroInformationViewController) else {
             return nil
         }
         
@@ -110,7 +88,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
             return nil
         }
         
-        guard imagesArray.count > previousIndex else {
+        guard pagesArray.count > previousIndex else {
             return nil
         }
         
@@ -119,12 +97,12 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        guard let viewControllerIndex = self.indexOf(viewController:viewController as! GeneralViewController) else {
+        guard let viewControllerIndex = self.indexOf(viewController:viewController as! IntroInformationViewController) else {
             return nil
         }
         
         let nextIndex = viewControllerIndex + 1
-        let orderedViewControllersCount = imagesArray.count
+        let orderedViewControllersCount = pagesArray.count
         
         guard orderedViewControllersCount != nextIndex else {
             return nil
@@ -138,7 +116,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return imagesArray.count
+        return pagesArray.count
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
@@ -159,13 +137,12 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         return UIPageViewControllerSpineLocation.min
         
     }
+
 }
 
-extension CarrouselChapterViewController: CompleteChapterDelegate {
-    func processChapter() {
-        guard delegate != nil else {
-            return
-        }
-        delegate.selectRightMenuItem(content: "chapter1")
+extension IntroCarrouselViewController: DismissIntro {
+    func dismiss() {
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        present(storyboard.instantiateInitialViewController()!, animated: false, completion: nil)
     }
 }
