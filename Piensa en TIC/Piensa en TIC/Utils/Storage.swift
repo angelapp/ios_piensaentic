@@ -54,4 +54,13 @@ class Storage: NSObject {
         let result = appState.object(forKey: key) as! String!
         return result
     }
+    
+    func saveChapter(_ key:String, value:Int) {
+        appState.set(value, forKey: key)
+    }
+    
+    func getIntFromKey(key:String) -> Int! {
+        let result = appState.integer(forKey: key)
+        return result
+    }
 }

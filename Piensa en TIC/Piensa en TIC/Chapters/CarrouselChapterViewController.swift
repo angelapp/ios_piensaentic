@@ -86,7 +86,9 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         if let colorText = generalContent["textColor"] {
             viewController.colorText = colorText as! String
         }
-        
+        if let activityName = generalContent["activity_name"] {
+            viewController.activityName = activityName as! String
+        }
         
         return viewController
     }
