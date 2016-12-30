@@ -88,6 +88,7 @@ extension HomeViewController: SelectRightMenuItem {
             guard let index = Int(subString) else {return}
             showChapter(index)
         }
+        Network.sendProgress()
         menuContainerViewController.setMenuState(MFSideMenuStateClosed, completion: nil)
     }
 }

@@ -8,6 +8,7 @@ class GeneralViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     var imageSaved:UIImage!
     var metadata:AnyObject!
+    var activityName:String!
     let storage = Storage.shared
     var delegate:CompleteChapterDelegate!
 

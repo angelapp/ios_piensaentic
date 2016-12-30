@@ -87,8 +87,9 @@ class EpilogueViewController: GeneralViewController {
     }
     
     @IBAction func actionButton(sender:Any?) -> () {
-        guard let segue = self.info["segue"] else {return}
+        guard let _ = self.info["segue"] else {return}
         guard delegate != nil else {return}
+        storage.saveChapter(activityName, value: 1)
         delegate.processChapter()
     }
     

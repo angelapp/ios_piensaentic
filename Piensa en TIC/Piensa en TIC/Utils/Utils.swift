@@ -1,3 +1,4 @@
+import Alamofire
 
 enum BorderPosition {
     case Up
@@ -220,4 +221,13 @@ extension UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
     
+}
+
+extension Request {
+    public func debugLog() -> Self {
+        #if DEBUG
+            debugPrint(self)
+        #endif
+        return self
+    }
 }
