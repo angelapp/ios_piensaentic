@@ -27,6 +27,9 @@
 		844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */; };
 		844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5C1DF50A2B0079AC35 /* Structure.plist */; };
 		844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */; };
+		8473BBB91E176F8E0027FEFD /* PreviewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */; };
+		8473BBBB1E1770660027FEFD /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473BBBA1E1770660027FEFD /* TermsViewController.swift */; };
+		8473BBBD1E1772650027FEFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473BBBC1E1772650027FEFD /* User.swift */; };
 		8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */; };
 		8478B9261DFD3DD3009D3C7A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */; };
 		849294A21E0C290800835B67 /* EnterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A11E0C290800835B67 /* EnterPasswordViewController.swift */; };
@@ -79,6 +82,9 @@
 		844EDE561DF50A090079AC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844EDE5C1DF50A2B0079AC35 /* Structure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Structure.plist; sourceTree = "<group>"; };
 		844EDE5F1DF67A7F0079AC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chapters.storyboard; sourceTree = "<group>"; };
+		8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewProfileViewController.swift; path = Controllers/PreviewProfileViewController.swift; sourceTree = "<group>"; };
+		8473BBBA1E1770660027FEFD /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = Controllers/TermsViewController.swift; sourceTree = "<group>"; };
+		8473BBBC1E1772650027FEFD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralViewController.swift; path = Controllers/GeneralViewController.swift; sourceTree = "<group>"; };
 		8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Controllers/InformationViewController.swift; sourceTree = "<group>"; };
 		849294A11E0C290800835B67 /* EnterPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterPasswordViewController.swift; path = Controllers/EnterPasswordViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
+				8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */,
+				8473BBBA1E1770660027FEFD /* TermsViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 				844EDE561DF50A090079AC35 /* Info.plist */,
 				844EDE5C1DF50A2B0079AC35 /* Structure.plist */,
 				84AA76C81DF925A2002D36AA /* BridgeHeader.h */,
+				8473BBBC1E1772650027FEFD /* User.swift */,
 			);
 			path = "Piensa en TIC";
 			sourceTree = "<group>";
@@ -402,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */ = {
@@ -460,11 +469,13 @@
 				84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */,
 				84293A541E14D161008535A2 /* IntroInformationViewController.swift in Sources */,
 				842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */,
+				8473BBBD1E1772650027FEFD /* User.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84400DF81E07AF58008BE9F1 /* TextDescriptionViewController.swift in Sources */,
 				84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */,
 				84400DF61E07AE16008BE9F1 /* ImageContentViewController.swift in Sources */,
 				842D55401E05DFB200432858 /* ProfileViewController.swift in Sources */,
+				8473BBB91E176F8E0027FEFD /* PreviewProfileViewController.swift in Sources */,
 				84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */,
 				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,
 				84293A501E14CE6E008535A2 /* IntroCarrouselViewController.swift in Sources */,
@@ -475,6 +486,7 @@
 				84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */,
 				84A95DD71E0E3EA00023EA38 /* SurveyTextViewCell.swift in Sources */,
 				84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */,
+				8473BBBB1E1770660027FEFD /* TermsViewController.swift in Sources */,
 				849294A61E0C58CA00835B67 /* Storage.swift in Sources */,
 				8478B9261DFD3DD3009D3C7A /* InformationViewController.swift in Sources */,
 			);

@@ -1,13 +1,32 @@
 import Alamofire
+import SwiftyJSON
 
 struct NetworkConstants {
     static let url = "https://piensaentic.co"
     static let api = "/api/"
     static let registerUserView = "register-user/"
     static let registerActivityFinishedView = "activity-register/"
+    static let apiKey = "50134DF39-D02F-4EBD-34JK3-55KJK3-222JNM"
+    static let headerApi = "APIID"
 }
 
 class Network: NSObject {
+    class func setupRequest(_ url:String, parameters:[String:AnyObject]) -> URLRequest! {
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(NetworkConstants.apiKey, forHTTPHeaderField: NetworkConstants.headerApi)
+        let data = try! JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
+        
+        let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        if let json = json {
+            print(json)
+        }
+        request.httpBody = json!.data(using: String.Encoding.utf8.rawValue)
+        
+        return request
+    }
+    
     class func getChapterList() -> [[String:AnyObject]]! {
         guard let menu = MainConfigurator.sharedConfiguration.menuContent() else { return nil}
         let storage = Storage.shared
@@ -36,12 +55,82 @@ class Network: NSObject {
         
         let url = [NetworkConstants.url,NetworkConstants.api, NetworkConstants.registerActivityFinishedView].flatMap{$0}.joined(separator: "")
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).debugLog().responseData { (result) in
+        guard let request = setupRequest(url, parameters: parameters as [String : AnyObject]) else {return}
+        
+        Alamofire.request(request).debugLog().responseData { (result) in
             guard let data = result.data, let utf8Text = String(data: data, encoding: .utf8) else {
                 return
             }
             
             print("Response Server: ",utf8Text)
+        }
+    }
+    
+    class func createUser(termsConditionalAccepted: Bool, completion: @escaping (ResponseCallback) -> ()){
+        let storage = Storage.shared
+        
+        guard let data = storage.getParameterFromKey(key: .user) as! Data! else {
+            completion(ResponseCallback.error(error: CustomError.NoData(description: "Error retrieving data")))
+            return
+        }
+        
+        guard let dic = User.unarchive(data: data) else {
+            completion(ResponseCallback.error(error: CustomError.NoData(description: "Error retrieving data")))
+            return
+        }
+
+        let user = User.initUser(fromDic: dic)
+        
+        let parameters: Parameters = [
+            "first_name": user.firstName,
+            "nick_name": user.nickName,
+            "birthdate": user.birthDate,
+            "email": user.email,
+            "terms_conditions_accepted": termsConditionalAccepted
+        ]
+        
+        let url = [NetworkConstants.url,NetworkConstants.api, NetworkConstants.registerUserView].flatMap{$0}.joined(separator: "")
+        
+        guard let request = setupRequest(url, parameters: parameters as [String:AnyObject]) else {
+            completion(ResponseCallback.error(error: CustomError.NoData(description: "Error creating request")))
+            return
+        }
+        
+        Alamofire.request(request).debugLog().responseJSON { (dataResult) in
+            guard dataResult.response != nil else {return}
+            guard let data = dataResult.data, let utf8Text = String(data: data, encoding: .utf8) else {
+                completion(ResponseCallback.error(error: CustomError.NoData(description: "Error parsing result")))
+                return
+            }
+            
+            guard let response = dataResult.response else {
+                completion(ResponseCallback.error(error: CustomError.NoData(description: "Error response is nil")))
+                return
+            }
+            
+            let json = JSON(data: data)
+            
+            print("Response Server - create user: ",dataResult.response)
+            print("Response Server - create user: ",dataResult.result)
+            print("Response Server - create user: ",data)
+            print("Response Server - create user: ",utf8Text)
+            print("Response Server - create user: ",json)
+            
+            var result:Bool = false
+            
+            switch response.statusCode {
+                case 400:
+                    break
+                case 404:
+                    break
+                case 200:
+                    storage.saveParameter(key: .email, value: json["email"].stringValue as AnyObject)
+                    result = true
+                    break
+                default: break
+            }
+            
+            completion(ResponseCallback.succeeded(succeeded: result))
         }
     }
 }

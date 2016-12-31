@@ -6,6 +6,8 @@ class TextDescriptionViewController: GeneralViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var image: UIImageView!
     @IBOutlet var exampleLabel: UILabel!
+    @IBOutlet var topImageConstraint: NSLayoutConstraint!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,7 +27,9 @@ class TextDescriptionViewController: GeneralViewController {
         guard let imageName = self.info["image"] else {return}
         guard let example = self.info["example"] else {return}
         
-        
+        if topImageName == "" {
+            topImageConstraint.constant = 20.0
+        }
         
         topImage.image = UIImage(named:topImageName)
         descriptionLabel.text = String(format: descriptionText)

@@ -33,6 +33,13 @@ class MainConfigurator: NSObject {
         return content
     }
     
+    func preface() -> NSDictionary!{
+        guard let servicesKeys = self.servicesKeys as NSDictionary! else { return nil}
+        let identifier = "preface"
+        guard let content = servicesKeys[identifier] as! NSDictionary! else {return nil}
+        return content
+    }
+    
     func countKeysByPrefix(_ content:NSDictionary,prefix:String)-> Int{
         
         let keysByPrefix = content.allKeys.filter { (r) -> Bool in

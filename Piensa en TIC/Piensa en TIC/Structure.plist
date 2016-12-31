@@ -105,36 +105,37 @@
 		</dict>
 		<key>preface</key>
 		<dict>
-			<key>page0</key>
-			<dict>
-				<key>content</key>
-				<string>top_image_name|form</string>
-				<key>top_image_name</key>
-				<string>pantalla-04_sobre_mi</string>
-				<key>form</key>
-				<string>name|heroe|birthdate|email</string>
-			</dict>
-			<key>page1</key>
-			<dict>
-				<key>content</key>
-				<string>second_background_image|info</string>
-				<key>segue</key>
-				<string>menu</string>
-				<key>alert</key>
-				<string>terms and conditions</string>
-				<key>second_background_image</key>
-				<string>pantalla-06_circulo</string>
-				<key>info</key>
-				<string>%@ de ahora en adelante serás %@ naciste el %d de %d del %d tu correo electrónico es %@</string>
-			</dict>
-			<key>background name</key>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>profileController</string>
+					<key>top_image_name</key>
+					<string>pantalla-04_sobre_mi</string>
+					<key>form</key>
+					<string>name|heroe|birthdate|email</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>previewController</string>
+					<key>segue</key>
+					<string>menu</string>
+					<key>alert</key>
+					<string>terms and conditions</string>
+					<key>second_background_image</key>
+					<string>pantalla-06_circulo</string>
+					<key>format</key>
+					<string>%@ de ahora en adelante serás %@ naciste el %@ tu correo electrónico es %@</string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
 			<string>act1_fondo</string>
 			<key>textColor</key>
-			<string>#123159</string>
+			<string>#123159FF</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>#237e99</string>
+			<string>#237e99FF</string>
 			<key>pageIndicatorColorActive</key>
-			<string>#123159</string>
+			<string>#123159FF</string>
 			<key>activity_name</key>
 			<string>Perfil</string>
 			<key>menu_bullet_activity</key>

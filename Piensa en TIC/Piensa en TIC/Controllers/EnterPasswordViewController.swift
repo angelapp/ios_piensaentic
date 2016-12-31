@@ -19,8 +19,13 @@ class EnterPasswordViewController: GeneralViewController {
     }
     
     func initialSetup(){
+        var nickName: String = ""
+        if let user = getUser() {
+            nickName = user.nickName
+        }
+        
         guard let descriptionText = self.info["description"] else { return}
-        descriptionLabel.text = descriptionText
+        descriptionLabel.text = String(format: descriptionText, nickName)
         descriptionLabel.textColor = UIColor(hexString:colorText)
     }
     

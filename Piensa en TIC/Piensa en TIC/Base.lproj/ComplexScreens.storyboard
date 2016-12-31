@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oIr-Hm-FTu">
-                                <rect key="frame" x="0.0" y="154" width="375" height="461"/>
+                                <rect key="frame" x="0.0" y="154" width="375" height="513"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="surveySelectionIdentifier" rowHeight="50" id="ffc-gf-9yV" customClass="SurveySelectionViewCell" customModule="Piensa_en_TIC" customModuleProvider="target">
@@ -136,7 +136,7 @@
                             <constraint firstItem="kp4-AN-VYk" firstAttribute="leading" secondItem="Lqf-O7-2ut" secondAttribute="leading" id="ffk-sd-141"/>
                             <constraint firstAttribute="trailing" secondItem="oIr-Hm-FTu" secondAttribute="trailing" id="i8I-AH-uke"/>
                             <constraint firstAttribute="trailing" secondItem="kp4-AN-VYk" secondAttribute="trailing" id="sKh-Nd-a8D"/>
-                            <constraint firstItem="S24-X9-zUf" firstAttribute="top" secondItem="oIr-Hm-FTu" secondAttribute="bottom" constant="52" id="yld-gM-rrq"/>
+                            <constraint firstItem="S24-X9-zUf" firstAttribute="top" secondItem="oIr-Hm-FTu" secondAttribute="bottom" id="yld-gM-rrq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -169,7 +169,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZSs-pO-ZPm">
-                                <rect key="frame" x="0.0" y="68" width="375" height="557"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="55" id="Y9d-ip-D34" customClass="ResultsViewCell" customModule="Piensa_en_TIC" customModuleProvider="target">
@@ -235,7 +235,7 @@
                             <constraint firstItem="ZSs-pO-ZPm" firstAttribute="top" secondItem="1Ti-ns-x8g" secondAttribute="bottom" constant="48" id="DS2-B5-Uh2"/>
                             <constraint firstAttribute="trailing" secondItem="ZSs-pO-ZPm" secondAttribute="trailing" id="DuE-px-bo2"/>
                             <constraint firstAttribute="trailing" secondItem="gkd-ql-IYY" secondAttribute="trailing" id="INj-2W-HCQ"/>
-                            <constraint firstItem="qb5-NZ-TYD" firstAttribute="top" secondItem="ZSs-pO-ZPm" secondAttribute="bottom" constant="42" id="Pob-ZV-JdF"/>
+                            <constraint firstItem="qb5-NZ-TYD" firstAttribute="top" secondItem="ZSs-pO-ZPm" secondAttribute="bottom" id="Pob-ZV-JdF"/>
                             <constraint firstItem="ZSs-pO-ZPm" firstAttribute="leading" secondItem="PvR-Wq-0sz" secondAttribute="leading" id="gqR-JD-Lzc"/>
                             <constraint firstItem="gkd-ql-IYY" firstAttribute="top" secondItem="1Ti-ns-x8g" secondAttribute="bottom" constant="15" id="m0X-9Z-YCR"/>
                             <constraint firstItem="gkd-ql-IYY" firstAttribute="leading" secondItem="PvR-Wq-0sz" secondAttribute="leading" id="qNI-Ri-HCA"/>

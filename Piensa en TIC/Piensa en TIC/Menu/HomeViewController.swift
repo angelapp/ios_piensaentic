@@ -3,6 +3,7 @@ import MFSideMenu
 
 protocol SelectRightMenuItem {
     func selectRightMenuItem(content:String!)
+    func selectRightMenuItemAndSendProgress(content:String!)
 }
 
 class HomeViewController: MFSideMenuContainerViewController {
@@ -82,13 +83,37 @@ extension HomeViewController: SelectRightMenuItem {
         self.centerViewController = navigationController
     }
     
+    func showPreface() {
+        content = mainConfigurator.preface()
+        
+        let propertiesStoryboard = UIStoryboard.init(name: "Profile", bundle: Bundle.main)
+        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
+        
+        let arrayContent:NSArray = content!["pages"] as! NSArray
+        let backgroundImageName = content!["backgroundName"] as! String
+        
+        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
+        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
+        (navigationController as! CarrouselChapterViewController).generalContent = content
+        (navigationController as! CarrouselChapterViewController).delegate = self
+        
+        self.centerViewController = navigationController
+    }
+    
     func selectRightMenuItem(content: String!) {
         if content.contains("chapter"){
             let subString = content.replacingOccurrences(of: "chapter", with: "")
             guard let index = Int(subString) else {return}
             showChapter(index)
+        } else if content.contains("preface") {
+            showPreface()
         }
-        Network.sendProgress()
+        
         menuContainerViewController.setMenuState(MFSideMenuStateClosed, completion: nil)
+    }
+    
+    func selectRightMenuItemAndSendProgress(content: String!) {
+        Network.sendProgress()
+        selectRightMenuItem(content: content)
     }
 }
