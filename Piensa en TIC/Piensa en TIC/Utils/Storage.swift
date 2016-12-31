@@ -50,9 +50,19 @@ class Storage: NSObject {
         appState.synchronize()
     }
     
+    func saveParameter(key:Keys, value:AnyObject){
+        appState.set(value, forKey: key.rawValue)
+        appState.synchronize()
+    }
+    
     func getStringFromKey(key:String) -> String! {
         let result = appState.object(forKey: key) as! String!
         return result
+    }
+    
+    func getParameterFromKey(key: Keys) -> AnyObject! {
+        let result = appState.object(forKey: key.rawValue)
+        return result as? AnyObject
     }
     
     func saveChapter(_ key:String, value:Int) {

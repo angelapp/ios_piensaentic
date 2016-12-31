@@ -5,6 +5,11 @@ protocol CompleteChapterDelegate {
     func processChapter()
 }
 
+protocol DataSourceEnableSwipe {
+    func enableSwipe()
+    func disableSwipe()
+}
+
 class CarrouselChapterViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     @IBOutlet var contentView:UIView!
@@ -71,6 +76,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
             viewController.index = index
             viewController.info = content
             viewController.delegate = self
+            viewController.delegateSwipe = self
             if let colorText = generalContent["textColor"] {
                 viewController.colorText = colorText as! String
             }
@@ -83,6 +89,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         viewController.index = index
         viewController.info = content
         viewController.delegate = self
+        viewController.delegateSwipe = self
         if let colorText = generalContent["textColor"] {
             viewController.colorText = colorText as! String
         }
@@ -168,6 +175,24 @@ extension CarrouselChapterViewController: CompleteChapterDelegate {
         guard delegate != nil else {
             return
         }
-        delegate.selectRightMenuItem(content: "chapter1")
+        delegate.selectRightMenuItemAndSendProgress(content: "chapter0")
+    }
+}
+
+extension CarrouselChapterViewController: DataSourceEnableSwipe {
+    func enableSwipe() {
+        for view in self.pageViewController!.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = true
+            }
+        }
+    }
+    
+    func disableSwipe() {
+        for view in self.pageViewController!.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+        }
     }
 }

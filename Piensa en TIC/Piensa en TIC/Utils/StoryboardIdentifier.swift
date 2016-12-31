@@ -15,4 +15,7 @@ enum StoryboardIdentifier {
     
     //MARK: enter password
     static let enterPassword = "enterPasswordController"
+    
+    //MARK: terms and conditions alert
+    static let termsController = "termsController"
 }

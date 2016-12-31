@@ -11,6 +11,7 @@ class GeneralViewController: UIViewController {
     var activityName:String!
     let storage = Storage.shared
     var delegate:CompleteChapterDelegate!
+    var delegateSwipe:DataSourceEnableSwipe!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,4 +145,13 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
         return word.replacingOccurrences(of: "u015", with: "\n")
     }
 
+}
+
+extension GeneralViewController {
+    func getUser() -> User! {
+        guard let data = storage.getParameterFromKey(key: .user) as! Data! else { return nil}
+        guard let dic = User.unarchive(data: data) else { return nil}
+        let user = User.initUser(fromDic: dic)
+        return user
+    }
 }
