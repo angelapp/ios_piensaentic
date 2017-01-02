@@ -23,6 +23,7 @@ class HomeViewController: MFSideMenuContainerViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        rightPanel()
         self.initialSetup()
     }
     
@@ -34,7 +35,7 @@ class HomeViewController: MFSideMenuContainerViewController {
     //MARK: Initial Setup
     func initialSetup() -> (){
         guard let nextChapter = getNextChapter() else {
-            showChapter(0)
+            showPreface()
             return
         }
         if nextChapter.contains("chapter") {
@@ -44,31 +45,20 @@ class HomeViewController: MFSideMenuContainerViewController {
             if nextChapter == "preface" {
                 showPreface()
             } else {
-                
+                showCredits()
             }
             
         }
+    }
+    
+    //MARK: setup right panel
+    func rightPanel(){
+        let homeStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
+        let rightSideMenuViewController = homeStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.rightMenu)
         
+        (rightSideMenuViewController as! RightViewController).delegate = self
         
-        
-        
-//        let homeStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
-//        let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
-//        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
-//        let rightSideMenuViewController = homeStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.rightMenu)
-//        
-//        let arrayContent:NSArray = content!["pages"] as! NSArray
-//        let backgroundImageName = content!["backgroundName"] as! String
-//        
-//        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
-//        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
-//        (navigationController as! CarrouselChapterViewController).generalContent = content
-//        (navigationController as! CarrouselChapterViewController).delegate = self
-//        
-//        (rightSideMenuViewController as! RightViewController).delegate = self
-//        
-//        self.rightMenuViewController = rightSideMenuViewController
-//        self.centerViewController = navigationController
+        self.rightMenuViewController = rightSideMenuViewController
     }
     
     //MARK: Controller Actions
@@ -157,6 +147,8 @@ extension HomeViewController: SelectRightMenuItem {
             showChapter(index)
         } else if content.contains("preface") {
             showPreface()
+        } else if content.contains("infocredits") {
+            showCredits()
         }
         
         menuContainerViewController.setMenuState(MFSideMenuStateClosed, completion: nil)
@@ -164,7 +156,7 @@ extension HomeViewController: SelectRightMenuItem {
     
     func selectRightMenuItemAndSendProgress(content: String!) {
         Network.sendProgress()
-        selectRightMenuItem(content: content)
+        initialSetup()
     }
 }
 

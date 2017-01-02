@@ -14,13 +14,6 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let user = Network.getUser() else {
-            self.initialSetup()
-            return
-        }
-        
-        dismiss()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +21,20 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
         
         let imageName = "actintro_fondo"
         backgroundImage.image = UIImage(named:imageName)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let _ = Network.getUser() else {
+            self.initialSetup()
+            return
+        }
+        
+        UIView.animate(withDuration: 0, delay: 1, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+            self.dismiss()
+        }, completion: {_ in
+        }
+        )
     }
     
     override func didReceiveMemoryWarning() {

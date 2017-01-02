@@ -132,6 +132,23 @@ extension NSAttributedString {
         return string
     }
     
+    func stringWithWords(words:[String], links:[String], color:UIColor, font:UIFont!) -> NSAttributedString{
+        let string : NSMutableAttributedString = NSMutableAttributedString.init(string: "")
+        for i in 0..<words.count {
+            let word = words[i]
+            let link = links[i]
+            var attributes = [NSLinkAttributeName:link,
+                              NSForegroundColorAttributeName:color,
+                              NSFontAttributeName:font ?? UIFont.systemFont(ofSize: 14.0)] as [String : Any]
+            if link != " " {
+                attributes[NSUnderlineStyleAttributeName] = NSNumber(value: NSUnderlineStyle.styleSingle.rawValue) as Any
+            }
+            let subString = NSAttributedString.init(string: word, attributes: attributes)
+            string.append(subString)
+        }
+        return string
+    }
+    
     func stringWithWords(words:[String], links:[String], color:UIColor) -> NSAttributedString{
         let string : NSMutableAttributedString = NSMutableAttributedString.init(string: "")
         for i in 0..<words.count {

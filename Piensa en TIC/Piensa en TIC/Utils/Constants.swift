@@ -18,6 +18,9 @@ enum Keys: String {
     
     case spyPlateNumber = "plateNumber"
     
+    
+    case spyInfo = "spyInfo"
+    case spyAnswerSelected = "spyAnswerSelected"
 }
 
 enum ResponseCallback {

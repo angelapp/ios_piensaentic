@@ -90,6 +90,24 @@ extension GeneralViewController {
         let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], links: links, color:UIColor(hexString: colorText)!)
         return result
     }
+    
+    func processDescriptionWithLinks(_ description:String, links:[String], font:UIFont!) -> NSAttributedString {
+        let words = description.split(by: ",")
+        guard let wordsResult = words else {return NSAttributedString()}
+        var wordsResponse = [AnyObject]()
+        for i in 0..<wordsResult.count {
+            
+            let word = wordsResult[i] as! String
+            
+            let newText1 = word.replacingOccurrences(of: "\\n", with: "u015").replacingOccurrences(of: "u015", with: "\n")
+            let newText = newText1.replacingOccurrences(of: "u2022", with: "• ")
+            
+            wordsResponse.append(newText as AnyObject)
+        }
+        
+        let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], links: links, color:UIColor(hexString: colorText)!, font: font)
+        return result
+    }
 }
 
 
