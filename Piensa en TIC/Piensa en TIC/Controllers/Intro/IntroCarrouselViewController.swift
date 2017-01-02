@@ -155,7 +155,17 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
 
 extension IntroCarrouselViewController: DismissIntro {
     func dismiss() {
-        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        var storyboardId = "Main"
+        guard let _ = Network.getUser() else {
+            storyboardId = "Menu"
+            presentNextView(storyboardId)
+            return
+        }
+        presentNextView(storyboardId)
+    }
+    
+    func presentNextView(_ identifier: String) {
+        let storyboard = UIStoryboard(name: identifier, bundle: nil)
         present(storyboard.instantiateInitialViewController()!, animated: false, completion: nil)
     }
 }

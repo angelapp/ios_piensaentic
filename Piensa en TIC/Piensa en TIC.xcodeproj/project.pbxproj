@@ -167,7 +167,6 @@
 		84293A521E14CEB2008535A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
 				8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */,
 				8473BBBA1E1770660027FEFD /* TermsViewController.swift */,
 			);
