@@ -9,6 +9,13 @@ struct Identifier {
 struct SurveyConstants {
     static let heightTitle:CGFloat = 78.0
 }
+// "0 a 5","Más de 5","Más de 20","Más de 100"
+enum SurveyOptions: String {
+    case first = "0 a 5"
+    case second = "Más de 5"
+    case third = "Más de 20"
+    case fourth = "Más de 100"
+}
 
 class SurveyViewController: GeneralViewController {
     
@@ -47,25 +54,69 @@ class SurveyViewController: GeneralViewController {
         }
         
         appendWalletInformation()
+        fillWithData()
     }
     
     func appendWalletInformation(){
         content.append(["section":"Fotografías de mis amigos" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
         results.append([true,false,false,false])
-        updateState(indexPath: IndexPath(row:0,section:0), value: true)
+//        updateState(indexPath: IndexPath(row:0,section:0), value: true)
         content.append(["section":"Mis fotografías" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
         results.append([true,false,false,false])
-        updateState(indexPath: IndexPath(row:0,section:1), value: true)
+//        updateState(indexPath: IndexPath(row:0,section:1), value: true)
         content.append(["section":"Datos de identificación" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
         results.append([true,false,false,false])
-        updateState(indexPath: IndexPath(row:0,section:2), value: true)
+//        updateState(indexPath: IndexPath(row:0,section:2), value: true)
         content.append(["section":"Teléfonos y datos de contacto de familia y amigos" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
         results.append([true,false,false,false])
-        updateState(indexPath: IndexPath(row:0,section:3), value: true)
+//        updateState(indexPath: IndexPath(row:0,section:3), value: true)
         content.append(["section":"Dinero o tarjetas de banco (miles de pesos)" as AnyObject, "options":["0 a 5","Más de 5","Más de 20","Más de 100"] as AnyObject])
         results.append([true,false,false,false])
-        updateState(indexPath: IndexPath(row:0,section:4), value: true)
+//        updateState(indexPath: IndexPath(row:0,section:4), value: true)
         content.append(["section":"¿Qué más tienes?" as AnyObject, "text":true as AnyObject])
+    }
+    
+    func fillWithData() {
+        
+        for section in 0..<content.count {
+            let dic = content[section]
+            
+            guard let sectionContent = dic as [String:Any]! else { continue}
+            if let _ = sectionContent["options"] as! [String]! {
+                let key = "".concatenate(sectionContent["section"] as! String!, (isWallet ? "Cartera":"Telefono"))
+                guard let result = storage.getStringFromKey(key: key) else {continue}
+                var index = 0
+                switch result {
+                    case SurveyOptions.first.rawValue:
+                        index = 0
+                        break
+                    case SurveyOptions.second.rawValue:
+                        index = 1
+                        break
+                    case SurveyOptions.third.rawValue:
+                        index = 2
+                        break
+                    case SurveyOptions.fourth.rawValue:
+                        index = 3
+                        break
+                    default: break
+                }
+                resetAllResults(index: section)
+                updateState(indexPath: IndexPath(row: index, section: section), value: true)
+            }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func resetAllResults(index: Int) {
+        for idx in 0..<results[index].count {
+            results[index][idx] = false
+        }
+    }
+    
+    func changeValue(section:Int, index: Int){
+        results[section][index] = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,6 +211,12 @@ extension SurveyViewController: UITableViewDataSource {
         if indexPath.section == content.count - 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.inputIdentifier, for: indexPath) as! SurveyTextViewCell
             
+            guard let sectionContent = content[indexPath.section] as [String:Any]! else { return cell}
+            let key = "".concatenate(sectionContent["section"] as! String!, (isWallet ? "Cartera":"Telefono"))
+            let result = storage.getStringFromKey(key: key)
+            cell.textView.text = result
+            cell.textView.delegate = self
+            
             return cell
         }
         
@@ -174,5 +231,15 @@ extension SurveyViewController: UITableViewDataSource {
         cell.radioButton.isSelected = results[indexPath.section][indexPath.row]
         
         return cell
+    }
+}
+
+extension SurveyViewController: UITextViewDelegate {
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        let section = content.count - 1
+        guard let sectionContent = content[section] as [String:Any]! else { return true}
+        let key = "".concatenate(sectionContent["section"] as! String!, (isWallet ? "Cartera":"Telefono"))
+        storage.saveOptionChosen(key: key, value: textView.text)
+        return true
     }
 }

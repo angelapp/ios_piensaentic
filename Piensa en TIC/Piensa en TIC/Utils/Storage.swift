@@ -62,7 +62,7 @@ class Storage: NSObject {
     
     func getParameterFromKey(key: Keys) -> AnyObject! {
         let result = appState.object(forKey: key.rawValue)
-        return result as? AnyObject
+        return result as AnyObject!
     }
     
     func saveChapter(_ key:String, value:Int) {

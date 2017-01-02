@@ -62,7 +62,8 @@ class EpilogueViewController: GeneralViewController {
             descriptionLabel.isSelectable = true
             descriptionLabel.attributedText = processDescriptionWithLinks(descriptionText, links: links as! [String])
             descriptionLabel.textAlignment = .center
-            descriptionLabel.tintColor = UIColor.init(hexString: colorText)
+            descriptionLabel.contentMode = .scaleAspectFit
+            descriptionLabel.tintColor = UIColor(hexString: colorText)
         }
         
         if let videoId = self.info["videoId"] {

@@ -14,7 +14,13 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initialSetup()
+        
+        guard let user = Network.getUser() else {
+            self.initialSetup()
+            return
+        }
+        
+        dismiss()
     }
     
     override func viewWillAppear(_ animated: Bool) {

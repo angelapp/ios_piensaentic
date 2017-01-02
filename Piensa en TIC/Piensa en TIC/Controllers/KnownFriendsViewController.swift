@@ -39,6 +39,28 @@ class KnownFriendsViewController: GeneralViewController {
     
     func configureField(field:UITextField){
         field.drawBorder(UIColor(hexString:"#4C7EDAFF"), y: field.frame.size.height, key: "BottomBorder", dotted: true)
+        fillWithData(field: field)
+    }
+    
+    func fillWithData(field: UITextField) {
+        var key: String = ""
+        switch field.tag {
+        case 0:
+            key = Keys.nameFriendOne.rawValue
+            break
+        case 1:
+            key = KnowFriendsConstant.friendOne
+            break
+        case 2:
+            key = Keys.nameFriendTwo.rawValue
+            break
+        case 3:
+            key = KnowFriendsConstant.friendTwo
+            break
+        default: break
+        }
+        
+        field.text = storage.getStringFromKey(key: key)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,20 +71,25 @@ class KnownFriendsViewController: GeneralViewController {
 }
 
 extension KnownFriendsViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        var currentString = textField.text! as NSString
-        if (currentString.length - 1) < range.location {
-            currentString = "".concatenate(currentString, string) as NSString
-        } else {
-            currentString = currentString.replacingCharacters(in: range, with: string) as NSString
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return false}
+        switch textField.tag {
+        case 0:
+            storage.saveOptionChosen(key: Keys.nameFriendOne.rawValue , value: text)
+            break
+        case 1:
+            storage.saveOptionChosen(key: KnowFriendsConstant.friendOne, value: text)
+            break
+        case 2:
+            storage.saveOptionChosen(key: Keys.nameFriendTwo.rawValue, value: text)
+            break
+        case 3:
+            storage.saveOptionChosen(key: KnowFriendsConstant.friendTwo, value: text)
+            break
+        default: break
         }
-        
-        if textField.tag == 1 {
-            storage.saveOptionChosen(key: KnowFriendsConstant.friendOne, value: currentString as String)
-        } else if textField.tag == 3 {
-            storage.saveOptionChosen(key: KnowFriendsConstant.friendTwo, value: currentString as String)
-        }
+
         return true
     }
 }

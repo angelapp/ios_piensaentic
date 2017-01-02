@@ -80,7 +80,8 @@ extension GeneralViewController {
         for i in 0..<wordsResult.count {
             
             let word = wordsResult[i] as! String
-            let newText1 = word.replacingOccurrences(of: "u015", with: "\n")
+            
+            let newText1 = word.replacingOccurrences(of: "\\n", with: "u015").replacingOccurrences(of: "u015", with: "\n")
             let newText = newText1.replacingOccurrences(of: "u2022", with: "• ")
             
             wordsResponse.append(newText as AnyObject)

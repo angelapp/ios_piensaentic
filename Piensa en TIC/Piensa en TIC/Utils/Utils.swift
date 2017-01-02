@@ -14,9 +14,9 @@ extension UIView {
             startDrawBorder(color, y: y, key: key, dotted: dotted)
             return
         }
-        if layer != nil {
+//        if layer != nil {
            layer.removeFromSuperlayer()
-        }
+//        }
         
         startDrawBorder(color, y: y, key: key, dotted: dotted)
     }
@@ -114,7 +114,7 @@ extension NSAttributedString {
             let word = words[i]
             let font: UIFont = fonts[i]
             let attributes = [NSFontAttributeName:font, NSForegroundColorAttributeName:color]
-            let subString = NSAttributedString.init(string: word, attributes: attributes)
+            let subString = NSAttributedString(string: word, attributes: attributes)
             string.append(subString)
         }
         return string
@@ -137,7 +137,7 @@ extension NSAttributedString {
         for i in 0..<words.count {
             let word = words[i]
             let link = links[i]
-            let attributes = [NSLinkAttributeName:link, NSForegroundColorAttributeName:color,NSFontAttributeName:UIFont.systemFont(ofSize: 20.0)] as [String : Any]
+            let attributes = [NSLinkAttributeName:link, NSForegroundColorAttributeName:color,NSFontAttributeName:UIFont.systemFont(ofSize: 14.0)] as [String : Any]
             let subString = NSAttributedString.init(string: word, attributes: attributes)
             string.append(subString)
         }
@@ -223,6 +223,31 @@ extension UIColor {
     
 }
 
+//MARK: parsing html to attributedstring
+extension NSAttributedString {
+    class func parseHtml(_ rawHtml: NSString) -> NSAttributedString! {
+        let format = "<span style=\"font-family: \("HelveticaNeue"); font-size: \(18.0)\">%@</span>" as NSString
+        let modifiedHtml = NSString(format: format, rawHtml)
+        let html = modifiedHtml.replacingOccurrences(of: "\\n", with: "</br>").replacingOccurrences(of: "\n", with: "</br>")
+        
+        let attributes = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                          NSCharacterEncodingDocumentAttribute: NSNumber(value: String.Encoding.utf8.rawValue),
+                          NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 18.0) as Any] as [String : Any]
+        
+        do {
+            guard let data = html.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) else { return NSAttributedString(string: html as String)}
+            let result = try! NSAttributedString(data: data, options: attributes, documentAttributes: nil)
+        
+            return result
+        } catch _ {
+            return NSAttributedString(string: html, attributes: attributes)
+        }
+        
+    }
+}
+
+
+//MARK: Request Alamofire enable logs
 extension Request {
     public func debugLog() -> Self {
         #if DEBUG

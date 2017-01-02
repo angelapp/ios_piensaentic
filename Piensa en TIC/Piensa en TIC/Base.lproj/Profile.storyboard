@@ -102,9 +102,9 @@
                                             <constraint firstAttribute="height" constant="290" id="bba-gR-3E1"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LW7-D7-cfr">
+                                    <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LW7-D7-cfr">
                                         <rect key="frame" x="0.0" y="427" width="375" height="240"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="240" id="fxc-KW-SBf"/>
                                         </constraints>
