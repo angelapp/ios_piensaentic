@@ -167,6 +167,7 @@
 		84293A521E14CEB2008535A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
 				8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */,
 				8473BBBA1E1770660027FEFD /* TermsViewController.swift */,
 			);
@@ -250,7 +251,6 @@
 				84A95DD31E0E2D960023EA38 /* Cell */,
 				84A95DD11E0E2B020023EA38 /* Survey */,
 				842D55411E0785D000432858 /* Chapters */,
-				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
 				18446CBF1E14DC6500434AFB /* LogginViewController.swift */,
 				18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */,
 				84293A521E14CEB2008535A2 /* Profile */,
