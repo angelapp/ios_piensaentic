@@ -48,7 +48,9 @@ class DescriptionFriendsViewController: GeneralViewController {
                 headerLabel.text = headerText
             }
             if let descriptionText = self.info[DescriptionFriendsConstants.descriptionNoContentKey] {
-                descriptionLabel.text = descriptionText
+//                descriptionLabel.attributedText = descriptionText
+                let html = descriptionText as NSString
+                descriptionLabel.attributedText = NSAttributedString.parseHtml(html)
             }
             
         } else {

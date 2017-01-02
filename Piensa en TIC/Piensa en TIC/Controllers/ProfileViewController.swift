@@ -30,6 +30,7 @@ class ProfileViewController: GeneralViewController {
         super.viewWillAppear(animated)
         disableSwipe()
         initialSetup()
+        fillWithData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,6 +58,26 @@ class ProfileViewController: GeneralViewController {
         }
         
         delegate.disableSwipe()
+    }
+    
+    func enableSwipe(){
+        guard let delegate = delegateSwipe else {
+            return
+        }
+        
+        delegate.enableSwipe()
+    }
+    
+    func fillWithData() {
+        guard let user = getUser() else {return}
+        nameTextField.text = user.firstName
+        heroTextField.text = user.nickName
+        birthDateButton.setTitle(user.birthDate, for: .normal)
+        birthDateButton.setTitle(user.birthDate, for: .highlighted)
+        birthDateButton.setTitle(user.birthDate, for: .selected)
+        emailTextField.text = user.email
+        
+        enableSwipe()
     }
     
     func isTextEmpty(field:String!) -> Bool{

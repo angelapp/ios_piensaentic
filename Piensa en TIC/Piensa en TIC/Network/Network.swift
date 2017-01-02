@@ -27,6 +27,14 @@ class Network: NSObject {
         return request
     }
     
+    class func getUser() -> User! {
+        let storage = Storage.shared
+        guard let data = storage.getParameterFromKey(key: .user) as! Data! else { return nil}
+        guard let dic = User.unarchive(data: data) else { return nil}
+        let user = User.initUser(fromDic: dic)
+        return user
+    }
+    
     class func getChapterList() -> [[String:AnyObject]]! {
         guard let menu = MainConfigurator.sharedConfiguration.menuContent() else { return nil}
         let storage = Storage.shared
@@ -49,8 +57,9 @@ class Network: NSObject {
     
     class func sendProgress() {
         guard let result = getChapterList() else {return}
+        guard let user = getUser() else {return}
         let parameters: Parameters = [
-            "activities_register":[result], "user_man":"tic101@mail.co"
+            "activities_register":result, "user_mail": user.email
         ]
         
         let url = [NetworkConstants.url,NetworkConstants.api, NetworkConstants.registerActivityFinishedView].flatMap{$0}.joined(separator: "")
@@ -110,7 +119,7 @@ class Network: NSObject {
             
             let json = JSON(data: data)
             
-            print("Response Server - create user: ",dataResult.response)
+            print("Response Server - create user: ",dataResult.response ?? "httpurlresponse nil")
             print("Response Server - create user: ",dataResult.result)
             print("Response Server - create user: ",data)
             print("Response Server - create user: ",utf8Text)

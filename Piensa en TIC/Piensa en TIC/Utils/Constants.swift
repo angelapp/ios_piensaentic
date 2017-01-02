@@ -4,7 +4,20 @@ struct Constants {
 
 enum Keys: String {
     case email = "email"
+    case password = "password"
     case user = "user"
+    
+    //MARK: fields to fill
+    case nameFriendOne = "friendNameOne"
+    case nameFriendTwo = "friendNameTwo"
+    case nickNameFriendOne = "friendNickNameOne"
+    case nickNameFriendTwo = "friendNickNameTwo"
+    
+    case moreStuffWallet = "moreWallet"
+    case moreStuffPhone = "morePhone"
+    
+    case spyPlateNumber = "plateNumber"
+    
 }
 
 enum ResponseCallback {

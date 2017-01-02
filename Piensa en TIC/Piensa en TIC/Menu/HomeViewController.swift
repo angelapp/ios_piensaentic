@@ -33,24 +33,42 @@ class HomeViewController: MFSideMenuContainerViewController {
     
     //MARK: Initial Setup
     func initialSetup() -> (){
+        guard let nextChapter = getNextChapter() else {
+            showChapter(0)
+            return
+        }
+        if nextChapter.contains("chapter") {
+            let chapterIndex = nextChapter.replacingOccurrences(of: "chapter", with: "")
+            showChapter(Int(chapterIndex)!)
+        } else {
+            if nextChapter == "preface" {
+                showPreface()
+            } else {
+                
+            }
+            
+        }
         
-        let homeStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
-        let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
-        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
-        let rightSideMenuViewController = homeStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.rightMenu)
         
-        let arrayContent:NSArray = content!["pages"] as! NSArray
-        let backgroundImageName = content!["backgroundName"] as! String
         
-        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
-        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
-        (navigationController as! CarrouselChapterViewController).generalContent = content
-        (navigationController as! CarrouselChapterViewController).delegate = self
         
-        (rightSideMenuViewController as! RightViewController).delegate = self
-        
-        self.rightMenuViewController = rightSideMenuViewController
-        self.centerViewController = navigationController
+//        let homeStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
+//        let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
+//        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
+//        let rightSideMenuViewController = homeStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.rightMenu)
+//        
+//        let arrayContent:NSArray = content!["pages"] as! NSArray
+//        let backgroundImageName = content!["backgroundName"] as! String
+//        
+//        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
+//        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
+//        (navigationController as! CarrouselChapterViewController).generalContent = content
+//        (navigationController as! CarrouselChapterViewController).delegate = self
+//        
+//        (rightSideMenuViewController as! RightViewController).delegate = self
+//        
+//        self.rightMenuViewController = rightSideMenuViewController
+//        self.centerViewController = navigationController
     }
     
     //MARK: Controller Actions
@@ -74,6 +92,14 @@ extension HomeViewController: SelectRightMenuItem {
         
         let arrayContent:NSArray = content!["pages"] as! NSArray
         let backgroundImageName = content!["backgroundName"] as! String
+        
+        if let menuColor = content["menuColor"] as! String! {
+//            UINavigationBar.appearance().tintColor = UIColor(hexString: menuColor)
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(hexString: menuColor)
+            
+        } else {
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        }
         
         (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
         (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
@@ -100,6 +126,30 @@ extension HomeViewController: SelectRightMenuItem {
         self.centerViewController = navigationController
     }
     
+    func showCredits() {
+        content = mainConfigurator.credits()
+        
+        let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
+        let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
+        
+        let arrayContent:NSArray = content!["pages"] as! NSArray
+        let backgroundImageName = content!["backgroundName"] as! String
+        
+        if let menuColor = content["menuColor"] as! String! {
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(hexString: menuColor)
+        } else {
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        }
+        
+        (navigationController as! CarrouselChapterViewController).imagesArray = arrayContent
+        (navigationController as! CarrouselChapterViewController).imageName = backgroundImageName
+        (navigationController as! CarrouselChapterViewController).generalContent = content
+        (navigationController as! CarrouselChapterViewController).delegate = self
+        
+        self.centerViewController = navigationController
+    }
+
+    
     func selectRightMenuItem(content: String!) {
         if content.contains("chapter"){
             let subString = content.replacingOccurrences(of: "chapter", with: "")
@@ -115,5 +165,28 @@ extension HomeViewController: SelectRightMenuItem {
     func selectRightMenuItemAndSendProgress(content: String!) {
         Network.sendProgress()
         selectRightMenuItem(content: content)
+    }
+}
+
+extension HomeViewController {
+    func getNextChapter() -> String! {
+        guard let menu = mainConfigurator.menuContent() else { return nil}
+        guard let _ = Network.getUser() else {return "preface"}
+        let storage = Storage.shared
+        var result = "infocredits"
+        for dic in menu {
+            let text = dic["text"] as! String
+            if text.contains("Perfil") {
+                continue
+            }
+            if let saved = storage.getIntFromKey(key: text) {
+                if saved == 0 {
+                    result = dic["content"] as! String
+                    break
+                }
+            }
+        }
+        
+        return result
     }
 }

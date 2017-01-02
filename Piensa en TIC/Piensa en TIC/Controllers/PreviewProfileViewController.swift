@@ -35,6 +35,9 @@ class PreviewProfileViewController: GeneralViewController {
     func showAlert(){
         
         UIView.animate(withDuration: 0, delay: 1, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+            if self.getUser() != nil {
+                return
+            }
             self.alertView = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIdentifier.termsController) as! TermsViewController
             self.alertView.delegate = self
                 if let view = self.alertView.view {

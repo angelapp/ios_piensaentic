@@ -61,6 +61,8 @@ class SpyFormViewController: GeneralViewController {
         secondTitle.textColor = color
         
         screen = screenid
+        
+        fillWithData()
     }
     
     func drawBottomBorder() {
@@ -69,6 +71,15 @@ class SpyFormViewController: GeneralViewController {
         secondTextView.drawSeparator(.Down, color: color!, dotted: true)
     }
     
+    
+    func fillWithData() {
+        guard let screen = screen else { return}
+        guard let description = storage.getStringFromKey(key: "".concatenate(SpyFormIdentifiers.descriptionId, screen)) else {return}
+        guard let contact     = storage.getStringFromKey(key: "".concatenate(SpyFormIdentifiers.contact, screen)) else { return}
+        
+        firstTextView.text = description
+        secondTextView.text = contact
+    }
 }
 
 extension SpyFormViewController: UITextViewDelegate {
