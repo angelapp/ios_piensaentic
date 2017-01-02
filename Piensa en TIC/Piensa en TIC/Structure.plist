@@ -678,7 +678,7 @@
 					<string></string>
 					<key>box_border_background</key>
 					<string>pantalla02_marco-1</string>
-					<key>question_two</key>
+					<key>question</key>
 					<string>¿Las eliminaste o protegiste?</string>
 					<key>select_options</key>
 					<string>Sí, lo hice|No, lo haré más tarde</string>
@@ -711,55 +711,33 @@
 			<array>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>creditsController</string>
 					<key>bottom_image_name</key>
 					<string>logo</string>
-					<key>description</key>
-					<array>
-						<string>Para dejar tus comentarios o calificar ingresa a </string>
-						<string>Piensa en TIC en App Store</string>
-						<string>\n \n Envíanos tus sugerencias y observaciones a </string>
-						<string>info@piensatic.co</string>
-						<string>\n \n Conoce más sobre seguridad y derechos en los espacios digitales en \n \n</string>
-						<string>http://dominemoslatecnologia.org</string>
-					</array>
+					<key>credits</key>
+					<string>Para dejar tus comentarios o calificar ingresa a ,Piensa en TIC en App Store, \n \n Envíanos tus sugerencias y observaciones a ,info@piensatic.co,\n \n Conoce más sobre seguridad y derechos en los espacios digitales en \n \n,http://dominemoslatecnologia.org</string>
 					<key>links</key>
-					<array>
-						<string>https://itunes.apple.com/</string>
-						<string>info@piensatic.co</string>
-						<string>http://dominemoslatecnologia.org</string>
-					</array>
+					<string> ,https://itunes.apple.com/, ,mail:info@piensatic.co, ,https://dominemoslatecnologia.org</string>
 				</dict>
 				<dict>
 					<key>content</key>
-					<string></string>
+					<string>creditsController</string>
 					<key>bottom_image_name</key>
 					<string>logo</string>
-					<key>description</key>
-					<array>
-						<string>Este recurso ha sido desarrollado en el marco del proyecto &quot;Promoción de los derechos de internet y fortalecimiento de capacidades para la prevención de riesgos y la atención de violencias digitales&quot;, coordinado por</string>
-						<string>Colnodo</string>
-						<string>con el apoyo de </string>
-						<string>Asociación para el Progreso de las Comunicaciones (APC).</string>
-						<string>\n \n Tipo de licenciamiento GNU. El código de esta aplicación es abierto y disponible en </string>
-						<string>github.org </string>
-					</array>
+					<key>credits</key>
+					<string>Este recurso ha sido desarrollado en el marco del proyecto &quot;Promoción de los derechos de internet y fortalecimiento de capacidades para la prevención de riesgos y la atención de violencias digitales&quot;, coordinado por ,Colnodo, con el apoyo de ,Asociación para el Progreso de las Comunicaciones (APC).,\n \n Tipo de licenciamiento GNU. El código de esta aplicación es abierto y disponible en ,github.org </string>
 					<key>links</key>
-					<array>
-						<string>http://colnodo.apc.org</string>
-						<string>http://apc.org/</string>
-						<string>https://github.com/</string>
-					</array>
+					<string> , ,http://colnodo.apc.org, ,http://apc.org/, ,https://github.org </string>
 				</dict>
 			</array>
 			<key>backgroundName</key>
 			<string>actintro_fondo</string>
 			<key>textColor</key>
-			<string>#c22323</string>
+			<string>#c22323FF</string>
 			<key>pageIndicatorColorActive</key>
-			<string>#c22323</string>
+			<string>#c22323FF</string>
 			<key>pageIndicatorColorInactive</key>
-			<string>#de5b33</string>
+			<string>#de5b33FF</string>
 			<key>activity_name</key>
 			<string>Información y contacto</string>
 			<key>menu_bullet_activity</key>

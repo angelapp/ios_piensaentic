@@ -37,6 +37,7 @@
 		849294A21E0C290800835B67 /* EnterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A11E0C290800835B67 /* EnterPasswordViewController.swift */; };
 		849294A41E0C2D8400835B67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A31E0C2D8400835B67 /* Constants.swift */; };
 		849294A61E0C58CA00835B67 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A51E0C58CA00835B67 /* Storage.swift */; };
+		8498487E1E1A0CB9008477C1 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498487D1E1A0CB9008477C1 /* CreditsViewController.swift */; };
 		84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4B5C51DF921A70077A0AE /* Menu.storyboard */; };
 		84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95DD41E0E2DC50023EA38 /* SurveySelectionViewCell.swift */; };
 		84A95DD71E0E3EA00023EA38 /* SurveyTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95DD61E0E3EA00023EA38 /* SurveyTextViewCell.swift */; };
@@ -94,6 +95,7 @@
 		849294A11E0C290800835B67 /* EnterPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterPasswordViewController.swift; path = Controllers/EnterPasswordViewController.swift; sourceTree = "<group>"; };
 		849294A31E0C2D8400835B67 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		849294A51E0C58CA00835B67 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Utils/Storage.swift; sourceTree = "<group>"; };
+		8498487D1E1A0CB9008477C1 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreditsViewController.swift; path = Controllers/Credits/CreditsViewController.swift; sourceTree = "<group>"; };
 		84A4B5C61DF921A70077A0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		84A95DD41E0E2DC50023EA38 /* SurveySelectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveySelectionViewCell.swift; path = Controllers/Cell/SurveySelectionViewCell.swift; sourceTree = "<group>"; };
 		84A95DD61E0E3EA00023EA38 /* SurveyTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyTextViewCell.swift; path = Controllers/Cell/SurveyTextViewCell.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 		8478B9241DFD3D8F009D3C7A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8498487C1E1A0C8C008477C1 /* Credits */,
 				84A95DD31E0E2D960023EA38 /* Cell */,
 				84A95DD11E0E2B020023EA38 /* Survey */,
 				842D55411E0785D000432858 /* Chapters */,
@@ -255,6 +258,14 @@
 				84293A511E14CE8D008535A2 /* Intro */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8498487C1E1A0C8C008477C1 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				8498487D1E1A0CB9008477C1 /* CreditsViewController.swift */,
+			);
+			name = Credits;
 			sourceTree = "<group>";
 		};
 		84A95DD11E0E2B020023EA38 /* Survey */ = {
@@ -472,6 +483,7 @@
 				849294A21E0C290800835B67 /* EnterPasswordViewController.swift in Sources */,
 				84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */,
 				84E42D131E0F626000D9F9BD /* ResultsViewCell.swift in Sources */,
+				8498487E1E1A0CB9008477C1 /* CreditsViewController.swift in Sources */,
 				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */,
 				84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */,
