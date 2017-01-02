@@ -1,18 +1,13 @@
-//
-//  ProfileViewController.swift
-//  Piensa en TIC
-//
-//  Created by SergioDan on 12/17/16.
-//  Copyright © 2016 angelapp. All rights reserved.
-//
-
 import UIKit
+import SwiftyJSON
 
 struct DatePickerConstants {
     static let height:CGFloat = 240.0
 }
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: GeneralViewController {
+    
+    @IBOutlet var topImageView:UIImageView!
     
     @IBOutlet var nameTextField:UITextField!
     @IBOutlet var heroTextField:UITextField!
@@ -33,7 +28,9 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        disableSwipe()
         initialSetup()
+        fillWithData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,6 +39,10 @@ class ProfileViewController: UIViewController {
     }
     
     func initialSetup(){
+        guard let topImage = self.info["top_image_name"] else {return}
+        
+        topImageView.image = UIImage(named: topImage)
+        
         nameTextField.delegate = self
         heroTextField.delegate = self
         emailTextField.delegate = self
@@ -51,16 +52,33 @@ class ProfileViewController: UIViewController {
         emailTextField.drawBorder(UIColor.black, y: emailTextField.frame.size.height, key: "BottomBorder", dotted: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func disableSwipe() {
+        guard let delegate = delegateSwipe else {
+            return
+        }
+        
+        delegate.disableSwipe()
     }
-    */
+    
+    func enableSwipe(){
+        guard let delegate = delegateSwipe else {
+            return
+        }
+        
+        delegate.enableSwipe()
+    }
+    
+    func fillWithData() {
+        guard let user = getUser() else {return}
+        nameTextField.text = user.firstName
+        heroTextField.text = user.nickName
+        birthDateButton.setTitle(user.birthDate, for: .normal)
+        birthDateButton.setTitle(user.birthDate, for: .highlighted)
+        birthDateButton.setTitle(user.birthDate, for: .selected)
+        emailTextField.text = user.email
+        
+        enableSwipe()
+    }
     
     func isTextEmpty(field:String!) -> Bool{
         guard let text = field else {return false}
@@ -73,6 +91,14 @@ class ProfileViewController: UIViewController {
         guard isTextEmpty(field: heroTextField.text) else {return false }
         guard isTextEmpty(field: birthDateButton.titleLabel?.text) else {return false}
         guard isTextEmpty(field: emailTextField.text) else {return false}
+        
+        delegateSwipe.enableSwipe()
+        
+        let user = User(nameTextField.text, nickName: heroTextField.text, birthDate: birthDateButton.titleLabel?.text, email: emailTextField.text)
+        let stringRepresentation = user.dictionary()
+        if let data = User.archive(user:stringRepresentation) {
+            storage.saveParameter(key: .user, value: data as AnyObject)
+        }
         
         return true
     }
@@ -121,21 +147,26 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController : UITextFieldDelegate {
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        switch textField.tag {
-        case nameTextField.tag:
-            heroTextField.becomeFirstResponder()
-            break
-        case heroTextField.tag:
-            emailTextField.becomeFirstResponder()
-            break
-        case emailTextField.tag:
-            textField.resignFirstResponder()
-            break
-        default: break
-        }
-//        validateFields()
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        let _ = validateFields()
         return true
     }
+    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        
+//        switch textField.tag {
+//        case nameTextField.tag:
+//            heroTextField.becomeFirstResponder()
+//            break
+//        case heroTextField.tag:
+//            emailTextField.becomeFirstResponder()
+//            break
+//        case emailTextField.tag:
+//            textField.resignFirstResponder()
+//            break
+//        default: break
+//        }
+////        validateFields()
+//        return true
+//    }
 }

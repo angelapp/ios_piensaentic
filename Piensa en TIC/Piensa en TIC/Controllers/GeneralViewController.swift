@@ -8,7 +8,10 @@ class GeneralViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     var imageSaved:UIImage!
     var metadata:AnyObject!
+    var activityName:String!
     let storage = Storage.shared
+    var delegate:CompleteChapterDelegate!
+    var delegateSwipe:DataSourceEnableSwipe!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,13 +80,32 @@ extension GeneralViewController {
         for i in 0..<wordsResult.count {
             
             let word = wordsResult[i] as! String
-            let newText1 = word.replacingOccurrences(of: "u015", with: "\n")
+            
+            let newText1 = word.replacingOccurrences(of: "\\n", with: "u015").replacingOccurrences(of: "u015", with: "\n")
             let newText = newText1.replacingOccurrences(of: "u2022", with: "• ")
             
             wordsResponse.append(newText as AnyObject)
         }
         
         let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], links: links, color:UIColor(hexString: colorText)!)
+        return result
+    }
+    
+    func processDescriptionWithLinks(_ description:String, links:[String], font:UIFont!) -> NSAttributedString {
+        let words = description.split(by: ",")
+        guard let wordsResult = words else {return NSAttributedString()}
+        var wordsResponse = [AnyObject]()
+        for i in 0..<wordsResult.count {
+            
+            let word = wordsResult[i] as! String
+            
+            let newText1 = word.replacingOccurrences(of: "\\n", with: "u015").replacingOccurrences(of: "u015", with: "\n")
+            let newText = newText1.replacingOccurrences(of: "u2022", with: "• ")
+            
+            wordsResponse.append(newText as AnyObject)
+        }
+        
+        let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], links: links, color:UIColor(hexString: colorText)!, font: font)
         return result
     }
 }
@@ -142,4 +164,13 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
         return word.replacingOccurrences(of: "u015", with: "\n")
     }
 
+}
+
+extension GeneralViewController {
+    func getUser() -> User! {
+        guard let data = storage.getParameterFromKey(key: .user) as! Data! else { return nil}
+        guard let dic = User.unarchive(data: data) else { return nil}
+        let user = User.initUser(fromDic: dic)
+        return user
+    }
 }

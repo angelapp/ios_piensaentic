@@ -17,10 +17,14 @@ class SummarySpyFormViewController: GeneralViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        initialSetup()
         configureBorder(view: plateBox)
         configureBorder(view: placesBox)
         configureBorder(view: identificationBox)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initialSetup()
     }
     
     override func didReceiveMemoryWarning() {

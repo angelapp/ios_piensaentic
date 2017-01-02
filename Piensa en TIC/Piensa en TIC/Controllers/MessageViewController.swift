@@ -22,7 +22,9 @@ class MessageViewController: GeneralViewController {
         guard let descriptionImageName = self.info["descriptionImage"] else { return}
         
         descriptionImage.image = UIImage(named:descriptionImageName)
-        descriptionLabel.text = String(format: headerDescription.replacingOccurrences(of: "\n", with: "\n"))
+        let html = headerDescription as NSString
+        descriptionLabel.attributedText = NSAttributedString.parseHtml(html)
+        descriptionLabel.textAlignment = .center
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
     }
 }

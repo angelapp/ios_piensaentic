@@ -11,6 +11,9 @@
 		18446CC21E14E0A400434AFB /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */; };
 		3AA321AA702C288E5D7EEB18 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */; };
 		842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842282CF1E10C88B003A9756 /* SpyFormViewController.swift */; };
+		84293A4E1E14CD7F008535A2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84293A4C1E14CD7F008535A2 /* WelcomeScreen.storyboard */; };
+		84293A501E14CE6E008535A2 /* IntroCarrouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84293A4F1E14CE6E008535A2 /* IntroCarrouselViewController.swift */; };
+		84293A541E14D161008535A2 /* IntroInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84293A531E14D161008535A2 /* IntroInformationViewController.swift */; };
 		842BC06D1E1212F0005DFBB3 /* SummarySpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */; };
 		842BC06F1E121F72005DFBB3 /* JustTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */; };
 		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
@@ -26,11 +29,15 @@
 		844EDE551DF50A090079AC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */; };
 		844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5C1DF50A2B0079AC35 /* Structure.plist */; };
 		844EDE601DF67A800079AC35 /* Chapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */; };
+		8473BBB91E176F8E0027FEFD /* PreviewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */; };
+		8473BBBB1E1770660027FEFD /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473BBBA1E1770660027FEFD /* TermsViewController.swift */; };
+		8473BBBD1E1772650027FEFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473BBBC1E1772650027FEFD /* User.swift */; };
 		8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */; };
 		8478B9261DFD3DD3009D3C7A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */; };
 		849294A21E0C290800835B67 /* EnterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A11E0C290800835B67 /* EnterPasswordViewController.swift */; };
 		849294A41E0C2D8400835B67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A31E0C2D8400835B67 /* Constants.swift */; };
 		849294A61E0C58CA00835B67 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849294A51E0C58CA00835B67 /* Storage.swift */; };
+		8498487E1E1A0CB9008477C1 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498487D1E1A0CB9008477C1 /* CreditsViewController.swift */; };
 		84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4B5C51DF921A70077A0AE /* Menu.storyboard */; };
 		84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95DD41E0E2DC50023EA38 /* SurveySelectionViewCell.swift */; };
 		84A95DD71E0E3EA00023EA38 /* SurveyTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95DD61E0E3EA00023EA38 /* SurveyTextViewCell.swift */; };
@@ -59,6 +66,9 @@
 		1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
 		4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842282CF1E10C88B003A9756 /* SpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpyFormViewController.swift; path = Controllers/SpyFormViewController.swift; sourceTree = "<group>"; };
+		84293A4D1E14CD7F008535A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WelcomeScreen.storyboard; sourceTree = "<group>"; };
+		84293A4F1E14CE6E008535A2 /* IntroCarrouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroCarrouselViewController.swift; path = Controllers/Intro/IntroCarrouselViewController.swift; sourceTree = "<group>"; };
+		84293A531E14D161008535A2 /* IntroInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroInformationViewController.swift; path = Controllers/Intro/IntroInformationViewController.swift; sourceTree = "<group>"; };
 		842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummarySpyFormViewController.swift; path = Controllers/SummarySpyFormViewController.swift; sourceTree = "<group>"; };
 		842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JustTextViewController.swift; path = Controllers/JustTextViewController.swift; sourceTree = "<group>"; };
 		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
@@ -77,11 +87,15 @@
 		844EDE561DF50A090079AC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844EDE5C1DF50A2B0079AC35 /* Structure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Structure.plist; sourceTree = "<group>"; };
 		844EDE5F1DF67A7F0079AC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chapters.storyboard; sourceTree = "<group>"; };
+		8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewProfileViewController.swift; path = Controllers/PreviewProfileViewController.swift; sourceTree = "<group>"; };
+		8473BBBA1E1770660027FEFD /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = Controllers/TermsViewController.swift; sourceTree = "<group>"; };
+		8473BBBC1E1772650027FEFD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		8478B9221DFD1EBD009D3C7A /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralViewController.swift; path = Controllers/GeneralViewController.swift; sourceTree = "<group>"; };
 		8478B9251DFD3DD3009D3C7A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Controllers/InformationViewController.swift; sourceTree = "<group>"; };
 		849294A11E0C290800835B67 /* EnterPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterPasswordViewController.swift; path = Controllers/EnterPasswordViewController.swift; sourceTree = "<group>"; };
 		849294A31E0C2D8400835B67 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		849294A51E0C58CA00835B67 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Utils/Storage.swift; sourceTree = "<group>"; };
+		8498487D1E1A0CB9008477C1 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreditsViewController.swift; path = Controllers/Credits/CreditsViewController.swift; sourceTree = "<group>"; };
 		84A4B5C61DF921A70077A0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		84A95DD41E0E2DC50023EA38 /* SurveySelectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveySelectionViewCell.swift; path = Controllers/Cell/SurveySelectionViewCell.swift; sourceTree = "<group>"; };
 		84A95DD61E0E3EA00023EA38 /* SurveyTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyTextViewCell.swift; path = Controllers/Cell/SurveyTextViewCell.swift; sourceTree = "<group>"; };
@@ -125,6 +139,39 @@
 				1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		84293A4B1E14CD41008535A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				844EDE4E1DF50A090079AC35 /* Main.storyboard */,
+				844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */,
+				84E814211E0DC971001CFBA8 /* ComplexScreens.storyboard */,
+				842D553A1E05D5C900432858 /* Profile.storyboard */,
+				844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */,
+				84A4B5C51DF921A70077A0AE /* Menu.storyboard */,
+				84293A4C1E14CD7F008535A2 /* WelcomeScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		84293A511E14CE8D008535A2 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				84293A4F1E14CE6E008535A2 /* IntroCarrouselViewController.swift */,
+				84293A531E14D161008535A2 /* IntroInformationViewController.swift */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
+		84293A521E14CEB2008535A2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
+				8473BBB81E176F8E0027FEFD /* PreviewProfileViewController.swift */,
+				8473BBBA1E1770660027FEFD /* TermsViewController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		842D55411E0785D000432858 /* Chapters */ = {
@@ -187,16 +234,12 @@
 				84AA76C21DF9236F002D36AA /* Menu */,
 				844EDE4A1DF50A090079AC35 /* AppDelegate.swift */,
 				844EDE4C1DF50A090079AC35 /* ViewController.swift */,
-				844EDE4E1DF50A090079AC35 /* Main.storyboard */,
+				84293A4B1E14CD41008535A2 /* Views */,
 				844EDE511DF50A090079AC35 /* Assets.xcassets */,
-				844EDE531DF50A090079AC35 /* LaunchScreen.storyboard */,
 				844EDE561DF50A090079AC35 /* Info.plist */,
 				844EDE5C1DF50A2B0079AC35 /* Structure.plist */,
-				84E814211E0DC971001CFBA8 /* ComplexScreens.storyboard */,
-				842D553A1E05D5C900432858 /* Profile.storyboard */,
-				844EDE5E1DF67A7F0079AC35 /* Chapters.storyboard */,
-				84A4B5C51DF921A70077A0AE /* Menu.storyboard */,
 				84AA76C81DF925A2002D36AA /* BridgeHeader.h */,
+				8473BBBC1E1772650027FEFD /* User.swift */,
 			);
 			path = "Piensa en TIC";
 			sourceTree = "<group>";
@@ -204,14 +247,24 @@
 		8478B9241DFD3D8F009D3C7A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8498487C1E1A0C8C008477C1 /* Credits */,
 				84A95DD31E0E2D960023EA38 /* Cell */,
 				84A95DD11E0E2B020023EA38 /* Survey */,
 				842D55411E0785D000432858 /* Chapters */,
-				842D553F1E05DFB200432858 /* ProfileViewController.swift */,
 				18446CBF1E14DC6500434AFB /* LogginViewController.swift */,
 				18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */,
+				84293A521E14CEB2008535A2 /* Profile */,
+				84293A511E14CE8D008535A2 /* Intro */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8498487C1E1A0C8C008477C1 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				8498487D1E1A0CB9008477C1 /* CreditsViewController.swift */,
+			);
+			name = Credits;
 			sourceTree = "<group>";
 		};
 		84A95DD11E0E2B020023EA38 /* Survey */ = {
@@ -356,6 +409,7 @@
 				84A4B5C71DF921A70077A0AE /* Menu.storyboard in Resources */,
 				844EDE5D1DF50A2B0079AC35 /* Structure.plist in Resources */,
 				842D553C1E05D5C900432858 /* Profile.storyboard in Resources */,
+				84293A4E1E14CD7F008535A2 /* WelcomeScreen.storyboard in Resources */,
 				844EDE501DF50A090079AC35 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */ = {
@@ -428,19 +482,24 @@
 				849294A21E0C290800835B67 /* EnterPasswordViewController.swift in Sources */,
 				84AA76C71DF9244B002D36AA /* StoryboardIdentifier.swift in Sources */,
 				84E42D131E0F626000D9F9BD /* ResultsViewCell.swift in Sources */,
+				8498487E1E1A0CB9008477C1 /* CreditsViewController.swift in Sources */,
 				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */,
 				84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */,
 				18446CC01E14DC6500434AFB /* LogginViewController.swift in Sources */,
+				84293A541E14D161008535A2 /* IntroInformationViewController.swift in Sources */,
 				842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */,
+				8473BBBD1E1772650027FEFD /* User.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84400DF81E07AF58008BE9F1 /* TextDescriptionViewController.swift in Sources */,
 				84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */,
 				84400DF61E07AE16008BE9F1 /* ImageContentViewController.swift in Sources */,
 				842D55401E05DFB200432858 /* ProfileViewController.swift in Sources */,
 				18446CC21E14E0A400434AFB /* PasswordRecoveryViewController.swift in Sources */,
+				8473BBB91E176F8E0027FEFD /* PreviewProfileViewController.swift in Sources */,
 				84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */,
 				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,
+				84293A501E14CE6E008535A2 /* IntroCarrouselViewController.swift in Sources */,
 				84E814201E0CFEA8001CFBA8 /* MessageViewController.swift in Sources */,
 				84E8141C1E0CF63A001CFBA8 /* KnownFriendsViewController.swift in Sources */,
 				842D553E1E05DA7D00432858 /* Utils.swift in Sources */,
@@ -448,6 +507,7 @@
 				84AA76C41DF923C6002D36AA /* HomeViewController.swift in Sources */,
 				84A95DD71E0E3EA00023EA38 /* SurveyTextViewCell.swift in Sources */,
 				84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */,
+				8473BBBB1E1770660027FEFD /* TermsViewController.swift in Sources */,
 				849294A61E0C58CA00835B67 /* Storage.swift in Sources */,
 				8478B9261DFD3DD3009D3C7A /* InformationViewController.swift in Sources */,
 			);
@@ -456,6 +516,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		84293A4C1E14CD7F008535A2 /* WelcomeScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84293A4D1E14CD7F008535A2 /* Base */,
+			);
+			name = WelcomeScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		842D553A1E05D5C900432858 /* Profile.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

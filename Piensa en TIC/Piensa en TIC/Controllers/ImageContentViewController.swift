@@ -28,13 +28,18 @@ class ImageContentViewController: GeneralViewController {
     
     
     func initialSetup(){
+        var nickName: String = ""
+        if let user = getUser() {
+            nickName = user.nickName
+        }
+        
         guard let topImageName = self.info["top_image_name"] else { return}
         guard let descriptionText = self.info["description"] else { return}
         guard let rightImageName = self.info["imageRight"] else {return}
         guard let leftImageName = self.info["imageLeft"] else {return}
         
         topImage.image = UIImage(named:topImageName)
-        descriptionLabel.text = String(format: descriptionText, getUserNameFromUserDefaults())
+        descriptionLabel.text = String(format: descriptionText, nickName)
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
         
         rightImage.image = UIImage(named:rightImageName)

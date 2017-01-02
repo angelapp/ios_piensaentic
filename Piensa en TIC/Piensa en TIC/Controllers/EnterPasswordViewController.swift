@@ -19,8 +19,13 @@ class EnterPasswordViewController: GeneralViewController {
     }
     
     func initialSetup(){
+        var nickName: String = ""
+        if let user = getUser() {
+            nickName = user.nickName
+        }
+        
         guard let descriptionText = self.info["description"] else { return}
-        descriptionLabel.text = descriptionText
+        descriptionLabel.text = String(format: descriptionText, nickName)
         descriptionLabel.textColor = UIColor(hexString:colorText)
     }
     
@@ -28,12 +33,14 @@ class EnterPasswordViewController: GeneralViewController {
     func validateFields() -> Bool{
         guard let password = password.text else {return false}
         guard password.characters.count > 0 else {return false}
+        guard password.characters.count >= 6 else {return false}
         guard let confirmPassword = confirmPassword.text else {return false}
         guard confirmPassword.characters.count > 0 else {return false}
         
         guard password == confirmPassword else {return false}
         
         guard matchRegex(pattern: Constants.patternPassword, value: password) else { return false}
+        
         
         return true
     }
@@ -43,7 +50,7 @@ class EnterPasswordViewController: GeneralViewController {
             showAlert(title: "Error", message: "Por favor verifica la informacion y vuelve a intentarlo.")
             return
         }
-        
+        storage.saveParameter(key: .password, value: password.text as AnyObject)
         showAlert(title: "Exito", message: "Su contraseña ha sido creada con exito.")
     }
     
