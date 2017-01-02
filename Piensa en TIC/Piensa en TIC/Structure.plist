@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>menu</key>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>vineta_sobremi</string>
+			<key>text</key>
+			<string>Perfil</string>
+			<key>content</key>
+			<string>preface</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_perfil</string>
+			<key>text</key>
+			<string>Crea una clave segura</string>
+			<key>content</key>
+			<string>chapter0</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_imagen</string>
+			<key>text</key>
+			<string>Yo en una imagen</string>
+			<key>content</key>
+			<string>chapter1</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_cartera</string>
+			<key>text</key>
+			<string>Qué hay en mi cartera?</string>
+			<key>content</key>
+			<string>chapter2</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_contacto_desconocido</string>
+			<key>text</key>
+			<string>Contacto desconocido</string>
+			<key>content</key>
+			<string>chapter3</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_encriptar</string>
+			<key>text</key>
+			<string>Encripta tus mensajes</string>
+			<key>content</key>
+			<string>chapter4</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_espia</string>
+			<key>text</key>
+			<string>Soy espía</string>
+			<key>content</key>
+			<string>chapter5</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>vineta_info</string>
+			<key>text</key>
+			<string>Información y contacto</string>
+			<key>content</key>
+			<string>infocredits</string>
+		</dict>
+	</array>
+	<key>chapters</key>
+	<dict>
+		<key>intro</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string></string>
+					<key>top_image_name</key>
+					<string>intro_logo</string>
+					<key>description</key>
+					<string>Atrévete a superar retos y dominar la tecnología con actividades útiles para enfrentar los riesgos digitales</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string></string>
+					<key>top_image_name</key>
+					<string>intro_logo</string>
+					<key>description</key>
+					<string>Lleva tu propio diario digital y aprende consejos de seguridad navegando de forma segura.</string>
+					<key>button</key>
+					<string>intro_bot_comencemos</string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
+			<string>actintro_fondo</string>
+			<key>textColor</key>
+			<string>#c22323</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#c22323</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#de5b33</string>
+		</dict>
+		<key>preface</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>profileController</string>
+					<key>top_image_name</key>
+					<string>pantalla-04_sobre_mi</string>
+					<key>form</key>
+					<string>name|heroe|birthdate|email</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>previewController</string>
+					<key>segue</key>
+					<string>menu</string>
+					<key>alert</key>
+					<string>terms and conditions</string>
+					<key>second_background_image</key>
+					<string>pantalla-06_circulo</string>
+					<key>format</key>
+					<string>%@ de ahora en adelante serás %@ naciste el %@ tu correo electrónico es %@</string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
+			<string>act1_fondo</string>
+			<key>textColor</key>
+			<string>#123159FF</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#237e99FF</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#123159FF</string>
+			<key>activity_name</key>
+			<string>Perfil</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_sobremi</string>
+		</dict>
+		<key>chapter0</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>imageContentController</string>
+					<key>top_image_name</key>
+					<string>pantalla-08_paso1</string>
+					<key>description</key>
+					<string>%@, piensa en una canción o frase que te guste, por ejemplo esta parte de la canción &quot;Cuando te veo&quot; de Choquibtown</string>
+					<key>imageRight</key>
+					<string>pantalla-08_mis_sentimientos</string>
+					<key>imageLeft</key>
+					<string>pantalla-08_solfeo</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>textDescriptionController</string>
+					<key>image</key>
+					<string>pantalla-09_mis_sentimientos</string>
+					<key>top_image_name</key>
+					<string>pantalla-09_paso2</string>
+					<key>description</key>
+					<string>Toma las letras iniciales y forma una contraseña súper segura:</string>
+					<key>example</key>
+					<string>Contraseña: u015 ,Mshtscnell|17,26</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>textDescriptionController</string>
+					<key>top_image_name</key>
+					<string>pantalla-10_paso3</string>
+					<key>image</key>
+					<string></string>
+					<key>description</key>
+					<string>Si quieres hacerla aún mas indescifrable, puedes cambiar algunas letras por números que se parezcan, por ejemplo la ele (l) por 1, la ese (s) por 5, quedaría asi:</string>
+					<key>example</key>
+					<string>Contraseña súper segura: u015,M5ht5cne11|17,26</string>
+				</dict>
+				<dict>
+					<key>button</key>
+					<string>Crea una contraseña</string>
+					<key>content</key>
+					<string>enterPasswordController</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>description</key>
+					<string>%@, ya pensaste tu contraseña? Para hacerla súper segura debe tener números, letras y mínimo 6 caracteres</string>
+				</dict>
+				<dict>
+					<key>button</key>
+					<string>pantalla-12_continuemos</string>
+					<key>content</key>
+					<string>chapterEpilogue</string>
+					<key>segue</key>
+					<string>menu</string>
+					<key>image</key>
+					<string>pantalla-12_fantastico</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>description</key>
+					<string>Esta contraseña es solo tuya!!! No se lo digas a nadie ni la escribas en un papel. Ten en cuenta que vas a usarla siempre que abras la aplicación.</string>
+					<key>button_background</key>
+					<string>gray</string>
+				</dict>
+			</array>
+			<key>userInfo</key>
+			<string>heroe</string>
+			<key>backgroundName</key>
+			<string>act1_fondo</string>
+			<key>textColor</key>
+			<string>#123159FF</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#237e99FF</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#123159FF</string>
+			<key>activity_name</key>
+			<string>Crea una clave segura</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_perfil</string>
+		</dict>
+		<key>chapter1</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>generalController</string>
+					<key>top_image_name</key>
+					<string>pantalla_13_titulo</string>
+					<key>description</key>
+					<string>Toma una fotografía que te represente, puede ser de ti o de algo que te guste mucho, también de un dibujo que hayas hecho. No te limites, puedes usar una imagen con filtros de Snapchat, Pinterest o alguna aplicación divertida que tengas en tu celular o computadora.</string>
+					<key>button</key>
+					<string>pantalla_13_bot-examinar</string>
+					<key>buttonEvent</key>
+					<string>photo</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>generalController</string>
+					<key>top_image_name</key>
+					<string>pantalla_14_marcofoto</string>
+					<key>description</key>
+					<string>Esta imagen dice mucho de ti, más allá de lo que muestra también tiene información sobre la hora, la fecha y lugar dónde la tomaste, e incluso puede tener el nombre o información sobre tu celular o cámara utilizada. Estos datos se llaman Metadatos.</string>
+					<key>button</key>
+					<string>pantalla_14_bot_revisar</string>
+					<key>buttonEvent</key>
+					<string>checkData</string>
+					<key>hasSecondaryImage</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>chapterEpilogue</string>
+					<key>description</key>
+					<string>Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:u015,u2022 Wikipedia u015,u2022 ICANN</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>button</key>
+					<string>pantalla_15_bot-continuar</string>
+					<key>image</key>
+					<string>pantalla_15_fantastico</string>
+					<key>links</key>
+					<string> ,https://es.wikipedia.org/wiki/Metadato,https://icann.org/news/blog/parte-i-que-son-los-metadatos</string>
+					<key>segue</key>
+					<string>menu</string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
+			<string>act2_fondo</string>
+			<key>textColor</key>
+			<string>#FFFFFFFF</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#faa448FF</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#faa44833</string>
+			<key>activity_name</key>
+			<string>Yo en una imagen</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_imagen</string>
+		</dict>
+		<key>chapter2</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>introController</string>
+					<key>secondary_image</key>
+					<string>pantalla01_fondo</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_titulo</string>
+					<key>description</key>
+					<string>¿Tienes una billetera o cartera donde guardas tus cosas importantes? ¿Qué pasaría si una persona toma y revisa tu cartera? ¿Qué encontraría?</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>surveyController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>question</key>
+					<string>Fotografías de mis amigos|Mis fotografías|Datos de identificación|Teléfonos y datos de contacto de familia y amigos|Dinero o tarjetas de banco (miles de pesos)|¿Qué más tienes?</string>
+					<key>options_select</key>
+					<string>0 a 5|Más de 5|Más de 20|Más de 100</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>surveyController</string>
+					<key>title</key>
+					<string>Ahora imagina que esa persona toma tu teléfono celular ¿Qué encontraría? Revisa!</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>question</key>
+					<string>Fotografías de mis amigos|Mis fotografías|Datos de identificación|Teléfonos y datos de contacto de familia y amigos|Dinero o tarjetas de banco (miles de pesos)|¿Qué más tienes?</string>
+					<key>options_select</key>
+					<string>0 a 5|Más de 5|Más de 20|Más de 100</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>resultsController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>question</key>
+					<string>Fotografías de mis amigos|Mis fotografías|Datos de identificación|Teléfonos y datos de contacto de familia y amigos|Dinero o tarjetas de banco (miles de pesos)|¿Qué más tienes?</string>
+					<key>hint_fields</key>
+					<string>cartera:|teléfono:</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>textDescriptionController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>description</key>
+					<string>Guardas muchas cosas en tu billetera y guardas más en tu celular. Toda esta información es valiosa, ¡protégela!</string>
+					<key>image</key>
+					<string>pantalla05_bombilla</string>
+					<key>example</key>
+					<string>Estos consejos prácticos te ayudarán</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
+					<string>pantalla_23_uno</string>
+					<key>adviceDescription</key>
+					<string>Utiliza una contraseña o un patrón para bloquear la pantalla</string>
+					<key>adviceImage</key>
+					<string>pantalla_23_patron</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
+					<string>pantalla_24_dos</string>
+					<key>adviceDescription</key>
+					<string>Marca la tarjeta SIM, la tarjeta de memoria, la batería y el teléfono con algo único para darte cuenta si te los han cambiado</string>
+					<key>adviceImage</key>
+					<string>pantalla_24_sim</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
+					<string>pantalla_25_tres</string>
+					<key>adviceDescription</key>
+					<string>No guardes información sensible en tu teléfono sin protegerla con una contraseña</string>
+					<key>adviceImage</key>
+					<string>pantalla_25_contrasena</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>adviceController</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>adviceNumber</key>
+					<string>pantalla_26_cuatro</string>
+					<key>adviceDescription</key>
+					<string>Conoce el número IMEI de tu teléfono marcando *#06#, así será más fácil rastrearlo si se te pierde o te lo roban</string>
+					<key>adviceImage</key>
+					<string>pantalla_26_imei</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>chapterEpilogue</string>
+					<key>top_image_name</key>
+					<string>pantalla_18_cremallera</string>
+					<key>description</key>
+					<string>¡Nunca dejes tu teléfono solo en un lugar público!</string>
+					<key>button</key>
+					<string>pantalla_27_btn-continuemos</string>
+					<key>image</key>
+					<string>pantalla_27_fantastico</string>
+					<key>segue</key>
+					<string>menu</string>
+				</dict>
+			</array>
+			<key>pageIndicatorColorInactive</key>
+			<string>#e0a2b1ff</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#ffffffff</string>
+			<key>textColor</key>
+			<string>#FFFFFFFF</string>
+			<key>backgroundName</key>
+			<string>act3_fondo</string>
+			<key>backgrounAlphaColor</key>
+			<string>#80D83872</string>
+			<key>activity_name</key>
+			<string>¿Qué hay en mi cartera?</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_cartera</string>
+			<key>zipper</key>
+			<string>pantalla_18_cremallera</string>
+		</dict>
+		<key>chapter3</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>introController</string>
+					<key>top_image_name</key>
+					<string>pantalla01_titulo-4</string>
+					<key>description</key>
+					<string>Ingresa a alguna de tus redes sociales y busca entre tus contactos dos personas que no conozcas o que no tengas idea de porque están allí.</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>knownController</string>
+					<key>borderColor</key>
+					<string>#4C7FD9</string>
+					<key>dot_line</key>
+					<string>pantalla_29_text_lines</string>
+					<key>description</key>
+					<string>Revisa sus perfiles y publicaciones, identifica si tienen amigos en común y ponles un apodo que nazca de tu corazón.</string>
+					<key>fields</key>
+					<string>Nombre|Apodo</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>describeFriendsController</string>
+					<key>no_header</key>
+					<string>No encontraste ninguna persona desconocida</string>
+					<key>header</key>
+					<string>Apodo:</string>
+					<key>no_top_image_name</key>
+					<string>pantalla03_felicitaciones</string>
+					<key>top_image_name</key>
+					<string>pantalla04_quienes-son</string>
+					<key>no_description</key>
+					<string>Cuanto tengas personas desconocidas entre tus contactos, asegúrate de que sean reales y confiables.  \n \n Piensa en la cantidad de contenido tuyo al que pueden acceder y si de verdad quieres darle ese permiso.</string>
+					<key>description</key>
+					<string>¿Vale la pena que las tengas en tus contactos?¿Cómo puedes asegurarte de que son personas reales y confiables? Piensa en la cantidad de contenido tuyo al que puedan acceder y si de verdad quieres darles ese permiso... si no, mejor elimínalos, así no podrán acceder a tus contenidos privados.</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>chapterEpilogue</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>description</key>
+					<string>Revisa periódicamente tu lista de contactos y seguidores en redes sociales, también los permisos que tienen sobre tu perfil y la información que publicas.</string>
+					<key>button</key>
+					<string>pantalla05_btn-continuar</string>
+					<key>image</key>
+					<string>pantalla05_fantastico</string>
+					<key>segue</key>
+					<string>menu</string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
+			<string>act4_fondo</string>
+			<key>textColor</key>
+			<string>#052d33ff</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#052d33ff</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#038571ff</string>
+			<key>activity_name</key>
+			<string>Contacto desconocido</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_contacto_desconocido</string>
+		</dict>
+		<key>chapter4</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>chapterEpilogue</string>
+					<key>top_image_name</key>
+					<string>pantalla01_titulo-1</string>
+					<key>description</key>
+					<string>Mira el siguiente video y conoce sobre la encriptación de los mensajes</string>
+					<key>videoId</key>
+					<string>KuUWKzD8e00</string>
+					<key>youtube_api_key</key>
+					<string>AIzaSyAcvZs2JqEhMsKEYU5lkoRTCkbcbSFQMkM</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>generalController</string>
+					<key>top_image_name</key>
+					<string>pantalla02_titulo</string>
+					<key>description</key>
+					<string>Escribe un mensaje secreto para tu mejor amigo o amiga, comienza con algo como: Hoy quiero contarte que... u015 u015 Encríptalo, tómale una foto y envíalo por el sistema de mensajería que más te guste. u015 u015 ¡No olvides contarle a tu contacto como descifrarlo!</string>
+					<key>button</key>
+					<string>pantalla02_btn_enviar</string>
+					<key>buttonEvent</key>
+					<string>send_message</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>messageController</string>
+					<key>descriptionImage</key>
+					<string>pantalla03_img_encriptacion</string>
+					<key>headerDescription</key>
+					<string>Algunos programas de mensajería usan códigos para encriptar los mensajes que intercambias con tus contactos protegiendo tus conversaciones \n \n Pero muchos no lo hacen o lo hacen muy mal.</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>encryptController</string>
+					<key>header</key>
+					<string>Una buena encriptación debería:</string>
+					<key>adviceOne</key>
+					<string>Encriptar los mensajes mientras viajan de tu teléfono al de tu contacto.</string>
+					<key>imageAdviceOne</key>
+					<string>pantalla04_uno</string>
+					<key>additionalImageOne</key>
+					<string>pantalla04_img_conversacion</string>
+					<key>adviceTwo</key>
+					<string>Encriptar tan bien que ni el programa los pueda entender.</string>
+					<key>imageAdviceTwo</key>
+					<string>pantalla04_dos</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>encryptTwoController</string>
+					<key>adviceOne</key>
+					<string>Encriptar además la identidad de tus contactos a quienes envías el mensaje</string>
+					<key>imageAdviceOne</key>
+					<string>pantalla05_tres</string>
+					<key>additionalImageOne</key>
+					<string>pantalla05_contacto</string>
+					<key>adviceTwo</key>
+					<string>Usar un método de encriptación revisado y validad por personas expertas</string>
+					<key>imageAdviceTwo</key>
+					<string>pantalla05_cuatro</string>
+					<key>additionalImageTwo</key>
+					<string>pantalla05_img_aprobacion</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>chapterEpilogue</string>
+					<key>description</key>
+					<string>Si quieres que tus mensajes estén bien encriptados prueba con Signal o Telegram. \n \n Para saber si tus programas de mensajería son buenos puedes consultar u015, http://www.eff.org/node/82654</string>
+					<key>links</key>
+					<string> ,http://www.eff.org/node/82654</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>button</key>
+					<string>pantalla06_btn_continuar</string>
+					<key>image</key>
+					<string>pantalla06_fantastico</string>
+					<key>segue</key>
+					<string>menu</string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
+			<string>act5_fondo</string>
+			<key>textColor</key>
+			<string>#ffffffff</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#052d33ff</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#5f998aff</string>
+			<key>activity_name</key>
+			<string>Encripta tus mensajes</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_encriptar</string>
+		</dict>
+		<key>chapter5</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>textDescriptionController</string>
+					<key>top_image_name</key>
+					<string>pantalla01_titulo-2</string>
+					<key>description</key>
+					<string>Ahora eres espía!</string>
+					<key>image</key>
+					<string>pantalla01_espia</string>
+					<key>example</key>
+					<string>Mira las fotos que publican algunos de tus contactos y busca lo siguiente</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>spyFormController</string>
+					<key>top_image_name</key>
+					<string>pantalla02_lupa_uno</string>
+					<key>description</key>
+					<string>Una foto en la que se lean las placas del carro de tu contacto</string>
+					<key>firstTitle</key>
+					<string>Placa</string>
+					<key>secondTitle</key>
+					<string>Contacto</string>
+					<key>box_border_background</key>
+					<string>pantalla02_marco-1</string>
+					<key>dot_line</key>
+					<string>pantalla_40_lines</string>
+					<key>screen</key>
+					<string>one</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>spyFormController</string>
+					<key>top_image_name</key>
+					<string>pantalla03_lupa_dos</string>
+					<key>description</key>
+					<string>Una foto que muestre los sitios que frecuentan los fines de semana</string>
+					<key>firstTitle</key>
+					<string>Sitios que frecuenta</string>
+					<key>secondTitle</key>
+					<string>Contacto</string>
+					<key>box_border_background</key>
+					<string>pantalla02_marco-1</string>
+					<key>dot_line</key>
+					<string>pantalla_40_lines</string>
+					<key>screen</key>
+					<string>two</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>spyFormController</string>
+					<key>top_image_name</key>
+					<string>pantalla04_lupa_tres</string>
+					<key>description</key>
+					<string>Una imagen en la que se vea el número de documento de identidad o teléfono</string>
+					<key>firstTitle</key>
+					<string>Documento de identidad o Teléfono</string>
+					<key>secondTitle</key>
+					<string>Contacto</string>
+					<key>box_border_background</key>
+					<string>pantalla02_marco-1</string>
+					<key>dot_line</key>
+					<string>pantalla_40_lines</string>
+					<key>screen</key>
+					<string>three</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>summaryController</string>
+					<key>box_border_background</key>
+					<string>pantalla02_marco-1</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>jusTextController</string>
+					<key>description</key>
+					<string>Las imágenes y fotografías que publicas pueden decir mucho más de ti de lo que quisieras. u015 u015 Mira entre tus imágenes y busca aquellas que muestren información que no quieres que sea pública! u015 u015 Elimínalas o protégelas, de todas maneras recuerda que alguien ya puede tener una copia de ellas.</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>chapterEpilogueTwo</string>
+					<key>description</key>
+					<string>¿Qué imágenes con información encontraste?</string>
+					<key>top_image_name</key>
+					<string></string>
+					<key>box_border_background</key>
+					<string>pantalla02_marco-1</string>
+					<key>question</key>
+					<string>¿Las eliminaste o protegiste?</string>
+					<key>select_options</key>
+					<string>Sí, lo hice|No, lo haré más tarde</string>
+					<key>button</key>
+					<string>pantalla07_btn_continuar</string>
+					<key>image</key>
+					<string>pantalla07_fantastico</string>
+					<key>segue</key>
+					<string>menu</string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
+			<string>act6_fondo</string>
+			<key>textColor</key>
+			<string>#000000FF</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#fc477aFF</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#f081a8FF</string>
+			<key>menuColor</key>
+			<string>#fc477aFF</string>
+			<key>activity_name</key>
+			<string>Soy espía</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_espia</string>
+		</dict>
+		<key>infocredits</key>
+		<dict>
+			<key>pages</key>
+			<array>
+				<dict>
+					<key>content</key>
+					<string>creditsController</string>
+					<key>bottom_image_name</key>
+					<string>logo</string>
+					<key>credits</key>
+					<string>Para dejar tus comentarios o calificar ingresa a ,Piensa en TIC en App Store, \n \n Envíanos tus sugerencias y observaciones a ,info@piensatic.co,\n \n Conoce más sobre seguridad y derechos en los espacios digitales en \n \n,http://dominemoslatecnologia.org</string>
+					<key>links</key>
+					<string> ,https://itunes.apple.com/, ,mail:info@piensatic.co, ,https://dominemoslatecnologia.org</string>
+				</dict>
+				<dict>
+					<key>content</key>
+					<string>creditsController</string>
+					<key>bottom_image_name</key>
+					<string>logo</string>
+					<key>credits</key>
+					<string>Este recurso ha sido desarrollado en el marco del proyecto &quot;Promoción de los derechos de internet y fortalecimiento de capacidades para la prevención de riesgos y la atención de violencias digitales&quot;, coordinado por ,Colnodo, con el apoyo de ,Asociación para el Progreso de las Comunicaciones (APC).,\n \n Tipo de licenciamiento GNU. El código de esta aplicación es abierto y disponible en ,github.org </string>
+					<key>links</key>
+					<string> , ,http://colnodo.apc.org, ,http://apc.org/, ,https://github.org </string>
+				</dict>
+			</array>
+			<key>backgroundName</key>
+			<string>actintro_fondo</string>
+			<key>textColor</key>
+			<string>#c22323FF</string>
+			<key>pageIndicatorColorActive</key>
+			<string>#c22323FF</string>
+			<key>pageIndicatorColorInactive</key>
+			<string>#de5b33FF</string>
+			<key>activity_name</key>
+			<string>Información y contacto</string>
+			<key>menu_bullet_activity</key>
+			<string>vineta_info</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
