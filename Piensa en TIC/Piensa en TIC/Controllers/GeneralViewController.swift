@@ -165,9 +165,13 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
     func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         
         imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        var shouldStop = false
         switch (buttonIndex){
             
-        case 0: break
+        case 0:
+            shouldStop = true
+            break
         case 1:
             imagePicker.sourceType = .camera
             break
@@ -177,9 +181,12 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
         default:break
             
         }
+        
+        if shouldStop {
+            return
+        }
+        storage.saveParameter(key: .latestChapter, value: "chapter1" as AnyObject)
         present(imagePicker, animated: true, completion: nil)
-        
-        
     }
     
     
@@ -195,5 +202,19 @@ extension GeneralViewController {
         guard let dic = User.unarchive(data: data) else { return nil}
         let user = User.initUser(fromDic: dic)
         return user
+    }
+}
+
+extension GeneralViewController {
+    func shareFunctionality() {
+        let staticText = "Encriptando con Piensa En TIC"
+        let activityViewController = UIActivityViewController(activityItems: [staticText], applicationActivities: nil)
+        
+        activityViewController.completionWithItemsHandler  = { activity, success, items, error in
+            print("Activitycontroller ",activity ?? "")
+            print("items ",items ?? "")
+        }
+        self.present(activityViewController, animated: true, completion: {})
+
     }
 }

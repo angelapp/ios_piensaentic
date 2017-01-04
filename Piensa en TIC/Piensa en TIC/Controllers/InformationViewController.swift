@@ -49,6 +49,8 @@ class InformationViewController: GeneralViewController {
                 if storage.getMetadata() != nil {
                     self.showAlert(title: "Metadatos", message: storage.getMetadata() as! String)
                 }
+            } else if buttonEvent == "send_message" {
+                shareFunctionality()
             }
         }
     }
