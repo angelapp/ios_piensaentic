@@ -5,6 +5,10 @@ protocol CompleteChapterDelegate {
     func processChapter()
 }
 
+protocol SwipeDelegate {
+    func backOnePage()
+}
+
 protocol DataSourceEnableSwipe {
     func enableSwipe()
     func disableSwipe()
@@ -81,7 +85,6 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
                 viewController.colorText = colorText as! String
             }
             
-            
             return viewController
         }
         
@@ -90,6 +93,9 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         viewController.info = content
         viewController.delegate = self
         viewController.delegateSwipe = self
+        if identifier == "previewController" {
+            viewController.delegateTransition = self
+        }
         if let colorText = generalContent["textColor"] {
             viewController.colorText = colorText as! String
         }
@@ -194,5 +200,12 @@ extension CarrouselChapterViewController: DataSourceEnableSwipe {
                 subView.isScrollEnabled = false
             }
         }
+    }
+}
+
+extension CarrouselChapterViewController: SwipeDelegate {
+    func backOnePage() {
+        guard let viewController =  viewController(index: 0, storyboard: storyboard!) else {return}
+        self.pageViewController.setViewControllers([viewController], direction: .reverse, animated: true, completion: nil)
     }
 }

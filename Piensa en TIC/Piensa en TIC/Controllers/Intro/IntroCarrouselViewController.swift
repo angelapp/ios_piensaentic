@@ -11,6 +11,7 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     var imageName:String!
     var pagesArray:[[String:String]]!
     var generalContent:NSDictionary!
+    var storage = Storage.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let _ = Network.getUser() else {
+        guard let _ = storage.getParameterFromKey(key: .email) else {
             self.initialSetup()
             return
         }
@@ -156,7 +157,7 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
 extension IntroCarrouselViewController: DismissIntro {
     func dismiss() {
         var storyboardId = "Main"
-        guard let _ = Network.getUser() else {
+        guard let _ = storage.getParameterFromKey(key: .email) else {
             storyboardId = "Menu"
             presentNextView(storyboardId)
             return

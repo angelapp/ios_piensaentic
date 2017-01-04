@@ -151,22 +151,4 @@ extension ProfileViewController : UITextFieldDelegate {
         let _ = validateFields()
         return true
     }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        
-//        switch textField.tag {
-//        case nameTextField.tag:
-//            heroTextField.becomeFirstResponder()
-//            break
-//        case heroTextField.tag:
-//            emailTextField.becomeFirstResponder()
-//            break
-//        case emailTextField.tag:
-//            textField.resignFirstResponder()
-//            break
-//        default: break
-//        }
-////        validateFields()
-//        return true
-//    }
 }

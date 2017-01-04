@@ -1,6 +1,7 @@
 import UIKit
 protocol CloseAlertDelegate {
     func dismissAlertView()
+    func dismissAlertViewAndBack()
 }
 
 class PreviewProfileViewController: GeneralViewController {
@@ -35,13 +36,13 @@ class PreviewProfileViewController: GeneralViewController {
     func showAlert(){
         
         UIView.animate(withDuration: 0, delay: 1, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
-            if self.getUser() != nil {
-                return
-            }
-            self.alertView = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIdentifier.termsController) as! TermsViewController
-            self.alertView.delegate = self
-                if let view = self.alertView.view {
-                    self.navigationController?.view.addSubview(view)
+                guard let email = self.storage.getParameterFromKey(key: Keys.email) else {
+                    self.alertView = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIdentifier.termsController) as! TermsViewController
+                    self.alertView.delegate = self
+                    if let view = self.alertView.view {
+                        self.navigationController?.view.addSubview(view)
+                    }
+                    return
                 }
             }, completion: {_ in
                 
@@ -63,5 +64,11 @@ extension PreviewProfileViewController: CloseAlertDelegate {
             self.alertView.view.removeFromSuperview()
             self.alertView = nil
         }
+    }
+    
+    func dismissAlertViewAndBack() {
+        dismissAlertView()
+        guard delegateTransition != nil else {return}
+        delegateTransition.backOnePage()
     }
 }

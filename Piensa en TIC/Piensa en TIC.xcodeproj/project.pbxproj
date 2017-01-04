@@ -46,6 +46,7 @@
 		84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */; };
 		84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CC1DF9273E002D36AA /* RightViewController.swift */; };
 		84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */; };
+		84C44FBC1E1CBA6400BC5D9D /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C44FBB1E1CBA6400BC5D9D /* UIViewController+Alert.swift */; };
 		84E42D0B1E0F256700D9F9BD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D0A1E0F256700D9F9BD /* Network.swift */; };
 		84E42D0D1E0F3B7E00D9F9BD /* ActivityRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */; };
 		84E42D111E0F61C100D9F9BD /* ResultsSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */; };
@@ -105,6 +106,7 @@
 		84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarrouselChapterViewController.swift; path = Chapters/CarrouselChapterViewController.swift; sourceTree = "<group>"; };
 		84AA76CC1DF9273E002D36AA /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = Menu/RightViewController.swift; sourceTree = "<group>"; };
 		84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConfigurator.swift; path = Service/MainConfigurator.swift; sourceTree = "<group>"; };
+		84C44FBB1E1CBA6400BC5D9D /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "Utils/UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		84E42D0A1E0F256700D9F9BD /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
 		84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityRegister.swift; path = Network/ActivityRegister.swift; sourceTree = "<group>"; };
 		84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsSurveyViewController.swift; path = Controllers/ResultsSurveyViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				842D553D1E05DA7D00432858 /* Utils.swift */,
 				849294A31E0C2D8400835B67 /* Constants.swift */,
 				849294A51E0C58CA00835B67 /* Storage.swift */,
+				84C44FBB1E1CBA6400BC5D9D /* UIViewController+Alert.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				84400DF61E07AE16008BE9F1 /* ImageContentViewController.swift in Sources */,
 				842D55401E05DFB200432858 /* ProfileViewController.swift in Sources */,
 				18446CC21E14E0A400434AFB /* PasswordRecoveryViewController.swift in Sources */,
+				84C44FBC1E1CBA6400BC5D9D /* UIViewController+Alert.swift in Sources */,
 				8473BBB91E176F8E0027FEFD /* PreviewProfileViewController.swift in Sources */,
 				84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */,
 				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,

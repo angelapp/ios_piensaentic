@@ -58,9 +58,9 @@ class Network: NSObject {
     
     class func passwordRecovery(email: String){
         let storage = Storage.shared
-        guard let savedEmail = storage.getParameterFromKey(key: .email) as! String! else { return nil}
+        guard let savedEmail = storage.getParameterFromKey(key: .email) as! String! else { return}
         if savedEmail == email{
-            guard let password = storage.getParameterFromKey(key: .password) as! String! else { return nil}
+            guard let password = storage.getParameterFromKey(key: .password) as! String! else { return}
             let parameters: Parameters = [
                 "user_mail":savedEmail, "password": password
             ]
@@ -75,7 +75,7 @@ class Network: NSObject {
             }
             
         } else {
-            showAlert(title: "Error", message: "Email no corresponde con el registrado en la aplicación.")
+//            showAlert(title: "Error", message: "Email no corresponde con el registrado en la aplicación.")
         }
     }
     
@@ -150,11 +150,15 @@ class Network: NSObject {
             print("Response Server - create user: ",json)
             
             var result:Bool = false
-            
+            var message = ""
             switch response.statusCode {
                 case 400:
+                    message = "El email debe ser unico."
+                    result = false
                     break
                 case 404:
+                    message = ""
+                    result = false
                     break
                 case 200:
                     storage.saveParameter(key: .email, value: json["email"].stringValue as AnyObject)
@@ -163,7 +167,7 @@ class Network: NSObject {
                 default: break
             }
             
-            completion(ResponseCallback.succeeded(succeeded: result))
+            completion(ResponseCallback.succeeded(succeeded: result, message: message))
         }
     }
 }

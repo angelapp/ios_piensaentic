@@ -12,6 +12,7 @@ class GeneralViewController: UIViewController {
     let storage = Storage.shared
     var delegate:CompleteChapterDelegate!
     var delegateSwipe:DataSourceEnableSwipe!
+    var delegateTransition: SwipeDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()

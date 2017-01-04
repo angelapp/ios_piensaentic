@@ -24,7 +24,7 @@ enum Keys: String {
 }
 
 enum ResponseCallback {
-    case succeeded(succeeded: Bool)
+    case succeeded(succeeded: Bool, message: String)
     case succeededObject(result: AnyObject)
     case error(error: Error?)
 }

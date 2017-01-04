@@ -53,7 +53,6 @@ class LogginViewController: UIViewController {
         passwordText.delegate = self
         passwordText.drawBorder(UIColor.black, y: passwordText.frame.size.height, key: "BottomBorder", dotted: true)
         savedPassword = getPassword()
-
     }
     
     func getPassword()-> String! {
