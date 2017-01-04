@@ -84,7 +84,11 @@ class SurveyViewController: GeneralViewController {
             guard let sectionContent = dic as [String:Any]! else { continue}
             if let _ = sectionContent["options"] as! [String]! {
                 let key = "".concatenate(sectionContent["section"] as! String!, (isWallet ? "Cartera":"Telefono"))
-                guard let result = storage.getStringFromKey(key: key) else {continue}
+                guard let result = storage.getStringFromKey(key: key) else {
+                    resetAllResults(index: section)
+                    updateState(indexPath: IndexPath(row: 0, section: section), value: true)
+                    continue
+                }
                 var index = 0
                 switch result {
                     case SurveyOptions.first.rawValue:

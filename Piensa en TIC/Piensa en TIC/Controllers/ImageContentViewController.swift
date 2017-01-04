@@ -39,7 +39,7 @@ class ImageContentViewController: GeneralViewController {
         guard let leftImageName = self.info["imageLeft"] else {return}
         
         topImage.image = UIImage(named:topImageName)
-        descriptionLabel.text = String(format: descriptionText, nickName)
+        descriptionLabel.attributedText = processNickname(descriptionText)
         descriptionLabel.textColor = UIColor.init(hexString: colorText)
         
         rightImage.image = UIImage(named:rightImageName)

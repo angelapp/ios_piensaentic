@@ -48,6 +48,7 @@ class GeneralViewController: UIViewController {
 
 extension GeneralViewController {
     func processExample(_ example:String) -> NSAttributedString {
+        let shouldBeBold = example.contains("Mshtscnell") || example.contains("M5ht5cne11")
         let array = example.split(by: "|")
         guard let arrayResult = array else { return NSAttributedString()}
         let words = (arrayResult[0] as! String).split(by: ",")
@@ -66,11 +67,32 @@ extension GeneralViewController {
         for i in 0..<fontsResult.count {
             let fontSize = fontsResult[i] as! String
             let cast = Int(fontSize)
-            
+            if shouldBeBold {
+                if i == fontsResult.count - 1 {
+                    fontsResponse.append(UIFont.boldSystemFont(ofSize: CGFloat(cast!)))
+                    continue
+                }
+            }
             fontsResponse.append(UIFont.systemFont(ofSize: CGFloat(cast!)))
         }
         
+        
+        
         let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], fonts: fontsResponse as! [UIFont], color:UIColor(hexString: colorText)!)
+        return result
+    }
+    
+    func processNickname(_ format:String) -> NSAttributedString {
+        guard let user = getUser() else {
+            return NSAttributedString(string: String.init(format: format, ""))
+        }
+        
+        let formatted = format.replacingOccurrences(of: "\\n", with: "u015").replacingOccurrences(of: "u015", with: "\n").replacingOccurrences(of: "%@", with: "")
+        let words = [user.nickName.uppercased(), formatted]
+        let fonts = [UIFont.boldSystemFont(ofSize: 20), UIFont.systemFont(ofSize: 20)]
+        
+        
+        let result = NSAttributedString().stringWithWords(words: words, fonts: fonts, color: UIColor(hexString: colorText)!)
         return result
     }
     
