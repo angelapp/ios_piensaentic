@@ -45,7 +45,7 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     func initialSetup() {
         pagesArray = [[String:String]]()
         pagesArray.append(["top_image":"logo","description":"Atrévete a superar retos y dominar la tecnología con actividades útiles para enfrentar los riesgos digitales."])
-        pagesArray.append(["top_image":"logo", "description":"Lleve tu propio diario digital y aprende consejos de seguridad navegando de forma segura.", "background":"intro_bot_comencemos"])
+        pagesArray.append(["top_image":"logo", "description":"Lleva tu propio diario digital y aprende consejos de seguridad navegando de forma segura.", "background":"intro_bot_comencemos"])
         
         
         pageViewController = UIPageViewController.init(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.horizontal, options: nil)

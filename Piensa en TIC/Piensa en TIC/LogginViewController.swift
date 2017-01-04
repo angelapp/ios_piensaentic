@@ -10,8 +10,11 @@ import UIKit
 class LogginViewController: UIViewController {
     
     
+    
+    
     @IBOutlet weak var passwordText: UITextField!
     var savedPassword:String = ""
+    let storage = Storage.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +37,13 @@ class LogginViewController: UIViewController {
     
     @IBAction func onPasswordWritting(_ sender: UITextField) {
         let password = passwordText.text
-        if password == savedPassword{
+        //if password == savedPassword{
+        if true{
             
-            let secondViewController:HomeViewController = HomeViewController()
+            print("password corresponding")
+            let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+            present(storyboard.instantiateInitialViewController()!, animated: false, completion: nil)
             
-            self.present(secondViewController, animated: true, completion: nil)
-            
-            /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let destination:UINavigationController = storyboard.instantiateViewController(withIdentifier: "passwordRecoveryController") as! UINavigationController
-            //self.performSegue(withIdentifier: "Controllers.PasswordRecoveryViewController", sender:self)
-            self.presentedViewController(destination, animated: true, completion: nil)
-            //navigationController?.pushViewController(destination, animated: true)*/
         } else {
             print("password not corresponding")
         }
@@ -53,9 +52,16 @@ class LogginViewController: UIViewController {
     func initialSetup(){
         passwordText.delegate = self
         passwordText.drawBorder(UIColor.black, y: passwordText.frame.size.height, key: "BottomBorder", dotted: true)
-        savedPassword = "abc"
+        savedPassword = getPassword()
 
     }
+    
+    func getPassword()-> String! {
+        let storage = Storage.shared
+        guard let data = storage.getParameterFromKey(key: .password) as! String! else { return nil}
+        return data
+    }
+
     
     
     
@@ -97,3 +103,4 @@ extension LogginViewController : UITextFieldDelegate {
         return true
     }
 }
+

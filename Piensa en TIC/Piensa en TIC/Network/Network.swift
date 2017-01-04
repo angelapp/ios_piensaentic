@@ -6,6 +6,7 @@ struct NetworkConstants {
     static let api = "/api/"
     static let registerUserView = "register-user/"
     static let registerActivityFinishedView = "activity-register/"
+    static let passworRecoveryView = "password-recovery/"
     static let apiKey = "50134DF39-D02F-4EBD-34JK3-55KJK3-222JNM"
     static let headerApi = "APIID"
 }
@@ -53,6 +54,29 @@ class Network: NSObject {
         }
         
         return result
+    }
+    
+    class func passwordRecovery(email: String){
+        let storage = Storage.shared
+        guard let savedEmail = storage.getParameterFromKey(key: .email) as! String! else { return nil}
+        if savedEmail == email{
+            guard let password = storage.getParameterFromKey(key: .password) as! String! else { return nil}
+            let parameters: Parameters = [
+                "user_mail":savedEmail, "password": password
+            ]
+            let url = [NetworkConstants.url,NetworkConstants.api, NetworkConstants.passworRecoveryView].flatMap{$0}.joined(separator: "")
+            guard let request = setupRequest(url, parameters: parameters as [String : AnyObject]) else {return}
+            Alamofire.request(request).debugLog().responseData { (result) in
+                guard let data = result.data, let utf8Text = String(data: data, encoding: .utf8) else {
+                    return
+                }
+                
+                print("Response Server: ",utf8Text)
+            }
+            
+        } else {
+            showAlert(title: "Error", message: "Email no corresponde con el registrado en la aplicación.")
+        }
     }
     
     class func sendProgress() {

@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oav-U4-cfv">
-                                <rect key="frame" x="101" y="267" width="173" height="172"/>
+                                <rect key="frame" x="110" y="253" width="155" height="160"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.335137083" green="0.77692945079999998" blue="0.37239419140000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.77254901960784317" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oav-U4-cfv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EuG-dj-Lnr"/>
                             <constraint firstItem="oav-U4-cfv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="19.5" id="jaS-k1-yJQ"/>

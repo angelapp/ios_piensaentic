@@ -51,6 +51,7 @@ class EpilogueViewController: GeneralViewController {
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = descriptionText
         descriptionLabel.textColor = UIColor(hexString: colorText)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 20)
     
         if let imageName = self.info["image"] {
             descriptionImage.image = UIImage(named:imageName)

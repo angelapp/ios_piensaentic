@@ -64,6 +64,7 @@ class PasswordRecoveryViewController: UIViewController {
         guard isTextEmpty(field: emailTextField.text) else {return false}
         return true
     }
+    
 }
 
 
