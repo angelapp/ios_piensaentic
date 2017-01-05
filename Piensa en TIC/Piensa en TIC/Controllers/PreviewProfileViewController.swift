@@ -22,15 +22,25 @@ class PreviewProfileViewController: GeneralViewController {
     }
     
     func initialSetup() {
-        guard let user = getUser() else {return}
         guard let imageBackground = self.info["second_background_image"] else {return}
         guard let format = self.info["format"] else { return}
         
         centerImage.image = UIImage(named: imageBackground)
-        let contentFormatted = String.init(format: format, user.firstName, user.nickName, user.birthDate, user.email)
-        summarizeLabel.text = contentFormatted
+        let contentFormatted = formatPreviewProfile(format)
+        summarizeLabel.attributedText = contentFormatted
+//        summarizeLabel.text = contentFormatted
         
         showAlert()
+    }
+    
+    func formatPreviewProfile(_ formatted: String) -> NSAttributedString {
+        guard let user = getUser() else {return NSAttributedString()}
+        let completedString = String(format: formatted, String(",\(user.firstName!),"), String(",\(user.nickName.uppercased()),"), String(",\(user.birthDate!),"), String(",\(user.email!),"))
+        guard let format = completedString.split(by: ",") else {return NSAttributedString(string: completedString)}
+        let fonts = [UIFont.boldSystemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.boldSystemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0)]
+        
+        return NSAttributedString().stringWithWords(words: format as! [String], fonts: fonts, color: UIColor(hexString: colorText)!)
+        
     }
     
     func showAlert(){

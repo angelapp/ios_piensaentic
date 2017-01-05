@@ -42,9 +42,6 @@ class Network: NSObject {
         var result = [[String:AnyObject]]()
         for dic in menu {
             let text = dic["text"] as! String
-            if text.contains("Perfil") {
-                continue
-            }
             if let saved = storage.getIntFromKey(key: text) {
                 if saved == 1 {
                     result.append(["activity_executed":text as AnyObject,
