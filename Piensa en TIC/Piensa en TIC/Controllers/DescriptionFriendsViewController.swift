@@ -65,6 +65,7 @@ class DescriptionFriendsViewController: GeneralViewController {
         
         headerLabel.textColor = color
         descriptionLabel.textColor = color
+        descriptionLabel.textAlignment = .center
     }
     
 
