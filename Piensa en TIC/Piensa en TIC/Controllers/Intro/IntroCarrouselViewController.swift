@@ -11,6 +11,7 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     var imageName:String!
     var pagesArray:[[String:String]]!
     var generalContent:NSDictionary!
+    var storage = Storage.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let _ = Network.getUser() else {
+        guard let _ = storage.getParameterFromKey(key: .email) else {
             self.initialSetup()
             return
         }
@@ -45,7 +46,7 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
     func initialSetup() {
         pagesArray = [[String:String]]()
         pagesArray.append(["top_image":"logo","description":"Atrévete a superar retos y dominar la tecnología con actividades útiles para enfrentar los riesgos digitales."])
-        pagesArray.append(["top_image":"logo", "description":"Lleve tu propio diario digital y aprende consejos de seguridad navegando de forma segura.", "background":"intro_bot_comencemos"])
+        pagesArray.append(["top_image":"logo", "description":"Lleva tu propio diario digital y aprende consejos de seguridad navegando de forma segura.", "background":"intro_bot_comencemos"])
         
         
         pageViewController = UIPageViewController.init(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.horizontal, options: nil)
@@ -155,7 +156,17 @@ class IntroCarrouselViewController: UIViewController, UIPageViewControllerDelega
 
 extension IntroCarrouselViewController: DismissIntro {
     func dismiss() {
-        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        var storyboardId = "Main"
+        guard let _ = storage.getParameterFromKey(key: .email) else {
+            storyboardId = "Menu"
+            presentNextView(storyboardId)
+            return
+        }
+        presentNextView(storyboardId)
+    }
+    
+    func presentNextView(_ identifier: String) {
+        let storyboard = UIStoryboard(name: identifier, bundle: nil)
         present(storyboard.instantiateInitialViewController()!, animated: false, completion: nil)
     }
 }

@@ -14,8 +14,6 @@ class TermsViewController: UIViewController {
         setupBackgroundBlur()
         acceptButton.addTarget(self, action: #selector(TermsViewController.actionButtonAccept), for: .touchUpInside)
         refuseButton.addTarget(self, action: #selector(TermsViewController.actionButtonRefuse), for: .touchUpInside)
-        
-        acceptButton.setTitle(":(", for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,13 +44,19 @@ class TermsViewController: UIViewController {
     func actionButtonAccept() {
         Network.createUser(termsConditionalAccepted: true, completion: { (response) in
             switch response {
-            case .succeeded(let succeeded):
+            case .succeeded(let succeeded, let message):
                 if succeeded {
                     guard self.delegate != nil else {return}
                     self.delegate.dismissAlertView()
+                } else {
+                    self.showAlert(title: "Error", message: message) { _ in
+                        guard self.delegate != nil else {return}
+                        self.delegate.dismissAlertViewAndBack()
+                    }
                 }
                 break
             case .error(let error):
+                
                 print(error.debugDescription)
                 break
             default: break

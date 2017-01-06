@@ -18,4 +18,7 @@ enum StoryboardIdentifier {
     
     //MARK: terms and conditions alert
     static let termsController = "termsController"
+    
+    //MARK: alert info view
+    static let alertViewInfo = "alertInfoController"
 }

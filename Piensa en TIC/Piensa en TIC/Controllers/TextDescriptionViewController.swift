@@ -39,6 +39,7 @@ class TextDescriptionViewController: GeneralViewController {
             exampleLabel.attributedText = processExample(example)
         } else {
             exampleLabel.text = example
+            exampleLabel.font = UIFont.systemFont(ofSize: 20.0)
         }
         
         exampleLabel.textColor = UIColor.init(hexString: colorText)

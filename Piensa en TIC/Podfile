@@ -10,5 +10,7 @@ target 'Piensa en TIC' do
   pod 'IQKeyboardManagerSwift','4.0.6'
   pod 'Alamofire', '~> 4.0'
   pod 'youtube-ios-player-helper', '~> 0.1.6'
-  pod 'SwiftyJSON' 
+  pod 'SwiftyJSON'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

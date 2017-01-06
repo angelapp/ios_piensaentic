@@ -65,6 +65,10 @@ class Storage: NSObject {
         return result as AnyObject!
     }
     
+    func setToNil(key: Keys) {
+        appState.setNilValueForKey(key.rawValue)
+    }
+    
     func saveChapter(_ key:String, value:Int) {
         appState.set(value, forKey: key)
     }

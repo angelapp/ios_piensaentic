@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18446CC01E14DC6500434AFB /* LogginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446CBF1E14DC6500434AFB /* LogginViewController.swift */; };
+		18446CC21E14E0A400434AFB /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */; };
 		3AA321AA702C288E5D7EEB18 /* Pods_Piensa_en_TIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */; };
 		842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842282CF1E10C88B003A9756 /* SpyFormViewController.swift */; };
 		84293A4E1E14CD7F008535A2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84293A4C1E14CD7F008535A2 /* WelcomeScreen.storyboard */; };
@@ -14,6 +16,7 @@
 		84293A541E14D161008535A2 /* IntroInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84293A531E14D161008535A2 /* IntroInformationViewController.swift */; };
 		842BC06D1E1212F0005DFBB3 /* SummarySpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */; };
 		842BC06F1E121F72005DFBB3 /* JustTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */; };
+		842CC0FD1E1F437000C81221 /* AlertInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CC0FC1E1F437000C81221 /* AlertInfoViewController.swift */; };
 		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
 		842D553C1E05D5C900432858 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D553A1E05D5C900432858 /* Profile.storyboard */; };
 		842D553E1E05DA7D00432858 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D553D1E05DA7D00432858 /* Utils.swift */; };
@@ -44,6 +47,7 @@
 		84AA76CB1DF92673002D36AA /* CarrouselChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */; };
 		84AA76CD1DF9273E002D36AA /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CC1DF9273E002D36AA /* RightViewController.swift */; };
 		84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */; };
+		84C44FBC1E1CBA6400BC5D9D /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C44FBB1E1CBA6400BC5D9D /* UIViewController+Alert.swift */; };
 		84E42D0B1E0F256700D9F9BD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D0A1E0F256700D9F9BD /* Network.swift */; };
 		84E42D0D1E0F3B7E00D9F9BD /* ActivityRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */; };
 		84E42D111E0F61C100D9F9BD /* ResultsSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */; };
@@ -59,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18446CBF1E14DC6500434AFB /* LogginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogginViewController.swift; sourceTree = "<group>"; };
+		18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piensa en TIC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Piensa en TIC/Pods-Piensa en TIC.release.xcconfig"; sourceTree = "<group>"; };
 		4DAAFC3AA06C26AEE5AD8E91 /* Pods_Piensa_en_TIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piensa_en_TIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842282CF1E10C88B003A9756 /* SpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpyFormViewController.swift; path = Controllers/SpyFormViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 		84293A531E14D161008535A2 /* IntroInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroInformationViewController.swift; path = Controllers/Intro/IntroInformationViewController.swift; sourceTree = "<group>"; };
 		842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummarySpyFormViewController.swift; path = Controllers/SummarySpyFormViewController.swift; sourceTree = "<group>"; };
 		842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JustTextViewController.swift; path = Controllers/JustTextViewController.swift; sourceTree = "<group>"; };
+		842CC0FC1E1F437000C81221 /* AlertInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertInfoViewController.swift; path = Controllers/AlertInfo/AlertInfoViewController.swift; sourceTree = "<group>"; };
 		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
 		842D553B1E05D5C900432858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		842D553D1E05DA7D00432858 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -101,6 +108,7 @@
 		84AA76CA1DF92673002D36AA /* CarrouselChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarrouselChapterViewController.swift; path = Chapters/CarrouselChapterViewController.swift; sourceTree = "<group>"; };
 		84AA76CC1DF9273E002D36AA /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = Menu/RightViewController.swift; sourceTree = "<group>"; };
 		84AA76CF1DF92A2E002D36AA /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConfigurator.swift; path = Service/MainConfigurator.swift; sourceTree = "<group>"; };
+		84C44FBB1E1CBA6400BC5D9D /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "Utils/UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		84E42D0A1E0F256700D9F9BD /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
 		84E42D0C1E0F3B7E00D9F9BD /* ActivityRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityRegister.swift; path = Network/ActivityRegister.swift; sourceTree = "<group>"; };
 		84E42D101E0F61C100D9F9BD /* ResultsSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsSurveyViewController.swift; path = Controllers/ResultsSurveyViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +176,14 @@
 				8473BBBA1E1770660027FEFD /* TermsViewController.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		842CC0FB1E1F433900C81221 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				842CC0FC1E1F437000C81221 /* AlertInfoViewController.swift */,
+			);
+			name = Alert;
 			sourceTree = "<group>";
 		};
 		842D55411E0785D000432858 /* Chapters */ = {
@@ -243,10 +259,13 @@
 		8478B9241DFD3D8F009D3C7A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				842CC0FB1E1F433900C81221 /* Alert */,
 				8498487C1E1A0C8C008477C1 /* Credits */,
 				84A95DD31E0E2D960023EA38 /* Cell */,
 				84A95DD11E0E2B020023EA38 /* Survey */,
 				842D55411E0785D000432858 /* Chapters */,
+				18446CBF1E14DC6500434AFB /* LogginViewController.swift */,
+				18446CC11E14E0A400434AFB /* PasswordRecoveryViewController.swift */,
 				84293A521E14CEB2008535A2 /* Profile */,
 				84293A511E14CE8D008535A2 /* Intro */,
 			);
@@ -296,6 +315,7 @@
 				842D553D1E05DA7D00432858 /* Utils.swift */,
 				849294A31E0C2D8400835B67 /* Constants.swift */,
 				849294A51E0C58CA00835B67 /* Storage.swift */,
+				84C44FBB1E1CBA6400BC5D9D /* UIViewController+Alert.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -346,6 +366,7 @@
 				844EDE451DF50A080079AC35 /* Resources */,
 				8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */,
 				EBB90192427B5D466642B6C2 /* [CP] Copy Pods Resources */,
+				18B2F46A1E201B3000028CEC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -368,6 +389,7 @@
 				TargetAttributes = {
 					844EDE461DF50A080079AC35 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9KDV58TUW5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -422,8 +444,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		18B2F46A1E201B3000028CEC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9dfca2a3c511dbb0e808c88a7c61c538006cdee4 6430ea034e956588f0718e29a005e6beaba0540cdb291d35287af7b7b8799eb2";
 		};
 		8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -479,14 +514,18 @@
 				8478B9231DFD1EBD009D3C7A /* GeneralViewController.swift in Sources */,
 				84E8141A1E0CF0AA001CFBA8 /* AdviceViewController.swift in Sources */,
 				84E8141E1E0CFA44001CFBA8 /* DescriptionFriendsViewController.swift in Sources */,
+				18446CC01E14DC6500434AFB /* LogginViewController.swift in Sources */,
 				84293A541E14D161008535A2 /* IntroInformationViewController.swift in Sources */,
 				842282D01E10C88B003A9756 /* SpyFormViewController.swift in Sources */,
 				8473BBBD1E1772650027FEFD /* User.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84400DF81E07AF58008BE9F1 /* TextDescriptionViewController.swift in Sources */,
+				842CC0FD1E1F437000C81221 /* AlertInfoViewController.swift in Sources */,
 				84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */,
 				84400DF61E07AE16008BE9F1 /* ImageContentViewController.swift in Sources */,
 				842D55401E05DFB200432858 /* ProfileViewController.swift in Sources */,
+				18446CC21E14E0A400434AFB /* PasswordRecoveryViewController.swift in Sources */,
+				84C44FBC1E1CBA6400BC5D9D /* UIViewController+Alert.swift in Sources */,
 				8473BBB91E176F8E0027FEFD /* PreviewProfileViewController.swift in Sources */,
 				84A95DD51E0E2DC50023EA38 /* SurveySelectionViewCell.swift in Sources */,
 				84AA76D01DF92A2E002D36AA /* MainConfigurator.swift in Sources */,
@@ -663,8 +702,9 @@
 			baseConfigurationReference = DFEF65DEE6C2D47F2CFFE753 /* Pods-Piensa en TIC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9KDV58TUW5;
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -680,8 +720,9 @@
 			baseConfigurationReference = 1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ASOCIACION COLOMBIANA DE ORGANIZACIONES NO GUBERNAMENTALES PARA LA COMUNICACION - (9KDV58TUW5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ASOCIACION COLOMBIANA DE ORGANIZACIONES NO GUBERNAMENTALES PARA LA COMUNICACION - (9KDV58TUW5)";
+				DEVELOPMENT_TEAM = 9KDV58TUW5;
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

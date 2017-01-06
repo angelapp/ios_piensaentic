@@ -1,5 +1,9 @@
 import UIKit
 
+protocol AlertInfoViewDelegate {
+    func dismissAlert()
+}
+
 class GeneralViewController: UIViewController {
     
     var index:Int!
@@ -12,6 +16,9 @@ class GeneralViewController: UIViewController {
     let storage = Storage.shared
     var delegate:CompleteChapterDelegate!
     var delegateSwipe:DataSourceEnableSwipe!
+    var delegateTransition: SwipeDelegate!
+    
+    var alertViewInfo:AlertInfoViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +54,7 @@ class GeneralViewController: UIViewController {
 
 extension GeneralViewController {
     func processExample(_ example:String) -> NSAttributedString {
+        let shouldBeBold = example.contains("Mshtscnell") || example.contains("M5ht5cne11")
         let array = example.split(by: "|")
         guard let arrayResult = array else { return NSAttributedString()}
         let words = (arrayResult[0] as! String).split(by: ",")
@@ -65,11 +73,32 @@ extension GeneralViewController {
         for i in 0..<fontsResult.count {
             let fontSize = fontsResult[i] as! String
             let cast = Int(fontSize)
-            
+            if shouldBeBold {
+                if i == fontsResult.count - 1 {
+                    fontsResponse.append(UIFont.boldSystemFont(ofSize: CGFloat(cast!)))
+                    continue
+                }
+            }
             fontsResponse.append(UIFont.systemFont(ofSize: CGFloat(cast!)))
         }
         
+        
+        
         let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], fonts: fontsResponse as! [UIFont], color:UIColor(hexString: colorText)!)
+        return result
+    }
+    
+    func processNickname(_ format:String) -> NSAttributedString {
+        guard let user = getUser() else {
+            return NSAttributedString(string: String.init(format: format, ""))
+        }
+        
+        let formatted = format.replacingOccurrences(of: "\\n", with: "u015").replacingOccurrences(of: "u015", with: "\n").replacingOccurrences(of: "%@", with: "")
+        let words = [user.nickName.uppercased(), formatted]
+        let fonts = [UIFont.boldSystemFont(ofSize: 20), UIFont.systemFont(ofSize: 20)]
+        
+        
+        let result = NSAttributedString().stringWithWords(words: words, fonts: fonts, color: UIColor(hexString: colorText)!)
         return result
     }
     
@@ -142,9 +171,13 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
     func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         
         imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        var shouldStop = false
         switch (buttonIndex){
             
-        case 0: break
+        case 0:
+            shouldStop = true
+            break
         case 1:
             imagePicker.sourceType = .camera
             break
@@ -154,9 +187,12 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
         default:break
             
         }
+        
+        if shouldStop {
+            return
+        }
+        storage.saveParameter(key: .latestChapter, value: "chapter1" as AnyObject)
         present(imagePicker, animated: true, completion: nil)
-        
-        
     }
     
     
@@ -172,5 +208,40 @@ extension GeneralViewController {
         guard let dic = User.unarchive(data: data) else { return nil}
         let user = User.initUser(fromDic: dic)
         return user
+    }
+}
+
+extension GeneralViewController {
+    func shareFunctionality() {
+        let staticText = "Encriptando con Piensa En TIC"
+        let activityViewController = UIActivityViewController(activityItems: [staticText], applicationActivities: nil)
+        
+        activityViewController.completionWithItemsHandler  = { activity, success, items, error in
+            print("Activitycontroller ",activity ?? "")
+            print("items ",items ?? "")
+        }
+        self.present(activityViewController, animated: true, completion: {})
+
+    }
+}
+
+extension GeneralViewController:AlertInfoViewDelegate {
+    func showAlertInfoView(_ message: String! = "") {
+        guard alertViewInfo == nil else {return}
+        
+        alertViewInfo = storyboard?.instantiateViewController(withIdentifier: StoryboardIdentifier.alertViewInfo) as! AlertInfoViewController
+        
+        alertViewInfo.message = message
+        alertViewInfo.delegate = self
+        
+        self.navigationController?.view.addSubview(alertViewInfo.view)
+    }
+    
+    func dismissAlert() {
+        guard alertViewInfo != nil else {return}
+        
+        alertViewInfo.removeFromParentViewController()
+        alertViewInfo.view.removeFromSuperview()
+        alertViewInfo = nil
     }
 }

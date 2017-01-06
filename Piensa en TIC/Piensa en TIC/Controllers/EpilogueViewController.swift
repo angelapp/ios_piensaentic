@@ -34,7 +34,7 @@ class EpilogueViewController: GeneralViewController {
         guard let descriptionText = self.info["description"] else { return}
         
         if topImageHeightConstraint != nil{
-            if topImageName == "" {
+            if topImageName == "" && descriptionText.range(of:"contraseña") == nil {
                 topImageHeightConstraint.constant = EpilogueConstants.heightTopImageWithoutPhoto
             } else {
                 topImageHeightConstraint.constant = EpilogueConstants.heightTopImage
@@ -44,13 +44,11 @@ class EpilogueViewController: GeneralViewController {
         if topImage != nil {
             topImage.image = UIImage(named:topImageName)
         }
-        if (descriptionText.range(of:"contraseña") != nil){
-            descriptionLabel.textContainerInset = UIEdgeInsetsMake(80, 0, 40,0)
-        }
         
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = descriptionText
         descriptionLabel.textColor = UIColor(hexString: colorText)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 18)
     
         if let imageName = self.info["image"] {
             descriptionImage.image = UIImage(named:imageName)
@@ -110,6 +108,7 @@ class EpilogueViewController: GeneralViewController {
     @IBAction func actionButton(sender:Any?) -> () {
         guard let _ = self.info["segue"] else {return}
         guard delegate != nil else {return}
+        storage.saveChapter(activityName, value: 1)
         delegate.processChapter()
     }
     

@@ -90,7 +90,7 @@ class ProfileViewController: GeneralViewController {
         guard isTextEmpty(field: nameTextField.text) else {return false}
         guard isTextEmpty(field: heroTextField.text) else {return false }
         guard isTextEmpty(field: birthDateButton.titleLabel?.text) else {return false}
-        guard isTextEmpty(field: emailTextField.text) else {return false}
+        guard isTextEmpty(field: emailTextField.text), (emailTextField.text?.isValidEmail())! else {return false}
         
         delegateSwipe.enableSwipe()
         
@@ -151,22 +151,4 @@ extension ProfileViewController : UITextFieldDelegate {
         let _ = validateFields()
         return true
     }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        
-//        switch textField.tag {
-//        case nameTextField.tag:
-//            heroTextField.becomeFirstResponder()
-//            break
-//        case heroTextField.tag:
-//            emailTextField.becomeFirstResponder()
-//            break
-//        case emailTextField.tag:
-//            textField.resignFirstResponder()
-//            break
-//        default: break
-//        }
-////        validateFields()
-//        return true
-//    }
 }

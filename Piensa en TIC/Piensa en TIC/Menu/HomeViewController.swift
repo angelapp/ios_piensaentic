@@ -47,7 +47,6 @@ class HomeViewController: MFSideMenuContainerViewController {
             } else {
                 showCredits()
             }
-            
         }
     }
     
@@ -162,6 +161,7 @@ extension HomeViewController: SelectRightMenuItem {
 
 extension HomeViewController {
     func getNextChapter() -> String! {
+        
         guard let menu = mainConfigurator.menuContent() else { return nil}
         guard let _ = Network.getUser() else {return "preface"}
         let storage = Storage.shared
@@ -179,6 +179,11 @@ extension HomeViewController {
             }
         }
         
-        return result
+        guard let chapter = storage.getParameterFromKey(key: .latestChapter) as! String! , chapter.characters.count > 1 else {
+            return result
+        }
+        storage.saveParameter(key: .latestChapter, value: "" as AnyObject)
+        
+        return chapter
     }
 }

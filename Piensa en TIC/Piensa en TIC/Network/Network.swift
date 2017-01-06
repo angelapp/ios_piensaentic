@@ -6,6 +6,7 @@ struct NetworkConstants {
     static let api = "/api/"
     static let registerUserView = "register-user/"
     static let registerActivityFinishedView = "activity-register/"
+    static let passworRecoveryView = "password-recovery/"
     static let apiKey = "50134DF39-D02F-4EBD-34JK3-55KJK3-222JNM"
     static let headerApi = "APIID"
 }
@@ -41,9 +42,6 @@ class Network: NSObject {
         var result = [[String:AnyObject]]()
         for dic in menu {
             let text = dic["text"] as! String
-            if text.contains("Perfil") {
-                continue
-            }
             if let saved = storage.getIntFromKey(key: text) {
                 if saved == 1 {
                     result.append(["activity_executed":text as AnyObject,
@@ -53,6 +51,38 @@ class Network: NSObject {
         }
         
         return result
+    }
+    
+    class func passwordRecovery(email: String, completion: @escaping (ResponseClosure)) -> Bool! {
+        let storage = Storage.shared
+        guard let user = getUser() else {return false}
+        guard let savedEmail = user.email else { return false}
+        if savedEmail == email{
+            guard let password = storage.getParameterFromKey(key: .password) as! String! else { return false}
+            let parameters: Parameters = [
+                "user_mail":savedEmail, "password": password
+            ]
+            let url = [NetworkConstants.url,NetworkConstants.api, NetworkConstants.passworRecoveryView].flatMap{$0}.joined(separator: "")
+            guard let request = setupRequest(url, parameters: parameters as [String : AnyObject]) else {return false}
+            Alamofire.request(request).debugLog().responseData { (result) in
+                guard let data = result.data else {
+                    completion(ResponseCallback.error(error: CustomError.NoData(description: "No possible to parse response")))
+                    return
+                }
+                let json = JSON(data: data)
+                print("Response Server: ",json)
+                var result = false
+                if json["sent"] == "OK" {
+                    result = true
+                }
+        
+                let responseCallback = ResponseCallback.succeeded(succeeded: result, message: "")
+                completion(responseCallback)
+            }
+            return true
+        } else {
+            return false
+        }
     }
     
     class func sendProgress() {
@@ -126,11 +156,15 @@ class Network: NSObject {
             print("Response Server - create user: ",json)
             
             var result:Bool = false
-            
+            var message = ""
             switch response.statusCode {
                 case 400:
+                    message = "El email debe ser unico."
+                    result = false
                     break
                 case 404:
+                    message = ""
+                    result = false
                     break
                 case 200:
                     storage.saveParameter(key: .email, value: json["email"].stringValue as AnyObject)
@@ -139,7 +173,7 @@ class Network: NSObject {
                 default: break
             }
             
-            completion(ResponseCallback.succeeded(succeeded: result))
+            completion(ResponseCallback.succeeded(succeeded: result, message: message))
         }
     }
 }

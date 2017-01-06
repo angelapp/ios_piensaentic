@@ -21,10 +21,12 @@ enum Keys: String {
     
     case spyInfo = "spyInfo"
     case spyAnswerSelected = "spyAnswerSelected"
+    
+    case latestChapter = "latestChapter"
 }
 
 enum ResponseCallback {
-    case succeeded(succeeded: Bool)
+    case succeeded(succeeded: Bool, message: String)
     case succeededObject(result: AnyObject)
     case error(error: Error?)
 }
@@ -32,3 +34,5 @@ enum ResponseCallback {
 enum CustomError:Error {
     case NoData(description:String)
 }
+
+typealias ResponseClosure = (ResponseCallback) -> ()

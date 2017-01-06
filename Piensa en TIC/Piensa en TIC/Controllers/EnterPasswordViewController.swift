@@ -25,7 +25,7 @@ class EnterPasswordViewController: GeneralViewController {
         }
         
         guard let descriptionText = self.info["description"] else { return}
-        descriptionLabel.text = String(format: descriptionText, nickName)
+        descriptionLabel.attributedText = processNickname(descriptionText)
         descriptionLabel.textColor = UIColor(hexString:colorText)
     }
     
