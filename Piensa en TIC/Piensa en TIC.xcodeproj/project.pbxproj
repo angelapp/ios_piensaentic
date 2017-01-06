@@ -366,6 +366,7 @@
 				844EDE451DF50A080079AC35 /* Resources */,
 				8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */,
 				EBB90192427B5D466642B6C2 /* [CP] Copy Pods Resources */,
+				18B2F46A1E201B3000028CEC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -388,7 +389,7 @@
 				TargetAttributes = {
 					844EDE461DF50A080079AC35 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6DX6UMAY8Y;
+						DevelopmentTeam = 9KDV58TUW5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -445,6 +446,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		18B2F46A1E201B3000028CEC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9dfca2a3c511dbb0e808c88a7c61c538006cdee4 6430ea034e956588f0718e29a005e6beaba0540cdb291d35287af7b7b8799eb2";
 		};
 		8D0BCBCEA3FA1F92D8A2D45C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -690,7 +704,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6DX6UMAY8Y;
+				DEVELOPMENT_TEAM = 9KDV58TUW5;
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -706,9 +720,9 @@
 			baseConfigurationReference = 1D07598B3DF8603AF1AA4AAC /* Pods-Piensa en TIC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = 6DX6UMAY8Y;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ASOCIACION COLOMBIANA DE ORGANIZACIONES NO GUBERNAMENTALES PARA LA COMUNICACION - (9KDV58TUW5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ASOCIACION COLOMBIANA DE ORGANIZACIONES NO GUBERNAMENTALES PARA LA COMUNICACION - (9KDV58TUW5)";
+				DEVELOPMENT_TEAM = 9KDV58TUW5;
 				INFOPLIST_FILE = "Piensa en TIC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
