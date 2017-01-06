@@ -1,5 +1,9 @@
 import UIKit
 
+protocol AlertInfoViewDelegate {
+    func dismissAlert()
+}
+
 class GeneralViewController: UIViewController {
     
     var index:Int!
@@ -13,6 +17,8 @@ class GeneralViewController: UIViewController {
     var delegate:CompleteChapterDelegate!
     var delegateSwipe:DataSourceEnableSwipe!
     var delegateTransition: SwipeDelegate!
+    
+    var alertViewInfo:AlertInfoViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,5 +222,26 @@ extension GeneralViewController {
         }
         self.present(activityViewController, animated: true, completion: {})
 
+    }
+}
+
+extension GeneralViewController:AlertInfoViewDelegate {
+    func showAlertInfoView(_ message: String! = "") {
+        guard alertViewInfo == nil else {return}
+        
+        alertViewInfo = storyboard?.instantiateViewController(withIdentifier: StoryboardIdentifier.alertViewInfo) as! AlertInfoViewController
+        
+        alertViewInfo.message = message
+        alertViewInfo.delegate = self
+        
+        self.navigationController?.view.addSubview(alertViewInfo.view)
+    }
+    
+    func dismissAlert() {
+        guard alertViewInfo != nil else {return}
+        
+        alertViewInfo.removeFromParentViewController()
+        alertViewInfo.view.removeFromSuperview()
+        alertViewInfo = nil
     }
 }

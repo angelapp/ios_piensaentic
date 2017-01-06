@@ -16,6 +16,7 @@
 		84293A541E14D161008535A2 /* IntroInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84293A531E14D161008535A2 /* IntroInformationViewController.swift */; };
 		842BC06D1E1212F0005DFBB3 /* SummarySpyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */; };
 		842BC06F1E121F72005DFBB3 /* JustTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */; };
+		842CC0FD1E1F437000C81221 /* AlertInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CC0FC1E1F437000C81221 /* AlertInfoViewController.swift */; };
 		842D55391E04EB4100432858 /* EpilogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D55381E04EB4100432858 /* EpilogueViewController.swift */; };
 		842D553C1E05D5C900432858 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D553A1E05D5C900432858 /* Profile.storyboard */; };
 		842D553E1E05DA7D00432858 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D553D1E05DA7D00432858 /* Utils.swift */; };
@@ -72,6 +73,7 @@
 		84293A531E14D161008535A2 /* IntroInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroInformationViewController.swift; path = Controllers/Intro/IntroInformationViewController.swift; sourceTree = "<group>"; };
 		842BC06C1E1212F0005DFBB3 /* SummarySpyFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummarySpyFormViewController.swift; path = Controllers/SummarySpyFormViewController.swift; sourceTree = "<group>"; };
 		842BC06E1E121F72005DFBB3 /* JustTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JustTextViewController.swift; path = Controllers/JustTextViewController.swift; sourceTree = "<group>"; };
+		842CC0FC1E1F437000C81221 /* AlertInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertInfoViewController.swift; path = Controllers/AlertInfo/AlertInfoViewController.swift; sourceTree = "<group>"; };
 		842D55381E04EB4100432858 /* EpilogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpilogueViewController.swift; path = Controllers/EpilogueViewController.swift; sourceTree = "<group>"; };
 		842D553B1E05D5C900432858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		842D553D1E05DA7D00432858 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		842CC0FB1E1F433900C81221 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				842CC0FC1E1F437000C81221 /* AlertInfoViewController.swift */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
 		842D55411E0785D000432858 /* Chapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		8478B9241DFD3D8F009D3C7A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				842CC0FB1E1F433900C81221 /* Alert */,
 				8498487C1E1A0C8C008477C1 /* Credits */,
 				84A95DD31E0E2D960023EA38 /* Cell */,
 				84A95DD11E0E2B020023EA38 /* Survey */,
@@ -495,6 +506,7 @@
 				8473BBBD1E1772650027FEFD /* User.swift in Sources */,
 				844EDE4B1DF50A090079AC35 /* AppDelegate.swift in Sources */,
 				84400DF81E07AF58008BE9F1 /* TextDescriptionViewController.swift in Sources */,
+				842CC0FD1E1F437000C81221 /* AlertInfoViewController.swift in Sources */,
 				84E814161E0CEDE6001CFBA8 /* IntroViewController.swift in Sources */,
 				84400DF61E07AE16008BE9F1 /* ImageContentViewController.swift in Sources */,
 				842D55401E05DFB200432858 /* ProfileViewController.swift in Sources */,
