@@ -36,7 +36,9 @@ class LogginViewController: UIViewController {
     }
     
     @IBAction func onPasswordWritting(_ sender: UITextField) {
+        
         let password = passwordText.text
+        guard isTextEmpty(field: password), password == storage.getParameterFromKey(key: .password) as! String! else {return}
         //if password == savedPassword{
         if true{
             

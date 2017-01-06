@@ -34,3 +34,5 @@ enum ResponseCallback {
 enum CustomError:Error {
     case NoData(description:String)
 }
+
+typealias ResponseClosure = (ResponseCallback) -> ()

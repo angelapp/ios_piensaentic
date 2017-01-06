@@ -90,7 +90,7 @@ class ProfileViewController: GeneralViewController {
         guard isTextEmpty(field: nameTextField.text) else {return false}
         guard isTextEmpty(field: heroTextField.text) else {return false }
         guard isTextEmpty(field: birthDateButton.titleLabel?.text) else {return false}
-        guard isTextEmpty(field: emailTextField.text) else {return false}
+        guard isTextEmpty(field: emailTextField.text), (emailTextField.text?.isValidEmail())! else {return false}
         
         delegateSwipe.enableSwipe()
         

@@ -53,26 +53,35 @@ class Network: NSObject {
         return result
     }
     
-    class func passwordRecovery(email: String){
+    class func passwordRecovery(email: String, completion: @escaping (ResponseClosure)) -> Bool! {
         let storage = Storage.shared
-        guard let savedEmail = storage.getParameterFromKey(key: .email) as! String! else { return}
+        guard let user = getUser() else {return false}
+        guard let savedEmail = user.email else { return false}
         if savedEmail == email{
-            guard let password = storage.getParameterFromKey(key: .password) as! String! else { return}
+            guard let password = storage.getParameterFromKey(key: .password) as! String! else { return false}
             let parameters: Parameters = [
                 "user_mail":savedEmail, "password": password
             ]
             let url = [NetworkConstants.url,NetworkConstants.api, NetworkConstants.passworRecoveryView].flatMap{$0}.joined(separator: "")
-            guard let request = setupRequest(url, parameters: parameters as [String : AnyObject]) else {return}
+            guard let request = setupRequest(url, parameters: parameters as [String : AnyObject]) else {return false}
             Alamofire.request(request).debugLog().responseData { (result) in
-                guard let data = result.data, let utf8Text = String(data: data, encoding: .utf8) else {
+                guard let data = result.data else {
+                    completion(ResponseCallback.error(error: CustomError.NoData(description: "No possible to parse response")))
                     return
                 }
-                
-                print("Response Server: ",utf8Text)
+                let json = JSON(data: data)
+                print("Response Server: ",json)
+                var result = false
+                if json["sent"] == "OK" {
+                    result = true
+                }
+        
+                let responseCallback = ResponseCallback.succeeded(succeeded: result, message: "")
+                completion(responseCallback)
             }
-            
+            return true
         } else {
-//            showAlert(title: "Error", message: "Email no corresponde con el registrado en la aplicación.")
+            return false
         }
     }
     

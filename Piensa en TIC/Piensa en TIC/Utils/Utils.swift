@@ -263,6 +263,16 @@ extension NSAttributedString {
     }
 }
 
+extension String {
+    func isValidEmail() -> Bool{
+        //        let validEmail = false
+        //        let filterString = "^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$"
+        let regexString = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
+        let emailRegex = /*validEmail ? filterString :*/ regexString
+        let emailPredicate = NSPredicate.init(format: "SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: self)
+    }
+}
 
 //MARK: Request Alamofire enable logs
 extension Request {
