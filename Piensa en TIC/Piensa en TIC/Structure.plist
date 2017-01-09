@@ -412,8 +412,8 @@
 			<string>#FFFFFFFF</string>
 			<key>backgroundName</key>
 			<string>act3_fondo</string>
-			<key>backgrounAlphaColor</key>
-			<string>#80D83872</string>
+			<key>backgroundAlphaColor</key>
+			<string>#D8387280</string>
 			<key>activity_name</key>
 			<string>¿Qué hay en mi cartera?</string>
 			<key>menu_bullet_activity</key>
@@ -718,6 +718,8 @@
 					<string>Para dejar tus comentarios o calificar ingresa a ,Piensa en TIC en App Store, \n \n Envíanos tus sugerencias y observaciones a ,info@piensatic.co,\n \n Conoce más sobre seguridad y derechos en los espacios digitales en \n \n,http://dominemoslatecnologia.org</string>
 					<key>links</key>
 					<string> ,https://itunes.apple.com/, ,mail:info@piensatic.co, ,https://dominemoslatecnologia.org</string>
+					<key>linkColor</key>
+					<string>#7d1836FF</string>
 				</dict>
 				<dict>
 					<key>content</key>
@@ -728,6 +730,8 @@
 					<string>Este recurso ha sido desarrollado en el marco del proyecto &quot;Promoción de los derechos de internet y fortalecimiento de capacidades para la prevención de riesgos y la atención de violencias digitales&quot;, coordinado por ,Colnodo, con el apoyo de ,Asociación para el Progreso de las Comunicaciones (APC).,\n \n Tipo de licenciamiento GNU. El código de esta aplicación es abierto y disponible en ,github.org </string>
 					<key>links</key>
 					<string> , ,http://colnodo.apc.org, ,http://apc.org/, ,https://github.org </string>
+					<key>linkColor</key>
+					<string>#7d1836FF</string>
 				</dict>
 			</array>
 			<key>backgroundName</key>

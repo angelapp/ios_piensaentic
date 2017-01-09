@@ -18,6 +18,7 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
     
     @IBOutlet var contentView:UIView!
     @IBOutlet var backgroundImage:UIImageView!
+    @IBOutlet var backgroundAlphaView: UIView!
     var pageViewController:UIPageViewController!
     var imagesArray:NSArray!
     var imageName:String!
@@ -73,6 +74,19 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         
         let content = imagesArray[index] as! [String:String]
         guard let identifier = content["content"] as String! else {return nil}
+        
+        if backgroundAlphaView != nil {
+            backgroundAlphaView.isHidden = true
+            backgroundAlphaView.backgroundColor = UIColor.clear
+            
+            if let backgroundAlphaColor = generalContent["backgroundAlphaColor"] as! String!,
+                identifier != StoryboardIdentifier.introController,
+                let activity = generalContent["menu_bullet_activity"] as! String!,
+                activity == "vineta_cartera" {
+                backgroundAlphaView.isHidden = false
+                backgroundAlphaView.backgroundColor = UIColor(hexString: backgroundAlphaColor)
+            }
+        }
         
         if identifier == "surveyController" || identifier == "resultsController" {
             let temporalStoryboard = UIStoryboard.init(name: "ComplexScreens", bundle: nil)

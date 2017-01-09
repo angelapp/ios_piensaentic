@@ -60,7 +60,7 @@ class LogginViewController: UIViewController {
     
     func getPassword()-> String! {
         let storage = Storage.shared
-        guard let data = storage.getParameterFromKey(key: .password) as! String! else { return nil}
+        guard let data = storage.getParameterFromKey(key: .password) as! String! else { return ""}
         return data
     }
 

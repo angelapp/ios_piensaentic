@@ -35,7 +35,7 @@ class PreviewProfileViewController: GeneralViewController {
     
     func formatPreviewProfile(_ formatted: String) -> NSAttributedString {
         guard let user = getUser() else {return NSAttributedString()}
-        let completedString = String(format: formatted, String(",\(user.firstName!),"), String(",\(user.nickName.uppercased()),"), String(",\(user.birthDate!),"), String(",\(user.email!),"))
+        let completedString = String(format: formatted, String(",\(user.firstName!),\n"), String(",\n\(user.nickName.uppercased()),\n"), String(",\(user.birthDate!),"), String(",\n\(user.email!),"))
         guard let format = completedString.split(by: ",") else {return NSAttributedString(string: completedString)}
         let fonts = [UIFont.boldSystemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.boldSystemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0),UIFont.systemFont(ofSize: 20.0)]
         

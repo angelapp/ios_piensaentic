@@ -21,4 +21,7 @@ enum StoryboardIdentifier {
     
     //MARK: alert info view
     static let alertViewInfo = "alertInfoController"
+    
+    //MARK: intro controller
+    static let introController = "introController"
 }

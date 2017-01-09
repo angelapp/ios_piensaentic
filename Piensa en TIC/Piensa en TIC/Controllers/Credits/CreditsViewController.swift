@@ -22,12 +22,13 @@ class CreditsViewController: GeneralViewController {
         guard let credits = self.info["credits"] else {return}
         guard let linksString = self.info["links"] else {return}
         guard let links = linksString.split(by: ",") else {return}
+        guard let linkColor = self.info["linkColor"] else {return}
         
-        creditsTextView.attributedText = processDescriptionWithLinks(credits, links: links as! [String], font: UIFont.systemFont(ofSize: 16.0))
+        creditsTextView.attributedText = processDescriptionWithLinks(credits, links: links as! [String], font: UIFont.systemFont(ofSize: 16.0), linkColor: UIColor(hexString: linkColor)!)
         creditsTextView.textAlignment = .center
         creditsTextView.contentMode = .scaleAspectFit
         creditsTextView.tintColor = UIColor(hexString: colorText)
-        
+        creditsTextView.isSelectable = true
         footerImageView.image = UIImage(named: image)
     }
 }

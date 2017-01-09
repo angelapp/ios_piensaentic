@@ -9,6 +9,7 @@ class GeneralViewController: UIViewController {
     var index:Int!
     var info:[String:String]!
     var colorText:String!
+    var colorSelected:UIColor!
     let imagePicker = UIImagePickerController()
     var imageSaved:UIImage!
     var metadata:AnyObject!
@@ -22,6 +23,10 @@ class GeneralViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if colorText != nil {
+            colorSelected = UIColor(hexString: colorText)!
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,7 +125,7 @@ extension GeneralViewController {
         return result
     }
     
-    func processDescriptionWithLinks(_ description:String, links:[String], font:UIFont!) -> NSAttributedString {
+    func processDescriptionWithLinks(_ description:String, links:[String], font:UIFont!, linkColor:UIColor? = UIColor.white) -> NSAttributedString {
         let words = description.split(by: ",")
         guard let wordsResult = words else {return NSAttributedString()}
         var wordsResponse = [AnyObject]()
@@ -134,7 +139,7 @@ extension GeneralViewController {
             wordsResponse.append(newText as AnyObject)
         }
         
-        let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], links: links, color:UIColor(hexString: colorText)!, font: font)
+        let result = NSAttributedString().stringWithWords(words: wordsResponse as! [String], links: links, color:UIColor(hexString: colorText)!, font: font, linkColor: linkColor!)
         return result
     }
 }
