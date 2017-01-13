@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,23 +18,23 @@
                         <viewControllerLayoutGuide type="bottom" id="spA-Jx-xeM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FbF-Pq-laB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Thj-zW-BHV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVD-KW-k8A">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hgz-D8-Kvq">
-                                        <rect key="frame" x="0.0" y="62" width="375" height="160"/>
+                                        <rect key="frame" x="0.0" y="62" width="320" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="LXs-oa-lvs"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DrG-Qb-aGM">
-                                        <rect key="frame" x="35" y="230" width="304" height="290"/>
+                                        <rect key="frame" x="7.5" y="230" width="304" height="290"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Escribe tu nombre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvv-6l-Hki">
                                                 <rect key="frame" x="8" y="8" width="288" height="21"/>
@@ -103,17 +103,17 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LW7-D7-cfr">
-                                        <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                        <rect key="frame" x="0.0" y="240" width="320" height="240"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="240" id="fxc-KW-SBf"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-GO-VTy">
-                                        <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                        <rect key="frame" x="0.0" y="240" width="320" height="240"/>
                                         <subviews>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8KR-y3-Jm5">
-                                                <rect key="frame" x="0.0" y="40" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="40" width="320" height="200"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="503701864.327627">
                                                     <!--2016-12-17 21:11:04 +0000-->
                                                 </date>
@@ -199,11 +199,11 @@
                         <viewControllerLayoutGuide type="bottom" id="PWB-ak-gXb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Nt-lv-hIq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aq-aH-1UG">
-                                <rect key="frame" x="67.5" y="154" width="240" height="360"/>
+                                <rect key="frame" x="40" y="60" width="240" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* En caso de no aceptar, no podrás seguir usando la aplicación." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkt-jG-1AY">
                                         <rect key="frame" x="8" y="308" width="224" height="44"/>
@@ -287,15 +287,15 @@
                         <viewControllerLayoutGuide type="bottom" id="7EY-oX-YEp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iXQ-Sp-2qy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lee-tG-Mob">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tK3-rQ-BcY">
-                                <rect key="frame" x="44" y="593" width="287" height="48.5"/>
+                                <rect key="frame" x="16.5" y="406" width="287" height="48.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48.5" id="9Sg-bN-EXs"/>
                                     <constraint firstAttribute="width" constant="287" id="UkB-I3-kaS"/>
@@ -306,7 +306,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEV-xu-8nW">
-                                <rect key="frame" x="62" y="208" width="249" height="253"/>
+                                <rect key="frame" x="35.5" y="113.5" width="249" height="253"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="253" id="wEi-NQ-4ba"/>
                                     <constraint firstAttribute="width" constant="249" id="zPw-mL-mFI"/>
@@ -346,14 +346,14 @@
                         <viewControllerLayoutGuide type="bottom" id="i49-bZ-UIw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xHJ-E8-6NY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUN-De-Hli">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIT-ab-UW1">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94457292559999995" green="0.96090680360000003" blue="0.96085256340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

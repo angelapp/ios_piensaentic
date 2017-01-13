@@ -46,7 +46,7 @@ class PasswordRecoveryViewController: UIViewController {
             switch response {
             case .succeeded(let succeeded, _):
                 if succeeded {
-                    _ = self.navigationController?.popViewController(animated: true)
+                    self.showAlertOk(title: "Recuperación de contraseña", message: "A su email llegará un correo con su contraseña.")
                 } else {
                     self.showAlert(title: "Error", message: "Por favor revise el email ingresado e intente nuevamente.")
                 }
@@ -82,6 +82,16 @@ class PasswordRecoveryViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Ok", style: .cancel) {(_) in
             alert.dismiss(animated: false, completion: nil)
+        }
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertOk(title:String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Ok", style: .cancel) {(_) in
+            alert.dismiss(animated: false, completion: nil)
+            _ = self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)

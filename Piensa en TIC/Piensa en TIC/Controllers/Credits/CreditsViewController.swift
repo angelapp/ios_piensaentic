@@ -24,7 +24,7 @@ class CreditsViewController: GeneralViewController {
         guard let links = linksString.split(by: ",") else {return}
         guard let linkColor = self.info["linkColor"] else {return}
         
-        creditsTextView.attributedText = processDescriptionWithLinks(credits, links: links as! [String], font: UIFont.systemFont(ofSize: 16.0), linkColor: UIColor(hexString: linkColor)!)
+        creditsTextView.attributedText = processDescriptionWithLinks(credits, links: links as! [String], font: UIFont.boldSystemFont(ofSize: 18.0), linkColor: UIColor(hexString: linkColor)!)
         creditsTextView.textAlignment = .center
         creditsTextView.contentMode = .scaleAspectFit
         creditsTextView.tintColor = UIColor(hexString: colorText)
