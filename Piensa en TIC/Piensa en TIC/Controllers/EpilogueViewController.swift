@@ -57,7 +57,8 @@ class EpilogueViewController: GeneralViewController {
         }
     
         if let buttonText = self.info["button"] {
-            backgroundImage.image = UIImage(named:buttonText)
+//            backgroundImage.image = UIImage(named:buttonText)
+            contnue.setImage(UIImage(named:buttonText), for: .normal)
         }
         
         if let linksString = self.info["links"]{
