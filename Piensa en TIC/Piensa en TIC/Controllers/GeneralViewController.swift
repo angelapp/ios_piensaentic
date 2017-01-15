@@ -1,4 +1,5 @@
 import UIKit
+import ImageIO
 
 protocol AlertInfoViewDelegate {
     func dismissAlert()
@@ -154,13 +155,12 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
     //MARK: delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print(info)
-        if let infoPic = info[UIImagePickerControllerMediaMetadata] {
-            print(infoPic)
-            storage.setMetadata(metadata: infoPic as AnyObject!)
-        }
+
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 //            self.imageView.contentMode = UIViewContentMode.scaleAspectFit
 //            self.imageView.image = pickedImage
+            let value = getMetadata(image: pickedImage)
+            storage.setMetadata(metadata: value as AnyObject)
             storage.setImage(image: pickedImage)
         }
         
@@ -232,14 +232,22 @@ extension GeneralViewController {
 
 extension GeneralViewController:AlertInfoViewDelegate {
     func showAlertInfoView(_ message: String! = "") {
-        guard alertViewInfo == nil else {return}
         
-        alertViewInfo = storyboard?.instantiateViewController(withIdentifier: StoryboardIdentifier.alertViewInfo) as! AlertInfoViewController
+        UIView.animate(withDuration: 0, delay: 1, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+                guard self.alertViewInfo == nil else {return}
+                
+                self.alertViewInfo = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIdentifier.alertViewInfo) as! AlertInfoViewController
+                
+                self.alertViewInfo.message = message
+                self.alertViewInfo.delegate = self
+                self.navigationController?.view.addSubview(self.alertViewInfo.view)
+            }, completion: {_ in
+                
+            }
+        )
         
-        alertViewInfo.message = message
-        alertViewInfo.delegate = self
         
-        self.navigationController?.view.addSubview(alertViewInfo.view)
+        
     }
     
     func dismissAlert() {
@@ -248,5 +256,58 @@ extension GeneralViewController:AlertInfoViewDelegate {
         alertViewInfo.removeFromParentViewController()
         alertViewInfo.view.removeFromSuperview()
         alertViewInfo = nil
+    }
+}
+
+extension GeneralViewController {
+    func getMetadata(image: UIImage) -> [String]{
+        var metaData = [String]()
+        guard let imageData: Data = UIImagePNGRepresentation(image) else {
+            return metaData
+        }
+        
+        guard let sourceRef = CGImageSourceCreateWithData(imageData as CFData, nil) else {
+            return metaData
+        }
+        
+        let options = [kCGImageSourceShouldCache as String : NSNumber(value: false)]
+        guard let imagesProperties = CGImageSourceCopyPropertiesAtIndex(sourceRef, 0, options as CFDictionary?) else {
+            return metaData
+        }
+        
+//        let width = CFDictionaryGetValue(imagesProperties, unsafeBitCast(kCGImagePropertyPixelWidth, to: UnsafeRawPointer.self))
+//        let widthValue = unsafeBitCast(width, to: NSNumber.self) as NSNumber
+//        
+//        let height = CFDictionaryGetValue(imagesProperties, unsafeBitCast(kCGImagePropertyPixelHeight, to: UnsafeRawPointer.self))
+//        let heightValue = unsafeBitCast(height, to: NSNumber.self) as NSNumber
+//        let value = String(format: "Dimensiones: %@ x %@", widthValue, heightValue)
+//        metaData.append(value)
+        
+        let excludeProperties = [kCGImagePropertyPNGDictionary]
+        
+        let keys = (imagesProperties as NSDictionary).allKeys as! [CFString]
+        for key in keys {
+            guard !keyIsInExcludeList(list: excludeProperties, key: key) else {continue}
+            guard let value = dictionaryGetValue(dictionary: imagesProperties, key: key ) else { continue}
+            print(value)
+            metaData.append(value)
+        }
+        
+        return metaData
+    }
+    
+    func keyIsInExcludeList(list: [CFString], key:CFString) -> Bool {
+        let isInList = list.contains {
+            $0 === key
+        }
+        return isInList
+    }
+    
+    func dictionaryGetValue(dictionary: CFDictionary, key: CFString) -> String! {
+        guard let ref = CFDictionaryGetValue(dictionary, unsafeBitCast(key, to: UnsafeRawPointer.self)) else {return nil}
+        let value = unsafeBitCast(ref, to: AnyObject.self)
+        
+        let result = String(format: "%@ : %@",key as String, value as! CVarArg)
+        return result
     }
 }

@@ -46,12 +46,16 @@ class InformationViewController: GeneralViewController {
                 self.loadImageButtonTapped(sender: sender as! UIButton)
             }
             else if buttonEvent == "checkData" {
-                guard storage.getMetadata() != nil else {
+                guard let metadata = storage.getMetadata() as! [String]! else {
                     showAlertInfoView("No hay información para mostrar!")
                     return
                 }
 //                    self.showAlert(title: "Metadatos", message: storage.getMetadata() as! String)
-                self.showAlertInfoView(storage.getMetadata() as! String)
+                var result = String()
+                for info in metadata {
+                    result = result.appendingFormat("\n%@", info)
+                }
+                self.showAlertInfoView(result)
                 
             } else if buttonEvent == "send_message" {
                 shareFunctionality()
