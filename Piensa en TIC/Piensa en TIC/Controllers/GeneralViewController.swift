@@ -262,38 +262,73 @@ extension GeneralViewController:AlertInfoViewDelegate {
 extension GeneralViewController {
     func getMetadata(image: UIImage) -> [String]{
         var metaData = [String]()
-        guard let imageData: Data = UIImagePNGRepresentation(image) else {
+//        guard let jpgData: Data = UIImageJPEGRepresentation(image, 1.0) else {
+//            return metaData
+//        }
+//        metaData.append(readMetadata(jpgData))
+        guard let pngData: Data = UIImagePNGRepresentation(image) else {
             return metaData
         }
         
-        guard let sourceRef = CGImageSourceCreateWithData(imageData as CFData, nil) else {
+        metaData.append(readMetadata(pngData))
+        return metaData
+    }
+    
+    func readMetadata(_ data: Data) -> String {
+        var metaData = String()
+        
+        guard let sourceRef = CGImageSourceCreateWithData(data as CFData, nil) else {
             return metaData
         }
         
-        let options = [kCGImageSourceShouldCache as String : NSNumber(value: false)]
-        guard let imagesProperties = CGImageSourceCopyPropertiesAtIndex(sourceRef, 0, options as CFDictionary?) else {
+//        let options = [kCGImageSourceShouldCache as String : NSNumber(value: false)]
+        guard let imagesProperties = CGImageSourceCopyPropertiesAtIndex(sourceRef, 0, nil) else {
             return metaData
         }
         
-//        let width = CFDictionaryGetValue(imagesProperties, unsafeBitCast(kCGImagePropertyPixelWidth, to: UnsafeRawPointer.self))
-//        let widthValue = unsafeBitCast(width, to: NSNumber.self) as NSNumber
-//        
-//        let height = CFDictionaryGetValue(imagesProperties, unsafeBitCast(kCGImagePropertyPixelHeight, to: UnsafeRawPointer.self))
-//        let heightValue = unsafeBitCast(height, to: NSNumber.self) as NSNumber
-//        let value = String(format: "Dimensiones: %@ x %@", widthValue, heightValue)
-//        metaData.append(value)
+        let dictionaries = [["key":kCGImagePropertyExifDictionary,
+                             "values":[kCGImagePropertyExifDateTimeOriginal,kCGImagePropertyExifFlash, kCGImagePropertyExifWhiteBalance],
+                             "textValues":["Fecha y hora: ", "Flash: ", "Balance de blancos: "]],
+                            ["key":kCGImagePropertyTIFFDictionary,
+                             "values":[kCGImagePropertyTIFFModel],
+                             "textValues":["Modelo: "]],
+                            ["key":kCGImagePropertyPixelWidth,
+                             "textValues": "Ancho: "],
+                            ["key":kCGImagePropertyPixelHeight,
+                             "textValues": "Altura: "],
+                            ["key":kCGImagePropertyOrientation,
+                             "textValues": "Orientación: "],
+                            ["key":kCGImagePropertyGPSDictionary,
+                             "values":[kCGImagePropertyGPSAltitude, kCGImagePropertyGPSLongitude, kCGImagePropertyGPSLatitude],
+                             "textValues":["Altitud: ","Longitud: ", "Latitud: "]]]
         
-        let excludeProperties = [kCGImagePropertyPNGDictionary]
-        
-        let keys = (imagesProperties as NSDictionary).allKeys as! [CFString]
-        for key in keys {
-            guard !keyIsInExcludeList(list: excludeProperties, key: key) else {continue}
-            guard let value = dictionaryGetValue(dictionary: imagesProperties, key: key ) else { continue}
-            print(value)
-            metaData.append(value)
+        for dictionary in dictionaries {
+            guard let arrayValues = dictionary["values"] as! [CFString]! else {
+                guard let value = dictionaryGetValue(dictionary: imagesProperties, key: dictionary["key"] as! CFString) else {
+                    continue
+                }
+                metaData.append(String(format:"\n%@ %@", dictionary["textValues"] as! String, value as! CVarArg))
+                
+                continue
+            }
+            
+            let textTitles = dictionary["textValues"] as! [String]
+            guard let secondaryProperties = dictionaryGetValue(dictionary: imagesProperties, key: dictionary["key"] as! CFString) as! CFDictionary!  else {
+                continue
+            }
+            
+            for i in 0 ..< arrayValues.count {
+                let property = arrayValues[i]
+                let title = textTitles[i]
+                guard let value = dictionaryGetValue(dictionary: secondaryProperties, key: property) as! String! else {
+                    continue
+                }
+                metaData.append(String(format:"\n%@ %@", title, value))
+            }
         }
         
         return metaData
+
     }
     
     func keyIsInExcludeList(list: [CFString], key:CFString) -> Bool {
@@ -303,11 +338,10 @@ extension GeneralViewController {
         return isInList
     }
     
-    func dictionaryGetValue(dictionary: CFDictionary, key: CFString) -> String! {
+    func dictionaryGetValue(dictionary: CFDictionary, key: CFString) -> Any! {
         guard let ref = CFDictionaryGetValue(dictionary, unsafeBitCast(key, to: UnsafeRawPointer.self)) else {return nil}
         let value = unsafeBitCast(ref, to: AnyObject.self)
-        
-        let result = String(format: "%@ : %@",key as String, value as! CVarArg)
-        return result
+
+        return value
     }
 }

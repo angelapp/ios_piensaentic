@@ -2,7 +2,7 @@ import UIKit
 
 class AlertInfoViewController: UIViewController {
     
-    @IBOutlet var informationLabel:UILabel!
+    @IBOutlet var informationLabel:UITextView!
     @IBOutlet var box:UIView!
     var delegate:AlertInfoViewDelegate!
     var message:String!
@@ -33,6 +33,10 @@ class AlertInfoViewController: UIViewController {
         box.layer.borderColor = UIColor.black.cgColor
         box.layer.borderWidth = 1.0
         box.layer.cornerRadius = 7.0
+        
+        informationLabel.layer.borderColor = UIColor.black.cgColor
+        informationLabel.layer.borderWidth = 1.0
+        informationLabel.layer.cornerRadius = 7.0
     }
 
     func setupView(){

@@ -54,7 +54,7 @@ class InformationViewController: GeneralViewController {
 //                    self.showAlert(title: "Metadatos", message: storage.getMetadata() as! String)
                 var result = String()
                 for info in metadata {
-                    result = result.appendingFormat("\n%@", info)
+                    result = result.appendingFormat("%@", info)
                 }
                 self.showAlertInfoView(result)
                 

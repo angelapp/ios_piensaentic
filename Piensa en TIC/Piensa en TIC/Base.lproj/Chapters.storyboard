@@ -833,22 +833,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eM-1K-J24">
                                         <rect key="frame" x="39.5" y="116.5" width="240" height="247"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="JKN-rw-cJ5">
+                                            <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9in-pV-MwZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="247"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="JKN-rw-cJ5" secondAttribute="bottom" id="5vQ-bi-dH9"/>
-                                            <constraint firstItem="JKN-rw-cJ5" firstAttribute="top" secondItem="7eM-1K-J24" secondAttribute="top" id="6n2-zQ-lYn"/>
                                             <constraint firstAttribute="width" constant="240" id="9uD-cn-pcz"/>
-                                            <constraint firstAttribute="trailing" secondItem="JKN-rw-cJ5" secondAttribute="trailing" id="CaM-uk-0DX"/>
+                                            <constraint firstItem="9in-pV-MwZ" firstAttribute="leading" secondItem="7eM-1K-J24" secondAttribute="leading" id="Z21-Co-HN9"/>
                                             <constraint firstAttribute="height" constant="247" id="ZU5-ST-AUK"/>
-                                            <constraint firstItem="JKN-rw-cJ5" firstAttribute="leading" secondItem="7eM-1K-J24" secondAttribute="leading" id="dOB-qe-agL"/>
+                                            <constraint firstItem="9in-pV-MwZ" firstAttribute="top" secondItem="7eM-1K-J24" secondAttribute="top" id="tBa-FM-SNw"/>
+                                            <constraint firstAttribute="bottom" secondItem="9in-pV-MwZ" secondAttribute="bottom" id="vua-DU-Ewo"/>
+                                            <constraint firstAttribute="trailing" secondItem="9in-pV-MwZ" secondAttribute="trailing" id="z8Z-eG-auG"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1V-hT-C2j">
@@ -886,12 +885,12 @@
                     </view>
                     <connections>
                         <outlet property="box" destination="7eM-1K-J24" id="Ewv-G9-bg3"/>
-                        <outlet property="informationLabel" destination="JKN-rw-cJ5" id="Y5h-87-vSH"/>
+                        <outlet property="informationLabel" destination="9in-pV-MwZ" id="AWv-fa-ByK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksy-Hl-mx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170.40000000000001" y="3518.5907046476764"/>
+            <point key="canvasLocation" x="-170.625" y="3517.5"/>
         </scene>
         <!--Spy Form View Controller-->
         <scene sceneID="u4g-qc-PU4">
