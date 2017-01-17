@@ -20,6 +20,22 @@ class GeneralViewController: UIViewController {
     var delegateSwipe:DataSourceEnableSwipe!
     var delegateTransition: SwipeDelegate!
     
+    let dictionaries = [["key":kCGImagePropertyExifDictionary,
+                         "values":[kCGImagePropertyExifDateTimeOriginal,kCGImagePropertyExifFlash, kCGImagePropertyExifWhiteBalance],
+                         "textValues":["Fecha y hora: ", "Flash: ", "Balance de blancos: "]],
+                        ["key":kCGImagePropertyTIFFDictionary,
+                         "values":[kCGImagePropertyTIFFModel],
+                         "textValues":["Modelo: "]],
+                        ["key":kCGImagePropertyPixelWidth,
+                         "textValues": "Ancho: "],
+                        ["key":kCGImagePropertyPixelHeight,
+                         "textValues": "Altura: "],
+                        ["key":kCGImagePropertyOrientation,
+                         "textValues": "Orientación: "],
+                        ["key":kCGImagePropertyGPSDictionary,
+                         "values":[kCGImagePropertyGPSAltitude, kCGImagePropertyGPSLongitude, kCGImagePropertyGPSLatitude],
+                         "textValues":["Altitud: ","Longitud: ", "Latitud: "]]]
+    
     var alertViewInfo:AlertInfoViewController!
 
     override func viewDidLoad() {
@@ -155,12 +171,17 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
     //MARK: delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print(info)
+        
+        if let metadata = info[UIImagePickerControllerMediaMetadata] as! [String: AnyObject]! {
+            let value = searchIn(metadata)
+            storage.setMetadata(metadata: value as AnyObject)
+        }
 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 //            self.imageView.contentMode = UIViewContentMode.scaleAspectFit
 //            self.imageView.image = pickedImage
-            let value = getMetadata(image: pickedImage)
-            storage.setMetadata(metadata: value as AnyObject)
+//            let value = getMetadata(image: pickedImage)
+//            storage.setMetadata(metadata: value as AnyObject)
             storage.setImage(image: pickedImage)
         }
         
@@ -286,22 +307,6 @@ extension GeneralViewController {
             return metaData
         }
         
-        let dictionaries = [["key":kCGImagePropertyExifDictionary,
-                             "values":[kCGImagePropertyExifDateTimeOriginal,kCGImagePropertyExifFlash, kCGImagePropertyExifWhiteBalance],
-                             "textValues":["Fecha y hora: ", "Flash: ", "Balance de blancos: "]],
-                            ["key":kCGImagePropertyTIFFDictionary,
-                             "values":[kCGImagePropertyTIFFModel],
-                             "textValues":["Modelo: "]],
-                            ["key":kCGImagePropertyPixelWidth,
-                             "textValues": "Ancho: "],
-                            ["key":kCGImagePropertyPixelHeight,
-                             "textValues": "Altura: "],
-                            ["key":kCGImagePropertyOrientation,
-                             "textValues": "Orientación: "],
-                            ["key":kCGImagePropertyGPSDictionary,
-                             "values":[kCGImagePropertyGPSAltitude, kCGImagePropertyGPSLongitude, kCGImagePropertyGPSLatitude],
-                             "textValues":["Altitud: ","Longitud: ", "Latitud: "]]]
-        
         for dictionary in dictionaries {
             guard let arrayValues = dictionary["values"] as! [CFString]! else {
                 guard let value = dictionaryGetValue(dictionary: imagesProperties, key: dictionary["key"] as! CFString) else {
@@ -343,5 +348,38 @@ extension GeneralViewController {
         let value = unsafeBitCast(ref, to: AnyObject.self)
 
         return value
+    }
+    
+    func searchIn(_ mainDictionary: [String: AnyObject]) -> String {
+        var metaData = String()
+        
+        for dictionary in dictionaries {
+            let key = dictionary["key"] as! String
+            guard let arrayValues = dictionary["values"] as! [String]! else {
+                guard let value = mainDictionary[key] else {
+                    continue
+                }
+                metaData.append(String(format:"\n%@ %@", dictionary["textValues"] as! String, value as! CVarArg))
+                
+                continue
+            }
+            
+            let textTitles = dictionary["textValues"] as! [String]
+            
+            guard let secondaryDictionary = mainDictionary[key] as! [String:AnyObject]! else {
+                continue
+            }
+            
+            for i in 0 ..< arrayValues.count {
+                let property = arrayValues[i]
+                let title = textTitles[i]
+                guard let value = secondaryDictionary[property] as! String! else {
+                    continue
+                }
+                metaData.append(String(format:"\n%@ %@", title, value))
+            }
+        }
+        
+        return metaData
     }
 }
