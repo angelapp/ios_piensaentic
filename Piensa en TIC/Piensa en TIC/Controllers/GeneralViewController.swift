@@ -1,5 +1,6 @@
 import UIKit
 import ImageIO
+import Photos
 
 protocol AlertInfoViewDelegate {
     func dismissAlert()
@@ -173,8 +174,27 @@ extension GeneralViewController: UIImagePickerControllerDelegate, UINavigationCo
         print(info)
         
         if let metadata = info[UIImagePickerControllerMediaMetadata] as! [String: AnyObject]! {
+            
             let value = searchIn(metadata)
             storage.setMetadata(metadata: value as AnyObject)
+            
+        } else if let url  = info[UIImagePickerControllerReferenceURL] as! NSURL!{
+            let asset = PHAsset.fetchAssets(withALAssetURLs: [url as URL], options: nil)
+            guard let result = asset.firstObject, result is PHAsset else {
+                return
+            }
+            let imageManager = PHImageManager.default()
+            imageManager.requestImageData(for: result , options: nil, resultHandler:{
+                (data, responseString, imageOriet, info) -> Void in
+                let imageData: NSData = data! as NSData
+                if let imageSource = CGImageSourceCreateWithData(imageData, nil) {
+                    let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)! as NSDictionary
+                    print(imageProperties)
+                    let valuesFromUrl = self.searchIn(imageProperties as! [String : AnyObject])
+                    self.storage.setMetadata(metadata: valuesFromUrl as AnyObject!)
+                    //now you have got meta data in imageProperties, you can display PixelHeight, PixelWidth, etc.
+                }
+            })
         }
 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -290,6 +310,7 @@ extension GeneralViewController {
         guard let pngData: Data = UIImagePNGRepresentation(image) else {
             return metaData
         }
+    
         
         metaData.append(readMetadata(pngData))
         return metaData
