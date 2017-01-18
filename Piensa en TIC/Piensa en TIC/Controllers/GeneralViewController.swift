@@ -380,7 +380,13 @@ extension GeneralViewController {
                 guard let value = mainDictionary[key] else {
                     continue
                 }
-                metaData.append(String(format:"\n%@ %@", dictionary["textValues"] as! String, value as! CVarArg))
+                
+                if value is String {
+                    metaData.append(String(format:"\n%@ %@", dictionary["textValues"] as! String, value as! String))
+                } else if value is NSNumber {
+                    metaData.append(String(format:"\n%@ %@", dictionary["textValues"] as! String, value as! NSNumber))
+                }
+                
                 
                 continue
             }
@@ -394,10 +400,16 @@ extension GeneralViewController {
             for i in 0 ..< arrayValues.count {
                 let property = arrayValues[i]
                 let title = textTitles[i]
-                guard let value = secondaryDictionary[property] as! String! else {
+                guard let value = secondaryDictionary[property] else {
                     continue
                 }
-                metaData.append(String(format:"\n%@ %@", title, value))
+                
+                
+                if value is String {
+                    metaData.append(String(format:"\n%@ %@", title, value as! String))
+                } else if value is NSNumber {
+                    metaData.append(String(format:"\n%@ %@", title, value as! NSNumber))
+                }
             }
         }
         
