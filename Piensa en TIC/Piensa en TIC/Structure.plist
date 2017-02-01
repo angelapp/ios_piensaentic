@@ -719,7 +719,7 @@
 					<key>links</key>
 					<string> ,https://itunes.apple.com/, ,mail:info@piensatic.co, ,https://dominemoslatecnologia.org</string>
 					<key>linkColor</key>
-					<string>#7d1836FF</string>
+					<string>#FFFFFFFF</string>
 				</dict>
 				<dict>
 					<key>content</key>
@@ -731,13 +731,13 @@
 					<key>links</key>
 					<string> , ,http://colnodo.apc.org, ,http://apc.org/, ,https://github.org </string>
 					<key>linkColor</key>
-					<string>#7d1836FF</string>
+					<string>#FFFFFFFF</string>
 				</dict>
 			</array>
 			<key>backgroundName</key>
 			<string>actintro_fondo</string>
 			<key>textColor</key>
-			<string>#c22323FF</string>
+			<string>#FFFFFFFF</string>
 			<key>pageIndicatorColorActive</key>
 			<string>#c22323FF</string>
 			<key>pageIndicatorColorInactive</key>

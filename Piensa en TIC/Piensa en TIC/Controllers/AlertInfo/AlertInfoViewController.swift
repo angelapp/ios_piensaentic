@@ -44,6 +44,7 @@ class AlertInfoViewController: UIViewController {
             informationLabel.text = "No hay información para mostrar."
             return
         }
+        informationLabel.font = UIFont.systemFont(ofSize: 26)
         
         informationLabel.text = message
     }
