@@ -97,7 +97,7 @@
 			<key>backgroundName</key>
 			<string>actintro_fondo</string>
 			<key>textColor</key>
-			<string>#c22323</string>
+			<string>#FFFFFF</string>
 			<key>pageIndicatorColorActive</key>
 			<string>#c22323</string>
 			<key>pageIndicatorColorInactive</key>
@@ -208,8 +208,6 @@
 					<string>gray</string>
 				</dict>
 			</array>
-			<key>userInfo</key>
-			<string>heroe</string>
 			<key>backgroundName</key>
 			<string>act1_fondo</string>
 			<key>textColor</key>

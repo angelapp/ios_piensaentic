@@ -35,6 +35,9 @@ class CarrouselChapterViewController: UIViewController, UIPageViewControllerDele
         
         guard let imageName = imageName else { return}
         backgroundImage.image = UIImage(named:imageName)
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

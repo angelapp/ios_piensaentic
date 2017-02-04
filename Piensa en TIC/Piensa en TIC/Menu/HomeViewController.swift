@@ -1,5 +1,6 @@
 import UIKit
 import MFSideMenu
+import Google
 
 protocol SelectRightMenuItem {
     func selectRightMenuItem(content:String!)
@@ -10,6 +11,7 @@ class HomeViewController: MFSideMenuContainerViewController {
     
     let mainConfigurator = MainConfigurator.sharedConfiguration
     var content:NSDictionary!
+    var actualActivity: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,7 @@ class HomeViewController: MFSideMenuContainerViewController {
         }
         
         content = mainConfigurator.chapter(index: 0)
+        actualActivity = content.object(forKey: "activity_name") as! String!
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +37,8 @@ class HomeViewController: MFSideMenuContainerViewController {
     
     //MARK: Initial Setup
     func initialSetup() -> (){
+        
+        
         guard let nextChapter = getNextChapter() else {
             showPreface()
             return
@@ -48,6 +53,9 @@ class HomeViewController: MFSideMenuContainerViewController {
                 showCredits()
             }
         }
+
+       
+    
     }
     
     //MARK: setup right panel
@@ -75,6 +83,8 @@ class HomeViewController: MFSideMenuContainerViewController {
 extension HomeViewController: SelectRightMenuItem {
     func showChapter(_ index:Int) {
         content = mainConfigurator.chapter(index: index)
+        actualActivity = content.object(forKey: "activity_name") as! String!
+        sendActivityToAnalytics();
         
         let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
         let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
@@ -100,6 +110,8 @@ extension HomeViewController: SelectRightMenuItem {
     
     func showPreface() {
         content = mainConfigurator.preface()
+        actualActivity = content.object(forKey: "activity_name") as! String!
+        sendActivityToAnalytics();
         
         let propertiesStoryboard = UIStoryboard.init(name: "Profile", bundle: Bundle.main)
         let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
@@ -117,6 +129,8 @@ extension HomeViewController: SelectRightMenuItem {
     
     func showCredits() {
         content = mainConfigurator.credits()
+        actualActivity = content.object(forKey: "activity_name") as! String!
+        sendActivityToAnalytics();
         
         let propertiesStoryboard = UIStoryboard.init(name: "Chapters", bundle: Bundle.main)
         let navigationController = propertiesStoryboard.instantiateViewController(withIdentifier: StoryboardIdentifier.chapterMain)
@@ -156,6 +170,20 @@ extension HomeViewController: SelectRightMenuItem {
     func selectRightMenuItemAndSendProgress(content: String!) {
         Network.sendProgress()
         initialSetup()
+    }
+    
+    
+    func sendActivityToAnalytics(){
+        if let default_tracker = GAI.sharedInstance().defaultTracker {
+            print("default tracker " + actualActivity)
+        }
+        
+        //let tracker = GAI.sharedInstance().defaultTracker
+        let tracker = GAI.sharedInstance().tracker(withTrackingId: "UA-87589169-1")
+        
+        let event = GAIDictionaryBuilder.createEvent(withCategory: "Activity", action: "Activity Open", label: actualActivity, value: 0)
+        tracker?.send(event!.build() as [NSObject: AnyObject])
+
     }
 }
 
